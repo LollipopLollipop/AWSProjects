@@ -1,0 +1,500 @@
+<!DOCTYPE html><html><head xmlns:md="http://oli.web.cmu.edu/metadata/"><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="IE=9" http-equiv="X-UA-Compatible"><meta content="/repository/presentation/whirlwind-1.2/" name="themePath"><title>Write Scalability</title><base href="https://oli.cmu.edu/repository/webcontent/fda7217280020ca6017598f75d250b76/projects/_p03_project_3/_p03_m01_databases/x-oli-workbook_page/_p03_m01_6_dynamodb.xml"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/reset.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/learning_content.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/azool.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/style.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxCore.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxModal.css"><!--[if lte IE 7.0]>
+        <link rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles/ie/ie7.css" type="text/css" />
+        <![endif]-->
+        <!--[if lte IE 6]>
+        <link rel="stylesheet" href="/branding/css/ielte6.css" type="text/css" />
+        <![endif]--><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.css"><!--[if IE 7]><![endif]--><script src="/repository/presentation/whirlwind-1.2/web/scripts/swfobject.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-core-1.4.5-full-compat.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-more-1.4.0.1.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootests.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Core.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Modal.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/azool.js" type="text/javascript"></script><script src="/oa.js" type="text/javascript"></script><script type="text/javascript" src="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.js">//</script><script type="text/javascript">var AZ = AZ ? AZ : {};
+AZ.d = {'courseKey': 'F14-CC-PSA', 'pageNumber': '174'};
+</script><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shCore.css"><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shThemeEclipse.css"><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shCore.js" type="text/javascript"> </script><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shBrushBash.js" type="text/javascript"> </script><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shBrushPlain.js" type="text/javascript"> </script><script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = '/repository/presentation/whirlwind-1.2/web/scripts//syntax/clipboard.swf';SyntaxHighlighter.all();</script></head><body class="workbook_page"><div class="contain"><div role="banner" class="header"><div class="oliClassTitle"><a class="logo"></a><h1><a title="15319/15619 Cloud Computing (Fall 2014)" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">15319/15619 Cloud Computing (Fall 2014)</a></h1></div><div aria-label="system" role="navigation" class="user"><h3>System Navigation</h3><ul class="userCredentials"><li class="userName"><a title="Edit my account" id="username" href="/jcourse/webui/myaccount/edit.do?user=dingz@andrew.cmu.edu">Ding ZHAO</a></li> <li class="login"><a title="Logout of the Open Learning Initiative." class="signout" href="/jcourse/webui/logout.do?from=0e4f809880020ca6015e1f3b7bfc2a3d">
+                            [  Sign Out  ]
+						</a></li></ul><div class="clear"></div><ul class="userHelp"><li><a title="Access Key + C" accesskey="C" class="home" id="myCourses" href="/jcourse/webui/myhome.do">My Courses</a>|
+				</li><li><a title="Access Key + S" accesskey="S" class="mimetypes_x-office-address-book" id="syllabus" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Syllabus</a>|
+			</li><li><span class="coursenav"> <a class="active" href="/jcourse/webui/syllabus/outline.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&from=0e4f809880020ca6015e1f3b7bfc2a3d">
+	      
+	        
+			Outline
+	    </a></span>|
+			</li><li><a onclick="openMdWin(this.href, 'activity');return false;" title="Ask OLI technical support team" href="/jcourse/webui/help.do">Help</a>|
+			</li><li id="moreBtn2"><a aria-haspopup="true" href="" tabindex="" title="More" accesskey="M" id="moreBtn">
+					More
+				</a></li></ul></div><div class="shadowOne" id="wn"><span class="controlpanel"> <a target="_blank" href="/jcourse/GradebookClient/index.html?myscores&section=0e4f7c4380020ca600aa44ba1eaf4b1e&col=0e4f809780020ca600b2808990fdcd15"><span class="gradebook">My Scores</span></a><a href="/jcourse/webui/mycourses/reports/practice.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&context=0e4f809780020ca600b2808990fdcd15"><span class="studentDashboard">Available Practice</span></a></span><span class="supportPanel"> <a title="Check if my computer is configured properly for this course." href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><span class="categories_preferences-system">Test My System</span></a> <a title="Send email to Majd Sakr" href="mailto:msakr@ANDREW.CMU.EDU"><span class="actions_mail-message-new">Email Sakr</span></a> <a onclick="openMdWin(this.href, 'activity');return false;" class="wnTechSupport" title="Ask OLI technical support team" href="/jcourse/webui/help.do"><span class="actions_mail-message-new">Email Tech Support</span></a></span></div></div><div aria-haspopup="true" aria-label="Unit" role="navigation" class="lessonHead"><h2 tabindex="" accesskey="u" id="0e4f807c80020ca6008491878136e895"><a tabindex="" href="javascript:;"><span>Unit&nbsp;::</span>Project 3</a></h2></div><div class="expand shadowOne"><ul id="topLvl"></ul></div><div aria-label="module, page" role="navigation" class="subNavigation"><a aria-label="previous, module" role="navigation" accesskey="," class="prev oneclick" href="javascript:;"></a><a aria-label="next, module" role="navigation" accesskey="." class="next oneclick" href="javascript:;"></a><div class="module"><ul id="moduleUl"><li><a id="0e4f807f80020ca601da17cb73b7cb68" title="Module  Files vs. Databases" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f807f80020ca601da17cb73b7cb68"><b><span>Files vs. Databases</span></b></a></li><li><a id="0e4f808780020ca600d665bde281f8be" title="Module  Vertical Scaling in Databases" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f808780020ca600d665bde281f8be"><b><span>Vertical Scaling in Databases</span></b></a></li><li><a id="0e4f809080020ca601c500941f6401a7" title="Module  Horizontal Scaling in Databases" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f809080020ca601c500941f6401a7"><b><span>Horizontal Scaling in Databases</span></b></a></li><li class="current"><a id="0e4f809780020ca600b2808990fdcd15" title="Module  Working with NoSQL: DynamoDB / HBase" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f809780020ca600b2808990fdcd15"><b><span>Working with NoSQL: DynamoDB / HBase</span></b></a></li></ul></div><div class="subMenu shadowOne" id="subMenuExpand"><ul id="jsonSubMenu"></ul></div></div><div class="searchBox"><form method="get" action="/jcourse/search/search.do" id="searchForm"><input value="0e4f7c4380020ca600aa44ba1eaf4b1e" type="hidden" name="section" class="sectionGUID"><input placeholder="Search this course" onBlur="this.setAttribute('value', this.value);" value="" size="25" id="q" type="text" name="q" class="q"><input value="0e4f809880020ca6015e1f3b7bfc2a3d" type="hidden" name="from" class="contextGUID"></form></div><div class="opacity"><div role="main" class="content shadowTwo"><div id="oli-message"><!----></div><div id="paginationtopwrap"><div class="clearfix" id="paginationtop"><div class="pagtopwrapwrap"><div class="pagtopwrap"><div aria-label="page" role="navigation" class="pagtop"><a aria-label="previous" role="navigation" title="Horizontal Scaling" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f809280020ca60021affbb28bbe9f"></a> <a aria-label="previous" role="navigation" title="Working with NoSQL: DynamoDB / HBase" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f809780020ca600b2808990fdcd15"></a> <span class="pagnum"><form method="get" class="pageForm" style="" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip" id="pagnumtip">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax"><input size="4" autocomplete="off" value="174" type="text" class="paginationInput"> </form></span><a aria-label="next" role="navigation" title="Next: Database Services in AWS" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/workbook/activity/page?context=0e4f809a80020ca6004f6e8c1f416e0f"></a></div></div></div><h3><a href="/jcourse/webui/syllabus/module.do?context=0e4f809780020ca600b2808990fdcd15" class="module-heading"></a>Write Scalability</h3></div></div><div id="lobjh" class=""><h3>Learning Objectives</h3><ul><li><div class="" id="p03_m01_d">Evaluate partitioning (sharding) in databases for horizontal scaling.</div></li></ul></div><div class="contentContain">
+
+		<div id="N106E9" class="section"><div class="sectionContain ">
+		<h2>Write Scalability in MySQL using Sharding</h2>
+		
+			
+				<p>In the previous project, we analyzed how horizontal scaling of MySQL database replicas
+					improved read scalability. However, we also learnt this technique (Replication)
+					cannot be used for database writes (for example, <code>INSERTS</code> and
+						<code>UPDATES</code>). Replication will not help in write scalability
+					because all replicas have to be modified for changes to be consistent across the
+					servers. Now we will experiment with a technique to handle write scalability,
+					namely Sharding. Sharding is horizontal partitioning (i.e. partitioning of the
+					rows) of a table and distributing them among multiple data nodes. This helps
+					improve write throughput by allowing write requests to be handled in parallel on
+					the corresponding shards. However, horizontal sharding might not always improve
+					performance. There are scenarios when sharding will perform poorly. In this
+					project module, we will compare the performance of a single MySQL server against
+					a MySQL "cluster" by running certain benchmarks, to help determine the various
+					tradeoffs that sharding presents.</p>
+			<p><em class="bold">Note</em>: For this checkpoint, assign the tag with Key: <code>Project</code>
+					and Value: <code>3.4</code> for all resources</p>	
+			<p>Please visit the <a href="https://piazza.com/class/hxs4b3o2lox5f9?cid=1575" id="_i_0" target="_blank">Piazza
+						post</a> for any updates regarding this part of the Project.</p>
+		
+		</div></div>
+		
+		<div id="N1070F" class="section"><div class="sectionContain ">
+			<h2>MySQL Cluster</h2>
+			
+			<p>MySQL Cluster is an extension to MySQL that provides clustering and auto-sharding for the
+					MySQL database management system. It is designed to provide high availability
+					and high throughput with low latency, while allowing for near linear
+					scalability. MySQL Cluster is implemented through the <code>NDB</code> or
+						<code>NDBCLUSTER</code> storage engine for MySQL (<code>NDB</code> stands
+					for Network Database). </p>
+				<div id="N10722" class="section"><div class="sectionContain ">
+					<h3>Types of Nodes in a MySQL Cluster </h3>
+					
+						<p>To create a fully functional production MySQL cluster, you need a minimum of 3
+							instances/nodes. The following are the types of nodes that should be
+							part of a MySQL production cluster: </p>
+						<p><em class="bold">Cluster Management Node</em>: The cluster management node manages the
+							cluster. It does not hold any data. A cluster can have multiple
+							management nodes for failover-redundancy and disaster recovery.</p>
+						<p><em class="bold">Data Node</em>: The data nodes contain the actual data (i.e. the row-wise
+							partitions of tables). These partitions are distributed across nodes.
+							The cluster can be configured to maintain replicas too. If replication
+							factor is 2, there are two copies of each partition  distributed within
+							the cluster. </p>
+						<p><em class="bold">API Node</em>: These are the nodes that access the cluster data. In the
+							case of a MySQL Cluster, a API node is a traditional MySQL server that
+							uses the <a href="http://dev.mysql.com/doc/refman/5.1/en/mysql-cluster.html" id="_i_1" target="_blank">NDBCLUSTER</a> storage engine. This is also called an SQL Node.
+							API nodes allow for client access via the 3306 port by default. </p>
+						<p>In addition to the three types of nodes we can also have a LoadBalancer node or a MySQL
+							proxy node. This node acts as a proxy end-point to an application that
+							tries to access data through the available API Nodes in the cluster. The
+							use of a proxy node is outside the scope of this project, but may come
+							in handy for real-world MySQL deployments.</p>
+						<p>The following diagram illustrates a MySQL cluster that has 1 management node, 1 API Node
+							and 3 Data Nodes. Notice that the API node is co-located with the first
+							data node.</p>
+						<div class="image shouldbeleft"><img src="../webcontent/mysql_cluster.png" id="_i_2" class=" popimg" onclick="loadImageFromPage(this);"></div>
+						<p>
+							<p>In this project we will create a cluster configuration with one management node and three
+								data nodes. We will also configure all the data nodes to act as
+								MySQL API nodes as well. We will use <code>m3.medium</code>
+								instances for all nodes in the cluster. To achieve this, launch 4
+									<code>m3.medium</code> instances (<code>ami-da6fe8b2</code>) -
+								all in the same availability zone. One of these nodes will act as
+								the management node. Note down the private IPs of all nodes.</p>
+						</p>
+						<p><em>Note</em> : Use the <code>ubuntu</code> user to log in to these
+							instances. </p>
+						
+					
+				</div></div>
+				<div id="N10766" class="section"><div class="sectionContain ">
+					<h3>Creating a MySQL Cluster </h3>
+					
+						<div id="N1076D" class="section"><div class="sectionContain ">
+							<h4>Configuring the management nodes </h4>
+							
+								<p>We will start by configuring the MySQL management node and then move on to the individual
+									data nodes. You will want to execute the following commands as
+										<code>root</code> unless mentioned otherwise:</p>
+								<ol><li>Let's create a directory to hold all the source packages for the management node.
+										Navigate to <code>/usr/src</code> directory and create the
+											<code>mysql-mgm</code> directory:
+										<div><pre class="brush: bash; gutter: false; ">
+										mkdir /usr/src/mysql-mgm
+										cd /usr/src/mysql-mgm</pre></div>
+									</li><li>Now let's download the latest GPL source packages for MySQL-Cluster from the MySQL
+										download site and extract the archive:
+										<div><pre class="brush: bash; gutter: false; ">
+										wget http://cdn.mysql.com/Downloads/MySQL-Cluster-7.3/mysql-cluster-gpl-7.3.7-linux-glibc2.5-x86_64.tar.gz
+										tar xvfz mysql-cluster-gpl-7.3.7-linux-glibc2.5-x86_64.tar.gz
+										</pre></div>
+									</li><li>Navigate to the extracted folder and move the binaries to <code>/usr/bin</code> so that
+										they appear on the user's PATH for
+										execution<div><pre class="brush: bash; gutter: false; ">
+										cd  mysql-cluster-gpl-7.3.7-linux-glibc2.5-x86_64
+										cp bin/ndb_mgm /usr/bin
+										cp bin/ndb_mgmd /usr/bin
+										</pre></div>
+									</li><li>Change the permissions for the MySQL binaries to allow for execute and optionally
+										remove the downloaded source files from
+											<code>/usr/src</code><div><pre class="brush: bash; gutter: false; ">
+										chmod 755 /usr/bin/ndb_mg*
+										cd /usr/src
+										rm -rf /usr/src/mysql-mgm
+										</pre></div>
+									</li><li>Next, we must create the cluster configuration file in
+											<code>/var/lib/mysql-cluster/</code> in a file named
+											<code>config.ini</code>. The folder does not exist so
+										you need to create it.
+										<div><pre class="brush: bash; gutter: false; ">
+										mkdir /var/lib/mysql-cluster
+										</pre></div>
+									</li><li>Create the file <code>config.ini</code> file using your favourite text editor and add
+										the following contents to the line:
+										<div><pre class="brush: text; gutter: false; ">
+										[NDBD DEFAULT]
+										#For this project we will set replicas as 1 - No replicas.
+										NoOfReplicas=1
+										DataMemory=1024M
+										IndexMemory=200M
+										[MYSQLD DEFAULT]
+										 
+										[NDB_MGMD DEFAULT]
+										DataDir=/var/lib/mysql-cluster
+										[TCP DEFAULT]
+										 
+										# Section for the cluster management node
+										[NDB_MGMD]
+										NodeId=1
+										# IP address of the first management node (this system)
+										HostName=&lt;private ip of your MGMT node&gt;
+										 
+										# Section for the storage nodes
+										[NDBD]
+										# IP address of the first storage node
+										HostName=&lt;private ip of your data node 1&gt;
+										DataDir= /var/lib/mysql-cluster
+										
+										[NDBD]
+										# IP address of the second storage node
+										HostName=&lt;private ip of your data node 2&gt;
+										DataDir=/var/lib/mysql-cluster
+										
+										[NDBD]
+										# IP address of the third storage node
+										HostName=&lt;private ip of your data node 3&gt;
+										DataDir=/var/lib/mysql-cluster
+										
+										[MYSQLD]
+										# IP address of your API Node
+										# For this project we will use one of the data nodes - 1
+										HostName=&lt;private ip of your data node 1&gt;
+										
+										[MYSQLD]
+										# IP address of your API Node
+										# For this project we will use one of the data nodes - 2
+										HostName=&lt;private ip of your data node 2&gt;
+										
+										[MYSQLD]
+										# IP address of your API Node
+										# For this project we will use one of the data nodes - 3
+										HostName=&lt;private ip of your data node 3&gt;
+										</pre></div>
+										Note that all hosts are defined at this stage, even though
+										we are only installing the management node. Note that the
+										management host node needs a NodeID parameter specified
+										whereas the NDBD nodes do not. </li><li>Once this is done you can start the management node with the following command:
+										<div><pre class="brush: bash; gutter: false; ">
+										ndb_mgmd -f /var/lib/mysql-cluster/config.ini --configdir=/var/lib/mysql-cluster/
+										</pre></div>
+									</li><li>Next, you can configure the <code>ndb_mgmd</code> to automatically start on boot by
+										configuring it as an <code>init.d</code> script:
+										<div><pre class="brush: bash; gutter: false; ">
+										echo "ndb_mgmd -f /var/lib/mysql-cluster/config.ini --configdir=/var/lib/mysql-cluster/" &gt; /etc/init.d/ndb_mgmd
+										chmod 755 /etc/init.d/ndb_mgmd
+										</pre></div>You
+										can verify that the management node is operational using the
+										command - <code>ndb_mgm</code> (just enter
+											<code>ndb_mgm</code> in the terminal) and by typing
+											&ldquo;<code>show</code>&rdquo; in the configuration utility. The
+										command will work, but it will show that the ndbd nodes are
+										disconnected (because we have not configured them yet). </li></ol>
+							
+						</div></div>
+						<div id="N107E2" class="section"><div class="sectionContain ">
+							<h4>Configuring the database nodes </h4>
+							
+								<p>Creating the DB nodes is fairly similar to creating the management nodes. You should
+									repeat the following procedure on all three data nodes. </p>
+								<ol><li> We start by creating a mysql group and adding a Linux user for MySQL. This is a good
+										idea in general as you should not run <code>mysql</code> as
+											<code>root</code> on a production system for security
+										reasons.
+										<div><pre class="brush: bash; gutter: false; ">
+										groupadd mysql
+										useradd -g mysql mysql
+										</pre></div>
+									</li><li> Navigate to <code>/usr/local</code> and download the same package as the one we used
+										for the management node and extract it.
+										<div><pre class="brush: bash; gutter: false; ">
+										cd /usr/local/
+										wget http://cdn.mysql.com/Downloads/MySQL-Cluster-7.3/mysql-cluster-gpl-7.3.7-linux-glibc2.5-x86_64.tar.gz
+										tar xvfz mysql-cluster-gpl-7.3.7-linux-glibc2.5-x86_64.tar.gz
+										</pre></div>
+									</li><li> Create a symbolic link named <code>mysql</code> pointing to the extracted folder (this
+										will be later be used by the DB cluster. So do not delete
+										it!). Once the symlink is complete you can install the
+										database.
+										<div><pre class="brush: bash; gutter: false; ">
+										ln -s mysql-cluster-gpl-7.3.7-linux-glibc2.5-x86_64 mysql
+										cd mysql
+										apt-get install libaio1 libaio-dev
+										scripts/mysql_install_db --user=mysql --datadir=/usr/local/mysql/data
+										</pre></div>
+									</li><li> Change the ownership of the directory to the newly created <code>mysql</code> group
+										<div><pre class="brush: bash; gutter: false; ">
+										chown -R root:mysql .
+										chown -R mysql data
+										</pre></div>
+									</li><li> As with the management nodes, we want the database engine to start automatically and
+										thus we need to add the appropriate <code>init.d</code>
+										script.
+										<div><pre class="brush: bash; gutter: false; ">
+										cp support-files/mysql.server /etc/init.d/
+										chmod 755 /etc/init.d/mysql.server
+										</pre></div>
+									</li><li>Finally, copy all the files in the <code>bin</code> directory to the
+											<code>/usr/bin</code> location to keep everything neat
+										and create a symlink to keep references right.
+										<div><pre class="brush: bash; gutter: false; ">
+									cd /usr/local/mysql/bin
+									mv * /usr/bin
+									cd ../
+									rm -fr /usr/local/mysql/bin
+									ln -s /usr/bin /usr/local/mysql/bin
+									</pre></div>
+									</li><li>The MySQL configuration file is not included by default. So we need to create it
+										ourselves. The file should be in the <code>/etc/</code>
+										directory and should be named <code>my.cnf</code>. Open the
+										file using a text editor and add the following lines to it:
+										<div><pre class="brush: bash; gutter: false; ">
+									[mysqld]
+									ndbcluster
+									# IP address of the cluster management node
+									ndb-connectstring=&lt;private IP of your Management Node&gt;
+									[mysql_cluster]
+									# IP address of the cluster management node
+									ndb-connectstring=&lt;private IP of your Management Node&gt;
+									</pre></div>
+									</li><li>Once <code>my.cnf</code> file has been saved we need to create the data folders for
+										MySQL.
+										<div><pre class="brush: bash; gutter: false; ">
+										mkdir /var/lib/mysql-cluster
+										</pre></div>
+									</li><li>Once that is done, we just need to initialize the cluster and start the service. The
+										initialization needs to be done only when you start the node
+										for the first time, or when
+											<code>/var/lib/mysql-cluster/config.ini</code> file has
+										been changed on the management node(s)
+										<div><pre class="brush: bash; gutter: false; ">
+										cd /var/lib/mysql-cluster
+										ndbd &ndash;-initial
+										/etc/init.d/mysql.server start
+										</pre></div>
+										Make sure you allow inbound requests through port 1186 in
+										the management node's security group. </li><li>
+										After this, secure the MySQL installation by running the appropriate script
+										<div><pre class="brush: bash; gutter: false; ">
+										/usr/local/mysql/bin/mysql_secure_installation
+										</pre></div>
+									</li><li> Finally, we need to configure <code>ndb</code> to start automatically using an init.d
+										script:
+										<div><pre class="brush: bash; gutter: false; ">
+										echo "ndbd" &gt; /etc/init.d/ndbd
+										chmod 755 /etc/init.d/ndbd
+										</pre></div>
+									</li><li>Once everything is done, you have completed configuring the first data+SQL node. Repeat
+										these steps on the second and third data+SQL nodes to get
+										them up and running as well.</li></ol>
+							
+						</div></div>
+						<div id="N10873" class="section"><div class="sectionContain ">
+							<h4>Testing and Verification </h4>
+							
+								<p>Once everything is completed it is time to verify our configuration to check if
+									everything is working as configured. To do this, we need to
+									verify that all nodes are visible and connected to the
+									management node. Open the ndb management shell by typing
+										<code>ndb_mgm</code> in terminal and type <code>show</code>.
+									This time you should see that the database nodes have been
+									populated in the output. </p>
+								<div><pre class="brush: text; ">root@MYSQL-MGM1:~# ndb_mgm
+ndb_mgm&gt; show
+Cluster Configuration
+---------------------
+[ndbd(NDB)] 2 node(s)
+id=2	@IP-1  (mysql-5.6.14 ndb-7.3.7, Nodegroup: *)
+id=3	@IP-1  (mysql-5.6.14 ndb-7.3.7, Nodegroup: *)
+id=4	@IP-1  (mysql-5.6.14 ndb-7.3.7, Nodegroup: *)
+ 
+[ndb_mgmd(MGM)] 1 node(s)
+id=1	@IP-MGMT  (mysql-5.6.14 ndb-7.3.7)
+ 
+[mysqld(API)]   1 node(s)
+id=5	@IP-1  (mysql-5.6.14 ndb-7.3.7)
+id=6	@IP-2  (mysql-5.6.14 ndb-7.3.7)
+id=7	@IP-3  (mysql-5.6.14 ndb-7.3.7)</pre></div>
+								<p>If you see output similar to the one above, you are clear to go and try out some basic
+									SQL commands. SSH to the first DB node in the cluster. Log in to
+									the SQL database and create a new database and table to verify
+									the data. </p>
+								<div><pre class="brush: text; ">mysql -u root -p
+CREATE DATABASE mysqlclustertest;
+USE mysqlclustertest;
+CREATE TABLE testtable (i INT) ENGINE=NDBCLUSTER;
+INSERT INTO testtable () VALUES (1);
+SELECT * FROM testtable;
++------+
+| i    |
++------+
+| 1    |
++------+
+1 row in set (0.01 sec)
+</pre></div>
+								<p>Note that when creating a database, the engine for the tables has
+									to be <code>NDBCLUSTER</code>. If you use InnoDB for example,
+									the data will NOT be partitioned between the cluster nodes.
+									There are some drawbacks when using <code>NDBCLUSTER</code> as
+									your engine, which can be found in the MySQL <a href="http://dev.mysql.com/doc/mysql-cluster-excerpt/5.6/en/mysql-cluster-ndb-innodb-engines.html" id="_i_3" target="_blank">website</a>. </p>
+								<p>Connect to the second database node and verify the same output. </p>
+								<div><pre class="brush: text; ">mysql -u root -p
+USE mysqlclustertest;
+SELECT * FROM testtable;
++------+
+| i    |
++------+
+| 1    |
++------+
+1 row in set (0.01 sec)</pre></div>
+								<p>You should see the same output as on the first node when doing
+									the select statement. Now if you insert a new entry to the
+									table, it will be visible back to the first node. The MySQL
+									server internally communicates to all data nodes to get the
+									data. So all of the data is visible from a single node&rsquo;s MySQL
+									shell. </p>
+							
+						</div></div>
+						<div id="N108A8" class="section"><div class="sectionContain ">
+							<h4>Creating a user for your MySQL Cluster </h4>
+							
+								<p>Unlike table data, SQL users do not replicate, so the same user has to be added to all
+									database nodes individually. Once logged in to the DB node SQL
+									shell, execute the following command: </p>
+								<div><pre class="brush: text; ">
+CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' with grant option;
+
+CREATE USER 'user'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' with grant option;
+
+FLUSH PRIVILEGES;
+
+SELECT * FROM mysql.user;</pre></div>
+								<p>Change the user and password as per your configuration needs. The % in the IP-address
+									acts as a wildcard and thus the whole subnet is allowed to
+									connect remotely to this DB node. Remember to flush privileges
+									after the user has been added. Remember to add the same user
+									with the same configuration to all other Database nodes in this
+									cluster. </p>
+								<p>This username and password will be used to connect to the API Node from outside the
+									cluster. </p>
+							
+						</div></div>
+					
+				</div></div>
+				<div id="N108C0" class="section"><div class="sectionContain ">
+					<h3>Single MySQL Node </h3>
+					
+						<p>In order to compare the performance of the MySQL Cluster with a traditional single node
+							MySQL database, launch one m3.medium instance
+							(<code>ami-da6fe8b2</code>). Repeat the MySQL configuration for the data
+							nodes but skip steps 7, the <code>ndbd --initial</code> command in step
+							9 and step 11 (these steps are used to add a MySQL node to a cluster).
+							Now this instance will act as a stand alone MySQL server against which
+							we will compare the cluster&rsquo;s performance. </p>
+					
+				</div></div>
+				<div id="N108D2" class="section"><div class="sectionContain ">
+					<h3>YCSB Tests</h3>
+					
+						<p>In the section, we are going to run the YCSB benchmark under two scenarios. First, you
+							should run the YCSB benchmark on a single MySQL node. Then, run the same
+							YCSB benchmark on the MySQL Cluster. You should open port 3306 for the
+							single MySQL node. For the MySQL cluster, you should open ports 1186 and
+							port 3306. Please note that you can run the benchmark for the MySQL
+							Cluster and single MySQL node at the same time from two different YCSB
+							nodes. Please run these benchmarks multiple times to gain better 
+							insight and understanding.</p>
+						<ol><li>To start, obtain a m1.large machine and boot it using the YCSB AMI
+									(<code>ami-226fe84a</code>). Since this AMI is based on Amazon
+								Linux, you can log in using the username <code>ec2-user</code>. This
+								will be the client machine from which you run all your tests. </li><li>Make sure the security group assigned to this machine is configured
+								to allow all TCP, UDP, and ICMP traffic. </li><li>Create a records.props file in the YCSB root directory, if it does not exist already.
+								This time, set the <code>recordcount</code> to <code>50000</code>. </li><li>YCSB accesses the MySQL database using the JDBC database driver. For MySQL this is called
+								MySQL Connector/J. With the YCSB AMI, there&rsquo;s already a connector
+								jar file. </li><li>Edit the <code>db.properties </code>file under the configuration folder of
+									<code>jdbc-binding</code>. In this file, you should see several
+								properties. For MySQL the Driver Class should be
+									<code>com.mysql.jdbc.Driver</code>. The JDBC URL is of the
+								form:<div><pre class="brush: text; "> 
+jdbc:mysql://server/databaseName</pre></div>
+								(Here the server should be the public DNS of the single MySQL
+								node/any data node in your MySQL Cluster and the
+									<code>databaseName</code> is <code>test</code>). Finally you
+								should set the MySQL database&rsquo;s user name and password according to
+								your settings on the MySQL Cluster. </li><li>SSH to any data node, run the following sql command to create a table on a single MySQL
+								node/data nodes of the MySQL Cluster. For the single MySQL
+								Node:<div><pre class="brush: text; ">
+CREATE DATABASE test;
+USE test;
+CREATE TABLE usertable(YCSB_KEY VARCHAR (255) PRIMARY KEY,   FIELD1 TEXT, FIELD2 TEXT,   FIELD3 TEXT, FIELD4 TEXT,   FIELD5 TEXT, FIELD6 TEXT,   FIELD7 TEXT, FIELD8 TEXT,   FIELD9 TEXT, FIELD10 TEXT);</pre></div></li><li>For the MySQL Cluster:
+									<div><pre class="brush: text; ">
+CREATE DATABASE test;
+USE test;
+CREATE TABLE usertable(YCSB_KEY VARCHAR (255) PRIMARY KEY,   FIELD1 TEXT, FIELD2 TEXT,   FIELD3 TEXT, FIELD4 TEXT,   FIELD5 TEXT, FIELD6 TEXT,   FIELD7 TEXT, FIELD8 TEXT,   FIELD9 TEXT, FIELD10 TEXT) ENGINE=NDBCLUSTER;</pre></div><em class="bold">Note:</em> for the MySQL cluster, you must use the
+								ndbcluster engine to ensure that the same table will also be created
+								on the other 2 nodes.</li><li>On the YCSB client, we can now load the MySQL cluster with the data
+								required for the benchmark. Run the following
+								command:<div><pre class="brush: bash; ">bin/ycsb load jdbc -P workloads/workloada -P jdbc-binding/conf/db.properties -P records.props -s 1&gt;  &lt;username&gt;_mysql_summary_file_loaddata  2&gt; &lt;username&gt;_mysql_results_file_loaddata
+</pre></div></li><li>In this section, we are going to run the benchmark with different workloads. Under the
+								workloads folder, there are several files describing different
+								workloads. For example, in <code>workloada</code>, only read
+								requests will be sent while in <code>workloadb</code>, only
+								write(update and insertion) requests will be sent. For these
+								workloads, the distribution of requests is uniform. You already know
+								the request arrival rate parameter in YCSB. In this test, we will be
+								testing the target arrival rates of 800. Use the following commands
+								to run the benchmark: <ol><li>
+										<div><pre class="brush: bash; ">time bin/ycsb run jdbc -P workloads/workloada -P jdbc-binding/conf/db.properties -P records.props -p operationcount=50000 -s -target 800 1&gt; summary_file_&lt;request type&gt; 2&gt; results_file_&lt;request type&gt;</pre></div>
+									</li><li>
+										<div><pre class="brush: bash; ">time bin/ycsb run jdbc -P workloads/workloadb -P jdbc-binding/conf/db.properties -P records.props -p operationcount=50000 -s -target 800 1&gt; summary_file_&lt;request type&gt; 2&gt; results_file_&lt;request type&gt;</pre></div>
+									</li></ol></li><li><em>Note</em>: After you run the test that contains only write requests, you should
+								recreate the table on a single MySQL node/MySQL cluster and reload
+								the data if you want to run another test that contains only read
+								requests.</li><li>Use the output files to answer the questions in the checkpoint quiz. The throughput and
+								other statistics are in the summary file. Always check the
+								checkpoint quiz for any other commands that you may have to run
+								before terminating. </li><li>Terminate all your instances once you are done. </li></ol>
+					
+				</div></div>
+		 
+		</div></div>
+		
+		<p>Besides the penalties mentioned in recitation and/or on Piazza, penalties accrue for the following:</p>
+		<table cellspacing="0" class="wbtable " align="center"><thead><tr><th align="left">Violation</th><th align="left">Penalty of the project grade</th></tr></thead><tbody><tr>
+				<td align="left">Using any instance other than <code>m3.medium</code> in your cluster</td>
+				<td>-10%</td>
+			</tr><tr class="e">
+				<td align="left">Spending more than $15 for this project checkpoint</td>
+				<td>-10%</td>
+			</tr><tr>
+				<td align="left">Spending more than $30 for this project checkpoint</td>
+				<td>-100%</td>
+			</tr><tr class="e">
+				<td align="left">Failing to tag all your resources for this project (Key:Project, Value:
+					3.4)</td>
+				<td>-10%</td>
+			</tr></tbody></table>	
+		
+		    <div class="activitywrap purpose checkpoint wbactivity"><div class="activityhead"><!----><a id="_p03_m01_checkpoint_4" class="purposeType purposecheckpoint" title="   Assess    your progress." href="/jcourse/webui/resolver/link/resource.do?src=0e4f809880020ca6015e1f3b7bfc2a3d&dst=_p03_m01_checkpoint_4" target="_blank"><span class="scnReader">Checkpoint</span></a><div class="activityinfo"><!----></div></div><div class="actContain"><h3><a href="/jcourse/webui/resolver/link/resource.do?src=0e4f809880020ca6015e1f3b7bfc2a3d&dst=_p03_m01_checkpoint_4" title="Opens in new window" class="checkpoint" target="_blank">Write Scalability</a></h3></div></div>
+		
+
+	</div></div></div><div class="paginationBt"><div class="pagtopwrapwrap2"><div class="pagtopwrap2"><div aria-label="page" role="navigation" class="pagtop2"><a aria-label="previous" role="navigation" title="Horizontal Scaling" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f809280020ca60021affbb28bbe9f"></a> <a aria-label="previous" role="navigation" title="Working with NoSQL: DynamoDB / HBase" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f809780020ca600b2808990fdcd15"></a> <span class="pagnum2"><form method="get" class="pageForm2" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip2">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax2"><input size="1" autocomplete="off" value="174" type="text" class="paginationInput2"> </form></span><a aria-label="next" role="navigation" title="Next: Database Services in AWS" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/workbook/activity/page?context=0e4f809a80020ca6004f6e8c1f416e0f"></a></div></div></div></div><div role="contentinfo" id="tinyfooter"><a class="oli" href="/">Open Learning Initiative</a><br><span class="license" title="Creative Commons License"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license"><img src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License"></a> Unless otherwise noted this work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+			</span></div></div></body></html>

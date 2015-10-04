@@ -1,0 +1,214 @@
+#1:
+You are receiving this email because your Amazon CloudWatch Alarm "AddCapacity" in the US - N. Virginia region has entered the ALARM state, because "Threshold Crossed: 2 datapoints were greater than the threshold (80.0). The most recent datapoints: [87.91666666666667, 96.33333333333333]." at "Sunday 05 October, 2014 16:03:10 UTC".
+
+View this alarm in the AWS Management Console:
+https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#s=Alarms&alarm=AddCapacity
+
+Alarm Details:
+- Name:                       AddCapacity
+- Description:
+- State Change:               OK -> ALARM
+- Reason for State Change:    Threshold Crossed: 2 datapoints were greater than the threshold (80.0). The most recent datapoints: [87.91666666666667, 96.33333333333333].
+- Timestamp:                  Sunday 05 October, 2014 16:03:10 UTC
+- AWS Account:                930143863167
+
+Threshold:
+- The alarm is in the ALARM state when the metric is GreaterThanThreshold 80.0 for 60 seconds.
+
+Monitored Metric:
+- MetricNamespace:            AWS/EC2
+- MetricName:                 CPUUtilization
+- Dimensions:                 [AutoScalingGroupName = project2asg]
+- Period:                     60 seconds
+- Statistic:                  Average
+- Unit:                       Percent
+
+State Change Actions:
+- OK:
+- ALARM: [arn:aws:autoscaling:us-east-1:930143863167:scalingPolicy:8c7f0254-d6f0-42dd-95bc-109922419a49:autoScalingGroupName/project2asg:policyName/my-scale-out-policy] [arn:aws:sns:us-east-1:930143863167:dingzproject2scalealarm]
+- INSUFFICIENT_DATA:
+
+
+#2:
+You are receiving this email because your Amazon CloudWatch Alarm "AddCapacity" in the US - N. Virginia region has entered the ALARM state, because "Threshold Crossed: 2 datapoints were greater than the threshold (80.0). The most recent datapoints: [83.50142857142858, 80.7942857142857]." at "Sunday 05 October, 2014 16:11:10 UTC".
+
+View this alarm in the AWS Management Console:
+https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#s=Alarms&alarm=AddCapacity
+
+Alarm Details:
+- Name:                       AddCapacity
+- Description:
+- State Change:               OK -> ALARM
+- Reason for State Change:    Threshold Crossed: 2 datapoints were greater than the threshold (80.0). The most recent datapoints: [83.50142857142858, 80.7942857142857].
+- Timestamp:                  Sunday 05 October, 2014 16:11:10 UTC
+- AWS Account:                930143863167
+
+Threshold:
+- The alarm is in the ALARM state when the metric is GreaterThanThreshold 80.0 for 60 seconds.
+
+Monitored Metric:
+- MetricNamespace:            AWS/EC2
+- MetricName:                 CPUUtilization
+- Dimensions:                 [AutoScalingGroupName = project2asg]
+- Period:                     60 seconds
+- Statistic:                  Average
+- Unit:                       Percent
+
+State Change Actions:
+- OK:
+- ALARM: [arn:aws:autoscaling:us-east-1:930143863167:scalingPolicy:8c7f0254-d6f0-42dd-95bc-109922419a49:autoScalingGroupName/project2asg:policyName/my-scale-out-policy] [arn:aws:sns:us-east-1:930143863167:dingzproject2scalealarm]
+- INSUFFICIENT_DATA:
+
+
+#3:
+You are receiving this email because your Amazon CloudWatch Alarm "AddCapacity" in the US - N. Virginia region has entered the ALARM state, because "Threshold Crossed: 2 datapoints were greater than the threshold (80.0). The most recent datapoints: [86.54857142857142, 87.61428571428573]." at "Sunday 05 October, 2014 16:17:10 UTC".
+
+View this alarm in the AWS Management Console:
+https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#s=Alarms&alarm=AddCapacity
+
+Alarm Details:
+- Name:                       AddCapacity
+- Description:
+- State Change:               OK -> ALARM
+- Reason for State Change:    Threshold Crossed: 2 datapoints were greater than the threshold (80.0). The most recent datapoints: [86.54857142857142, 87.61428571428573].
+- Timestamp:                  Sunday 05 October, 2014 16:17:10 UTC
+- AWS Account:                930143863167
+
+Threshold:
+- The alarm is in the ALARM state when the metric is GreaterThanThreshold 80.0 for 60 seconds.
+
+Monitored Metric:
+- MetricNamespace:            AWS/EC2
+- MetricName:                 CPUUtilization
+- Dimensions:                 [AutoScalingGroupName = project2asg]
+- Period:                     60 seconds
+- Statistic:                  Average
+- Unit:                       Percent
+
+State Change Actions:
+- OK:
+- ALARM: [arn:aws:autoscaling:us-east-1:930143863167:scalingPolicy:8c7f0254-d6f0-42dd-95bc-109922419a49:autoScalingGroupName/project2asg:policyName/my-scale-out-policy] [arn:aws:sns:us-east-1:930143863167:dingzproject2scalealarm]
+- INSUFFICIENT_DATA:
+
+#4:
+You are receiving this email because your Amazon CloudWatch Alarm "AddCapacity" in the US - N. Virginia region has entered the ALARM state, because "Threshold Crossed: 2 datapoints were greater than the threshold (80.0). The most recent datapoints: [90.61333333333333, 93.495]." at "Sunday 05 October, 2014 16:23:10 UTC".
+
+View this alarm in the AWS Management Console:
+https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#s=Alarms&alarm=AddCapacity
+
+Alarm Details:
+- Name:                       AddCapacity
+- Description:
+- State Change:               OK -> ALARM
+- Reason for State Change:    Threshold Crossed: 2 datapoints were greater than the threshold (80.0). The most recent datapoints: [90.61333333333333, 93.495].
+- Timestamp:                  Sunday 05 October, 2014 16:23:10 UTC
+- AWS Account:                930143863167
+
+Threshold:
+- The alarm is in the ALARM state when the metric is GreaterThanThreshold 80.0 for 60 seconds.
+
+Monitored Metric:
+- MetricNamespace:            AWS/EC2
+- MetricName:                 CPUUtilization
+- Dimensions:                 [AutoScalingGroupName = project2asg]
+- Period:                     60 seconds
+- Statistic:                  Average
+- Unit:                       Percent
+
+State Change Actions:
+- OK:
+- ALARM: [arn:aws:sns:us-east-1:930143863167:dingzproject2scalealarm] [arn:aws:autoscaling:us-east-1:930143863167:scalingPolicy:8c7f0254-d6f0-42dd-95bc-109922419a49:autoScalingGroupName/project2asg:policyName/my-scale-out-policy]
+- INSUFFICIENT_DATA:
+
+
+#5:
+You are receiving this email because your Amazon CloudWatch Alarm "AddCapacity" in the US - N. Virginia region has entered the ALARM state, because "Threshold Crossed: 2 datapoints were greater than the threshold (80.0). The most recent datapoints: [95.64999999999999, 95.68333333333334]." at "Sunday 05 October, 2014 16:47:10 UTC".
+
+View this alarm in the AWS Management Console:
+https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#s=Alarms&alarm=AddCapacity
+
+Alarm Details:
+- Name:                       AddCapacity
+- Description:
+- State Change:               OK -> ALARM
+- Reason for State Change:    Threshold Crossed: 2 datapoints were greater than the threshold (80.0). The most recent datapoints: [95.64999999999999, 95.68333333333334].
+- Timestamp:                  Sunday 05 October, 2014 16:47:10 UTC
+- AWS Account:                930143863167
+
+Threshold:
+- The alarm is in the ALARM state when the metric is GreaterThanThreshold 80.0 for 60 seconds.
+
+Monitored Metric:
+- MetricNamespace:            AWS/EC2
+- MetricName:                 CPUUtilization
+- Dimensions:                 [AutoScalingGroupName = project2asg]
+- Period:                     60 seconds
+- Statistic:                  Average
+- Unit:                       Percent
+
+State Change Actions:
+- OK:
+- ALARM: [arn:aws:sns:us-east-1:930143863167:dingzproject2scalealarm] [arn:aws:autoscaling:us-east-1:930143863167:scalingPolicy:8c7f0254-d6f0-42dd-95bc-109922419a49:autoScalingGroupName/project2asg:policyName/my-scale-out-policy]
+- INSUFFICIENT_DATA:
+
+
+#6:
+You are receiving this email because your Amazon CloudWatch Alarm "AddCapacity" in the US - N. Virginia region has entered the ALARM state, because "Threshold Crossed: 2 datapoints were greater than the threshold (80.0). The most recent datapoints: [89.41, 95.37]." at "Sunday 05 October, 2014 16:51:10 UTC".
+
+View this alarm in the AWS Management Console:
+https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#s=Alarms&alarm=AddCapacity
+
+Alarm Details:
+- Name:                       AddCapacity
+- Description:
+- State Change:               OK -> ALARM
+- Reason for State Change:    Threshold Crossed: 2 datapoints were greater than the threshold (80.0). The most recent datapoints: [89.41, 95.37].
+- Timestamp:                  Sunday 05 October, 2014 16:51:10 UTC
+- AWS Account:                930143863167
+
+Threshold:
+- The alarm is in the ALARM state when the metric is GreaterThanThreshold 80.0 for 60 seconds.
+
+Monitored Metric:
+- MetricNamespace:            AWS/EC2
+- MetricName:                 CPUUtilization
+- Dimensions:                 [AutoScalingGroupName = project2asg]
+- Period:                     60 seconds
+- Statistic:                  Average
+- Unit:                       Percent
+
+State Change Actions:
+- OK:
+- ALARM: [arn:aws:sns:us-east-1:930143863167:dingzproject2scalealarm] [arn:aws:autoscaling:us-east-1:930143863167:scalingPolicy:8c7f0254-d6f0-42dd-95bc-109922419a49:autoScalingGroupName/project2asg:policyName/my-scale-out-policy]
+- INSUFFICIENT_DATA:
+
+
+#7:
+You are receiving this email because your Amazon CloudWatch Alarm "AddCapacity" in the US - N. Virginia region has entered the ALARM state, because "Threshold Crossed: 2 datapoints were greater than the threshold (80.0). The most recent datapoints: [80.42714285714285, 96.10571428571428]." at "Sunday 05 October, 2014 17:37:10 UTC".
+
+View this alarm in the AWS Management Console:
+https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#s=Alarms&alarm=AddCapacity
+
+Alarm Details:
+- Name:                       AddCapacity
+- Description:
+- State Change:               OK -> ALARM
+- Reason for State Change:    Threshold Crossed: 2 datapoints were greater than the threshold (80.0). The most recent datapoints: [80.42714285714285, 96.10571428571428].
+- Timestamp:                  Sunday 05 October, 2014 17:37:10 UTC
+- AWS Account:                930143863167
+
+Threshold:
+- The alarm is in the ALARM state when the metric is GreaterThanThreshold 80.0 for 60 seconds.
+
+Monitored Metric:
+- MetricNamespace:            AWS/EC2
+- MetricName:                 CPUUtilization
+- Dimensions:                 [AutoScalingGroupName = project2asg]
+- Period:                     60 seconds
+- Statistic:                  Average
+- Unit:                       Percent
+
+State Change Actions:
+- OK:
+- ALARM: [arn:aws:autoscaling:us-east-1:930143863167:scalingPolicy:8c7f0254-d6f0-42dd-95bc-109922419a49:autoScalingGroupName/project2asg:policyName/my-scale-out-policy] [arn:aws:sns:us-east-1:930143863167:dingzproject2scalealarm]
+- INSUFFICIENT_DATA:

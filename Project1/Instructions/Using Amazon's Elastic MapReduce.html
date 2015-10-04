@@ -1,0 +1,343 @@
+<!DOCTYPE html><html><head xmlns:md="http://oli.web.cmu.edu/metadata/"><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="IE=9" http-equiv="X-UA-Compatible"><meta content="/repository/presentation/whirlwind-1.2/" name="themePath"><title>Using Amazon's Elastic MapReduce</title><base href="https://oli.cmu.edu/repository/webcontent/fda7217280020ca6017598f75d250b76/projects/_p01_project_1/_p01_m01_intro/x-oli-workbook_page/_p01_m01_3_emr.xml"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/reset.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/learning_content.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/azool.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/style.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxCore.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxModal.css"><!--[if lte IE 7.0]>
+        <link rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles/ie/ie7.css" type="text/css" />
+        <![endif]-->
+        <!--[if lte IE 6]>
+        <link rel="stylesheet" href="/branding/css/ielte6.css" type="text/css" />
+        <![endif]--><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.css"><!--[if IE 7]><![endif]--><script src="/repository/presentation/whirlwind-1.2/web/scripts/swfobject.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-core-1.4.5-full-compat.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-more-1.4.0.1.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootests.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Core.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Modal.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/azool.js" type="text/javascript"></script><script src="/oa.js" type="text/javascript"></script><script type="text/javascript" src="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.js">//</script><script type="text/javascript">var AZ = AZ ? AZ : {};
+AZ.d = {'courseKey': 'F14-CC-PSA', 'pageNumber': '155'};
+
+/* <![CDATA[ */
+swfobject.embedSWF('../webcontent/youplayer.swf',
+ 'o_i_8',
+ '640',
+ '480',
+ '10.2',
+ (Browser.Platform.mac ? null : '/repository/presentation/whirlwind-1.2/web/scripts/expressInstall.swf'),
+{'movie_identifier':'_i_8', 'version':'10.2', 'expressinstall':'%2Frepository%2Fpresentation%2Fwhirlwind-1.2%2Fweb%2Fscripts%2FexpressInstall.swf', 'log_service_url':'%2Flog%2Fserver', 'user_guid':'dingz%40andrew.cmu.edu', 'session_id':'1c9670f380020ca600ba8cf7e8309e55', 'auth_token':'s%3D1c9670f380020ca600ba8cf7e8309e55%26u%3Ddingz%40andrew.cmu.edu%26h%3D1875afe0f644fa4f255efe8eb57dd363', 'container_id':'0e4f805680020ca601667e6158cc6a89', 'source_id':'FLASH_PSEUDO_TUTOR', 'dataset_name':'F14-CC-PSA', 'problem_name':'youplayer', 'school_name':'Carnegie+Mellon+University', 'class_name':'F14-CC-PSA', 'class_description':'15319%2F15619+Cloud+Computing+%28Fall+2014%29%3A+Aug+2014+-+Jan+2015', 'video_id':'7n0XtbFEBBI', 'fs':'1', 'object_height':'480', 'object_width':'640', 'br':'br',},
+ {
+			
+			scale: 'showall', allowScriptAccess: 'always', swLiveConnect: 'true', 
+			wmode: 'white'},
+ {},
+ false);
+  /* ]]> */
+
+/* <![CDATA[ */
+swfobject.embedSWF('../webcontent/youplayer.swf',
+ 'o_i_10',
+ '640',
+ '480',
+ '10.2',
+ (Browser.Platform.mac ? null : '/repository/presentation/whirlwind-1.2/web/scripts/expressInstall.swf'),
+{'movie_identifier':'_i_10', 'version':'10.2', 'expressinstall':'%2Frepository%2Fpresentation%2Fwhirlwind-1.2%2Fweb%2Fscripts%2FexpressInstall.swf', 'log_service_url':'%2Flog%2Fserver', 'user_guid':'dingz%40andrew.cmu.edu', 'session_id':'1c9670f380020ca600ba8cf7e8309e55', 'auth_token':'s%3D1c9670f380020ca600ba8cf7e8309e55%26u%3Ddingz%40andrew.cmu.edu%26h%3D1875afe0f644fa4f255efe8eb57dd363', 'container_id':'0e4f805680020ca601667e6158cc6a89', 'source_id':'FLASH_PSEUDO_TUTOR', 'dataset_name':'F14-CC-PSA', 'problem_name':'youplayer', 'school_name':'Carnegie+Mellon+University', 'class_name':'F14-CC-PSA', 'class_description':'15319%2F15619+Cloud+Computing+%28Fall+2014%29%3A+Aug+2014+-+Jan+2015', 'video_id':'EI7wWiQ_l7I', 'fs':'1', 'object_height':'480', 'object_width':'640', 'br':'br',},
+ {
+			
+			scale: 'showall', allowScriptAccess: 'always', swLiveConnect: 'true', 
+			wmode: 'white'},
+ {},
+ false);
+  /* ]]> */
+
+/* <![CDATA[ */
+swfobject.embedSWF('../webcontent/youplayer.swf',
+ 'o_i_11',
+ '640',
+ '480',
+ '10.2',
+ (Browser.Platform.mac ? null : '/repository/presentation/whirlwind-1.2/web/scripts/expressInstall.swf'),
+{'movie_identifier':'_i_11', 'version':'10.2', 'expressinstall':'%2Frepository%2Fpresentation%2Fwhirlwind-1.2%2Fweb%2Fscripts%2FexpressInstall.swf', 'log_service_url':'%2Flog%2Fserver', 'user_guid':'dingz%40andrew.cmu.edu', 'session_id':'1c9670f380020ca600ba8cf7e8309e55', 'auth_token':'s%3D1c9670f380020ca600ba8cf7e8309e55%26u%3Ddingz%40andrew.cmu.edu%26h%3D1875afe0f644fa4f255efe8eb57dd363', 'container_id':'0e4f805680020ca601667e6158cc6a89', 'source_id':'FLASH_PSEUDO_TUTOR', 'dataset_name':'F14-CC-PSA', 'problem_name':'youplayer', 'school_name':'Carnegie+Mellon+University', 'class_name':'F14-CC-PSA', 'class_description':'15319%2F15619+Cloud+Computing+%28Fall+2014%29%3A+Aug+2014+-+Jan+2015', 'video_id':'vn-ixZPYOzg', 'fs':'1', 'object_height':'480', 'object_width':'640', 'br':'br',},
+ {
+			
+			scale: 'showall', allowScriptAccess: 'always', swLiveConnect: 'true', 
+			wmode: 'white'},
+ {},
+ false);
+  /* ]]> */
+
+/* <![CDATA[ */
+swfobject.embedSWF('../webcontent/youplayer.swf',
+ 'o_i_13',
+ '640',
+ '480',
+ '10.2',
+ (Browser.Platform.mac ? null : '/repository/presentation/whirlwind-1.2/web/scripts/expressInstall.swf'),
+{'movie_identifier':'_i_13', 'version':'10.2', 'expressinstall':'%2Frepository%2Fpresentation%2Fwhirlwind-1.2%2Fweb%2Fscripts%2FexpressInstall.swf', 'log_service_url':'%2Flog%2Fserver', 'user_guid':'dingz%40andrew.cmu.edu', 'session_id':'1c9670f380020ca600ba8cf7e8309e55', 'auth_token':'s%3D1c9670f380020ca600ba8cf7e8309e55%26u%3Ddingz%40andrew.cmu.edu%26h%3D1875afe0f644fa4f255efe8eb57dd363', 'container_id':'0e4f805680020ca601667e6158cc6a89', 'source_id':'FLASH_PSEUDO_TUTOR', 'dataset_name':'F14-CC-PSA', 'problem_name':'youplayer', 'school_name':'Carnegie+Mellon+University', 'class_name':'F14-CC-PSA', 'class_description':'15319%2F15619+Cloud+Computing+%28Fall+2014%29%3A+Aug+2014+-+Jan+2015', 'video_id':'H0q5V4ApuU4', 'fs':'1', 'object_height':'480', 'object_width':'640', 'br':'br',},
+ {
+			
+			scale: 'showall', allowScriptAccess: 'always', swLiveConnect: 'true', 
+			wmode: 'white'},
+ {},
+ false);
+  /* ]]> */
+</script><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shCore.css"><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shThemeEclipse.css"><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shCore.js" type="text/javascript"> </script><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shBrushPlain.js" type="text/javascript"> </script><script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = '/repository/presentation/whirlwind-1.2/web/scripts//syntax/clipboard.swf';SyntaxHighlighter.all();</script></head><body class="workbook_page"><div class="contain"><div role="banner" class="header"><div class="oliClassTitle"><a class="logo"></a><h1><a title="15319/15619 Cloud Computing (Fall 2014)" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">15319/15619 Cloud Computing (Fall 2014)</a></h1></div><div aria-label="system" role="navigation" class="user"><h3>System Navigation</h3><ul class="userCredentials"><li class="userName"><a title="Edit my account" id="username" href="/jcourse/webui/myaccount/edit.do?user=dingz@andrew.cmu.edu">Ding ZHAO</a></li> <li class="login"><a title="Logout of the Open Learning Initiative." class="signout" href="/jcourse/webui/logout.do?from=0e4f805680020ca601667e6158cc6a89">
+                            [  Sign Out  ]
+						</a></li></ul><div class="clear"></div><ul class="userHelp"><li><a title="Access Key + C" accesskey="C" class="home" id="myCourses" href="/jcourse/webui/myhome.do">My Courses</a>|
+				</li><li><a title="Access Key + S" accesskey="S" class="mimetypes_x-office-address-book" id="syllabus" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Syllabus</a>|
+			</li><li><span class="coursenav"> <a class="active" href="/jcourse/webui/syllabus/outline.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&from=0e4f805680020ca601667e6158cc6a89">
+	      
+	        
+			Outline
+	    </a></span>|
+			</li><li><a onclick="openMdWin(this.href, 'activity');return false;" title="Ask OLI technical support team" href="/jcourse/webui/help.do">Help</a>|
+			</li><li id="moreBtn2"><a aria-haspopup="true" href="" tabindex="" title="More" accesskey="M" id="moreBtn">
+					More
+				</a></li></ul></div><div class="shadowOne" id="wn"><span class="controlpanel"> <a target="_blank" href="/jcourse/GradebookClient/index.html?myscores&section=0e4f7c4380020ca600aa44ba1eaf4b1e&col=0e4f805280020ca600f7c0202d8ce779"><span class="gradebook">My Scores</span></a><a href="/jcourse/webui/mycourses/reports/practice.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&context=0e4f805280020ca600f7c0202d8ce779"><span class="studentDashboard">Available Practice</span></a></span><span class="supportPanel"> <a title="Check if my computer is configured properly for this course." href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><span class="categories_preferences-system">Test My System</span></a> <a title="Send email to Majd Sakr" href="mailto:msakr@ANDREW.CMU.EDU"><span class="actions_mail-message-new">Email Sakr</span></a> <a onclick="openMdWin(this.href, 'activity');return false;" class="wnTechSupport" title="Ask OLI technical support team" href="/jcourse/webui/help.do"><span class="actions_mail-message-new">Email Tech Support</span></a></span></div></div><div aria-haspopup="true" aria-label="Unit" role="navigation" class="lessonHead"><h2 tabindex="" accesskey="u" id="0e4f804880020ca60186ea3456b42d0c"><a tabindex="" href="javascript:;"><span>Unit&nbsp;::</span>Project 1</a></h2></div><div class="expand shadowOne"><ul id="topLvl"></ul></div><div aria-label="module, page" role="navigation" class="subNavigation"><a aria-label="previous, module" role="navigation" accesskey="," class="prev oneclick" href="javascript:;"></a><a aria-label="next, module" role="navigation" accesskey="." class="next oneclick" href="javascript:;"></a><div class="module"><ul id="moduleUl"><li class="current"><a id="0e4f805280020ca600f7c0202d8ce779" title="Module  Introduction to Big Data Analysis" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f805280020ca600f7c0202d8ce779"><b><span>Introduction to Big Data Analysis</span></b></a></li></ul></div><div class="subMenu shadowOne" id="subMenuExpand"><ul id="jsonSubMenu"></ul></div></div><div class="searchBox"><form method="get" action="/jcourse/search/search.do" id="searchForm"><input value="0e4f7c4380020ca600aa44ba1eaf4b1e" type="hidden" name="section" class="sectionGUID"><input placeholder="Search this course" onBlur="this.setAttribute('value', this.value);" value="" size="25" id="q" type="text" name="q" class="q"><input value="0e4f805680020ca601667e6158cc6a89" type="hidden" name="from" class="contextGUID"></form></div><div class="opacity"><div role="main" class="content shadowTwo"><div id="oli-message"><!----></div><div id="paginationtopwrap"><div class="clearfix" id="paginationtop"><div class="pagtopwrapwrap"><div class="pagtopwrap"><div aria-label="page" role="navigation" class="pagtop"><a aria-label="previous" role="navigation" title="Introduction to Big Data" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f805380020ca6016d30bf29bf4112"></a> <a aria-label="previous" role="navigation" title="Sequential Analysis" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f805480020ca600340165d3d04971"></a> <span class="pagnum"><form method="get" class="pageForm" style="" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip" id="pagnumtip">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax"><input size="4" autocomplete="off" value="155" type="text" class="paginationInput"> </form></span><a aria-label="next" role="navigation" title="Next: Introduction and APIs" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/webui/syllabus/module.do?context=0e4f805d80020ca601b79285e8642616"></a></div></div></div><h3><a href="/jcourse/webui/syllabus/module.do?context=0e4f805280020ca600f7c0202d8ce779" class="module-heading"></a>Using Amazon's Elastic MapReduce</h3></div></div><div id="lobjh" class="multi"><h3>Learning Objectives</h3><ul><li><div class="" id="p01_m01_mr1">Use Elastic MapReduce to run a MapReduce job on the cloud</div><div class="" id="p01_m01_mr2">Write your own Mapper and Reducer programs to use in a Streaming MapReduce Job.</div></li></ul></div><div class="contentContain">
+
+		<div id="N106F4" class="section"><div class="sectionContain ">
+			<h2>Further Analysis of the Data</h2>
+			
+				<p>
+					Processing a single file sequentially like we did in the
+					previous page does not really answer the question of "What was
+					the most popular page for the month of July 2014" or how many
+					hits did any particular page get on a particular day. To answer this
+					we must:</p>
+					<ul><li>
+							<em class="emphasis">aggregate</em>
+							the view counts and
+						</li><li>
+							generate a
+							<em class="emphasis">daily timeline</em>
+							of page
+							views for each article we are interested in.
+						</li></ul>
+
+					<p>In order to process such a large dataset (~70 GB compressed),
+						we will setup an Elastic MapReduce job Flow. You will have to
+						write simple Map and Reduce programs in the language of your
+						choice
+					</p>
+
+					<p>In this part of the project you will understand some of the
+						key aspects of Elastic MapReduce and run an Elastic MapReduce
+						job flow.
+					</p>
+					<p><em class="bold">Note</em>: For this checkpoint, assign the tag with Key: <code>Project</code> and Value: <code>1.2</code> for all resources</p>
+			
+		</div></div>
+
+
+		<div id="N10723" class="section"><div class="sectionContain ">
+			<h2>Introduction to MapReduce</h2>
+			
+				<p>
+					The
+					<a href="http://en.wikipedia.org/wiki/MapReduce" id="_i_0" target="_blank">MapReduce</a>
+					programming model, pioneered by Google, is designed to process
+					big data using a large number of machines.
+					In a MapReduce program, data, stored as
+					<em>Key/Value pairs</em>, is processed by a
+					<em>Map</em> function. Mappers output a
+					transformed set of Key/Value pairs, which are subsequently
+					processed by a
+					<em>Reduce</em>
+					function (Figure 1.1).
+				</p>
+
+				<span class="imagewrap"><span class="image"><img src="../webcontent/mapred_figure.png" id="_i_1" class=" popimg" onclick="loadImageFromPage(this);"></span><span class="caption">
+						Figure 1.1: MapReduce Overview (Image from
+						<a href="http://en.wikipedia.org/wiki/File:Mapreduce_Overview.svg" id="_i_2" target="_blank">Wikipedia</a>
+						)
+					</span></span>
+
+				<p>
+					MapReduce was designed to run in large server farms similar
+					to machines that are deployed at Google's data centers and is proprietary.
+					<a href="http://hadoop.apache.org/" id="_i_3" target="_blank">Hadoop</a>
+					is an open-source implementation of Google's MapReduce,
+					which will be covered in detail in the Unit, "Programming Models".
+					<a href="http://aws.amazon.com/elasticmapreduce/" id="_i_4" target="_blank">Amazon's Elastic MapReduce</a>
+					is an implementation of Hadoop, and is designed for quick
+					provisioning of Hadoop clusters and fast transfers to/from S3.
+				</p>
+
+				<p>In this part of the project you will understand some of the key
+					aspects of Elastic MapReduce and run an Elastic MapReduce job flow. We will
+					cover MapReduce in detail in the last Unit of the course. For now, here
+					are several resources to get your started - Introductory MapReduce videos from 
+					<a href="https://www.youtube.com/watch?v=I0k8VBWzGXw" id="_i_5" target="_blank">MapR</a>
+					and <a href="https://www.youtube.com/watch?v=ht3dNvdNDzI" id="_i_6" target="_blank">HortonWorks</a>. 
+					You can also refer to the <a href="http://aws.amazon.com/documentation/elastic-mapreduce/" id="_i_7" target="_blank">Elastic 
+					MapReduce Documentation</a>.</p>
+
+			
+		</div></div>
+
+		<div id="N10769" class="section"><div class="sectionContain ">
+			<h2>An Example Elastic MapReduce Job flow : Wordcount</h2>
+			
+				 	<p>The following video will walk through the process of writing
+				 	a Streaming Elastic MapReduce job flow using Python and Java:</p>
+	        	
+	        	 <div class="activitywrap  flash"><div class="activityhead"><!----><div class="activityinfo"><!----></div></div><div class="actContain"><div class="activity flash"><div style="min-width:640px;min-height:480px;" class="flash_obj" id="_i_8"><div id="o_i_8"><div style="width:640px;height:125px;" class="noflash"><div class="code"><p>Adobe Flash Player is required.</p><p><a target="_blank" href="http://get.adobe.com/flashplayer/">Get
+									Adobe<sup>&reg;</sup> Flash<sup>&reg;</sup> Player.</a></p><p><a target="_blank" href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Test My System</a></p></div></div></div></div> </div></div><div class="captionwrap"><span class="caption">Writing Streaming MapReduce Programs in Python and Java</span></div></div>
+			
+				<p>In the example explained in the video above, the map phase Word Count takes a directory of
+					text input files, scans through all of them, outputting a single
+					word (key) and the
+					number "1" (value) per each line. The aggregate reducer takes input,
+					line-by-line, from all the mappers and sums each instance of that
+					Key/Value pair.
+					The final output is a list with each word, and the number of times
+					that word occurred in all the input files.
+				</p>
+
+				<p>
+					You can see the code
+					<a href="http://aws.amazon.com/articles/2273" id="_i_9" target="_blank">here</a>.</p>
+					
+					<p>If you want to try running this job flow, perform the following 
+					steps:</p>
+					
+					 <div class="activitywrap  flash"><div class="activityhead"><!----><div class="activityinfo"><!----></div></div><div class="actContain"><div class="activity flash"><div style="min-width:640px;min-height:480px;" class="flash_obj" id="_i_10"><div id="o_i_10"><div style="width:640px;height:125px;" class="noflash"><div class="code"><p>Adobe Flash Player is required.</p><p><a target="_blank" href="http://get.adobe.com/flashplayer/">Get
+									Adobe<sup>&reg;</sup> Flash<sup>&reg;</sup> Player.</a></p><p><a target="_blank" href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Test My System</a></p></div></div></div></div> </div></div><div class="captionwrap"><span class="caption">Running a Python Streaming Program on Elastic MapReduce </span></div></div>
+				 
+				 <p>If you want to run a Java program using Hadoop streaming on EMR:</p>
+				 
+				 <div class="activitywrap  flash"><div class="activityhead"><!----><div class="activityinfo"><!----></div></div><div class="actContain"><div class="activity flash"><div style="min-width:640px;min-height:480px;" class="flash_obj" id="_i_11"><div id="o_i_11"><div style="width:640px;height:125px;" class="noflash"><div class="code"><p>Adobe Flash Player is required.</p><p><a target="_blank" href="http://get.adobe.com/flashplayer/">Get
+									Adobe<sup>&reg;</sup> Flash<sup>&reg;</sup> Player.</a></p><p><a target="_blank" href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Test My System</a></p></div></div></div></div> </div></div><div class="captionwrap"><span class="caption">Running a Java Streaming Program on Elastic MapReduce </span></div></div>
+				
+				<p>To recap, the steps you need to follow are:</p>	
+					<ol><li>
+            In the AWS Management Console, click
+            <em>Services</em>
+            and click on
+            <em>Elastic MapReduce</em>
+          </li><li>
+            In the Elastic MapReduce view, click
+            <em>Create Cluster</em>.
+           </li><li>At the top of the page, click on <em>Configure Sample Application</em>
+           and select Wordcount.</li><li>Enter an S3 location for your program output folder. Please <em>do not</em>
+              use the bucket you created for project hand-ins. Create another
+              bucket on S3 for this as well as other requirements.</li><li>Make sure logging and debugging is enabled , and click OK.</li><li>
+            In the
+            <em>Cluster Configuration</em>
+            section:
+            <ul><li>Enter a name for the cluster</li><li>Enter an S3 location for your log folder, if you have not already. Please <em>do not</em>
+              use the bucket you created for project hand-ins. Create another
+              bucket on S3 for this as well as other requirements.</li><li>Make sure logging and debugging is enabled.</li></ul>
+          </li><li>
+            In the
+            <em>Tag</em>
+            section:
+            <ul><li>
+                Tag your cluster as discussed in the project primer and in 
+                the recitation demos.
+              </li></ul>
+          </li><li>
+            In the
+            <em>Software Configuration</em>
+            section:
+            <ul><li>Use the AMI 2.4.2 (Hadoop 1.0.3) distribution from Amazon.</li><li>There is no need to install any additional applications for 
+              this example.</li></ul>
+            </li><li>
+            In the
+            <em>Hardware Configuration</em>
+            section:
+            <ul><li>
+                Use the
+                <em>m1.small</em>
+                instance for both the master and core nodes
+              </li><li>Specify 2 core nodes.</li><li>There is no need to use any task nodes for this example.</li></ul>
+          </li><li>
+            In the
+            <em>Security and Access </em>
+            section:
+            <ul><li>Specify an EC2 keypair that you've already created in the AWS Account Setup page.
+              </li><li>There is no need to add any IAM user access or IAM roles in this example.</li></ul>
+          </li><li>
+            In the
+            <em>Bootstrap Options</em>
+            section, proceed without any bootstrap actions
+          </li><li>Finally, in the <em>Steps</em> section, you can see a step named "wordcount"
+          has already been configured for you. Click on the edit icon to 
+          see the detail of this step. For the purpose of this example,
+          you may use the default input location, or specify your own input
+          to test.</li><li>Set <em>Auto-terminate</em> to <em>No</em>, so that you can
+          log on to your cluster even after the job is finished if you need
+          to debug the job. Make sure you manually terminate your cluster after you 
+          are done with the EMR console!</li><li>
+            Review all of your options and click the 
+            <em>Create Cluster</em> button after everything looks OK. Remember 
+            that after this point, you will be charged for the cluster.
+          </li></ol>
+
+        <p>Amazon will then provision a Hadoop cluster with 1 master node
+          and 2 data nodes, and submit the job to it.
+          This takes about 5 minutes to instantiate the virtual machines,
+          configure them, etc. You can monitor your job progress from the console
+          and inspect the output and log S3 locations for information regarding your job.
+        </p>
+					
+					
+      
+      </div></div>
+      <div id="N10855" class="section"><div class="sectionContain ">
+        <h2>Writing your own Mappers and Reducers</h2>
+      
+				<p>Now lets get back to processing the wikipedia dataset. 
+				In this part you will write your own mappers and reducers to perform
+				the following tasks on the entire 1-month input dataset. Create an
+				EMR Job Flow to:</p>
+				
+				<ol><li>Filter out elements based on the rules discussed in the 
+				  previous page</li><li>Aggregate the pageviews from hourly views to daily views</li><li>Calculate the total pageviews for each article</li><li>For every article that has page-views over 100,000, print the
+				  following line as output:
+				  <div><pre class="brush: text; gutter: false; ">&lt;total month views&gt;\t&lt;article name&gt;\t
+				  &lt;date1:page views for date1&gt;\t &lt;date2:page views for date2&gt; ...</pre></div>
+				  </li><li><em>Note</em>: Print out the page views for all dates in a single line</li><li><em>Getting the input filename from within a Mapper</em>:
+				  As the date/time information is encoded in the filename,
+				  Hadoop streaming makes the filename available to every map task
+				  through the environment variables <code>map_input_file</code> or <code>map.input.file</code>.
+				  For example, the filename can be accessed in python using the
+				  statement <code>os.environ["map_input_file"]</code>, or in Java
+				  using the statement <code>System.getenv("map_input_file")</code>.</li><li><em>Note</em>: If you are having trouble getting the filename,
+				  check the Hadoop version in EMR. If you are using the latest version,
+				  the environment variable will be <code>mapreduce_map_input_file</code></li></ol>
+				 
+				  <p>When running your EMR job flow, use spot instances
+				  if their price is less than on-demand pricing. For the checkpoint, 
+				  We will require you to arrive at a job flow configuration that will 
+				  finish in less than <em>1 hour, but not using more 
+				  than 5 USD</em> (calculated using on-demand pricing).
+				  We suggest using the 
+				  <a href="http://aws.amazon.com/developertools/2264" id="_i_12" target="_blank">EMR Ruby Client</a>
+				  to setup multiple job flows to test various type and number of instances
+				  to arrive at an appropriate configuration.</p>
+				  
+				<p>The following video is helpful in troubleshooting common EMR problems 
+				and errors:</p>
+				
+				<div class="activitywrap  flash"><div class="activityhead"><!----><div class="activityinfo"><!----></div></div><div class="actContain"><div class="activity flash"><div style="min-width:640px;min-height:480px;" class="flash_obj" id="_i_13"><div id="o_i_13"><div style="width:640px;height:125px;" class="noflash"><div class="code"><p>Adobe Flash Player is required.</p><p><a target="_blank" href="http://get.adobe.com/flashplayer/">Get
+									Adobe<sup>&reg;</sup> Flash<sup>&reg;</sup> Player.</a></p><p><a target="_blank" href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Test My System</a></p></div></div></div></div> </div></div><div class="captionwrap"><span class="caption">Troubleshooting EMR</span></div></div>
+				 
+				 </div></div>
+		<div id="N108B3" class="section"><div class="sectionContain ">
+		<h2>Project Grading Penalties</h2>
+		
+		<p>The following table outlines the violations of the project rules and their corresponding 
+		grade penalties for this project.</p>
+		
+		<table cellspacing="0" class="wbtable " align="center"><thead><tr><th>Violation</th><th>Penalty of the project grade</th></tr></thead><tbody><tr>
+			<td>Using any instance type in your cluster that has an on-demand pricing higher than m1.large</td>
+			<td>-10%</td>
+		</tr><tr class="e">
+			<td>Using more than 20 core+task instances in your EMR cluster to run the job</td>
+			<td>-10%</td>
+		</tr><tr>
+			<td>Spending more than $15 for this project checkpoint</td>
+			<td>-10%</td>
+		</tr><tr class="e">
+			<td>Failing to tag your instance for this project</td>
+			<td>-10%</td>
+		</tr></tbody></table>
+		
+		</div></div>				
+
+				<p>When you are ready, proceed to complete the checkpoint quiz 
+				below:</p>
+
+					
+				<div class="activitywrap purpose checkpoint wbactivity"><div class="activityhead"><!----><a id="_p01_section_1_checkpoint_2" class="purposeType purposecheckpoint" title="   Assess    your progress." href="/jcourse/webui/resolver/link/resource.do?src=0e4f805680020ca601667e6158cc6a89&dst=_p01_section_1_checkpoint_2" target="_blank"><span class="scnReader">Checkpoint</span></a><div class="activityinfo"><!----></div></div><div class="actContain"><h3><a href="/jcourse/webui/resolver/link/resource.do?src=0e4f805680020ca601667e6158cc6a89&dst=_p01_section_1_checkpoint_2" title="Opens in new window" class="checkpoint" target="_blank">Elastic MapReduce</a></h3></div></div>
+			</div></div></div><div class="paginationBt"><div class="pagtopwrapwrap2"><div class="pagtopwrap2"><div aria-label="page" role="navigation" class="pagtop2"><a aria-label="previous" role="navigation" title="Introduction to Big Data" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f805380020ca6016d30bf29bf4112"></a> <a aria-label="previous" role="navigation" title="Sequential Analysis" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f805480020ca600340165d3d04971"></a> <span class="pagnum2"><form method="get" class="pageForm2" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip2">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax2"><input size="1" autocomplete="off" value="155" type="text" class="paginationInput2"> </form></span><a aria-label="next" role="navigation" title="Next: Introduction and APIs" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/webui/syllabus/module.do?context=0e4f805d80020ca601b79285e8642616"></a></div></div></div></div><div role="contentinfo" id="tinyfooter"><a class="oli" href="/">Open Learning Initiative</a><br><span class="license" title="Creative Commons License"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license"><img src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License"></a> Unless otherwise noted this work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+			</span></div></div></body></html>

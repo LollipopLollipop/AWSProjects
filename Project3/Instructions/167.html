@@ -1,0 +1,352 @@
+<!DOCTYPE html><html><head xmlns:md="http://oli.web.cmu.edu/metadata/"><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="IE=9" http-equiv="X-UA-Compatible"><meta content="/repository/presentation/whirlwind-1.2/" name="themePath"><title>Databases</title><base href="https://oli.cmu.edu/repository/webcontent/fda7217280020ca6017598f75d250b76/projects/_p03_project_3/_p03_m01_databases/x-oli-workbook_page/_p03_m01_2_file_db.xml"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/reset.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/learning_content.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/azool.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/style.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxCore.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxModal.css"><!--[if lte IE 7.0]>
+        <link rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles/ie/ie7.css" type="text/css" />
+        <![endif]-->
+        <!--[if lte IE 6]>
+        <link rel="stylesheet" href="/branding/css/ielte6.css" type="text/css" />
+        <![endif]--><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.css"><!--[if IE 7]><![endif]--><script src="/repository/presentation/whirlwind-1.2/web/scripts/swfobject.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-core-1.4.5-full-compat.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-more-1.4.0.1.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootests.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Core.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Modal.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/azool.js" type="text/javascript"></script><script src="/oa.js" type="text/javascript"></script><script type="text/javascript" src="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.js">//</script><script type="text/javascript">var AZ = AZ ? AZ : {};
+AZ.d = {'courseKey': 'F14-CC-PSA', 'pageNumber': '167'};
+</script><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shCore.css"><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shThemeEclipse.css"><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shCore.js" type="text/javascript"> </script><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shBrushPlain.js" type="text/javascript"> </script><script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = '/repository/presentation/whirlwind-1.2/web/scripts//syntax/clipboard.swf';SyntaxHighlighter.all();</script></head><body class="workbook_page"><div class="contain"><div role="banner" class="header"><div class="oliClassTitle"><a class="logo"></a><h1><a title="15319/15619 Cloud Computing (Fall 2014)" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">15319/15619 Cloud Computing (Fall 2014)</a></h1></div><div aria-label="system" role="navigation" class="user"><h3>System Navigation</h3><ul class="userCredentials"><li class="userName"><a title="Edit my account" id="username" href="/jcourse/webui/myaccount/edit.do?user=dingz@andrew.cmu.edu">Ding ZHAO</a></li> <li class="login"><a title="Logout of the Open Learning Initiative." class="signout" href="/jcourse/webui/logout.do?from=0e4f808380020ca6009633f4757424d6">
+                            [  Sign Out  ]
+						</a></li></ul><div class="clear"></div><ul class="userHelp"><li><a title="Access Key + C" accesskey="C" class="home" id="myCourses" href="/jcourse/webui/myhome.do">My Courses</a>|
+				</li><li><a title="Access Key + S" accesskey="S" class="mimetypes_x-office-address-book" id="syllabus" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Syllabus</a>|
+			</li><li><span class="coursenav"> <a class="active" href="/jcourse/webui/syllabus/outline.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&from=0e4f808380020ca6009633f4757424d6">
+	      
+	        
+			Outline
+	    </a></span>|
+			</li><li><a onclick="openMdWin(this.href, 'activity');return false;" title="Ask OLI technical support team" href="/jcourse/webui/help.do">Help</a>|
+			</li><li id="moreBtn2"><a aria-haspopup="true" href="" tabindex="" title="More" accesskey="M" id="moreBtn">
+					More
+				</a></li></ul></div><div class="shadowOne" id="wn"><span class="controlpanel"> <a target="_blank" href="/jcourse/GradebookClient/index.html?myscores&section=0e4f7c4380020ca600aa44ba1eaf4b1e&col=0e4f807f80020ca601da17cb73b7cb68"><span class="gradebook">My Scores</span></a><a href="/jcourse/webui/mycourses/reports/practice.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&context=0e4f807f80020ca601da17cb73b7cb68"><span class="studentDashboard">Available Practice</span></a></span><span class="supportPanel"> <a title="Check if my computer is configured properly for this course." href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><span class="categories_preferences-system">Test My System</span></a> <a title="Send email to Majd Sakr" href="mailto:msakr@ANDREW.CMU.EDU"><span class="actions_mail-message-new">Email Sakr</span></a> <a onclick="openMdWin(this.href, 'activity');return false;" class="wnTechSupport" title="Ask OLI technical support team" href="/jcourse/webui/help.do"><span class="actions_mail-message-new">Email Tech Support</span></a></span></div></div><div aria-haspopup="true" aria-label="Unit" role="navigation" class="lessonHead"><h2 tabindex="" accesskey="u" id="0e4f807c80020ca6008491878136e895"><a tabindex="" href="javascript:;"><span>Unit&nbsp;::</span>Project 3</a></h2></div><div class="expand shadowOne"><ul id="topLvl"></ul></div><div aria-label="module, page" role="navigation" class="subNavigation"><a aria-label="previous, module" role="navigation" accesskey="," class="prev oneclick" href="javascript:;"></a><a aria-label="next, module" role="navigation" accesskey="." class="next oneclick" href="javascript:;"></a><div class="module"><ul id="moduleUl"><li class="current"><a id="0e4f807f80020ca601da17cb73b7cb68" title="Module  Files vs. Databases" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f807f80020ca601da17cb73b7cb68"><b><span>Files vs. Databases</span></b></a></li><li><a id="0e4f808780020ca600d665bde281f8be" title="Module  Vertical Scaling in Databases" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f808780020ca600d665bde281f8be"><b><span>Vertical Scaling in Databases</span></b></a></li><li><a id="0e4f809080020ca601c500941f6401a7" title="Module  Horizontal Scaling in Databases" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f809080020ca601c500941f6401a7"><b><span>Horizontal Scaling in Databases</span></b></a></li><li><a id="0e4f809780020ca600b2808990fdcd15" title="Module  Working with NoSQL: DynamoDB / HBase" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f809780020ca600b2808990fdcd15"><b><span>Working with NoSQL: DynamoDB / HBase</span></b></a></li></ul></div><div class="subMenu shadowOne" id="subMenuExpand"><ul id="jsonSubMenu"></ul></div></div><div class="searchBox"><form method="get" action="/jcourse/search/search.do" id="searchForm"><input value="0e4f7c4380020ca600aa44ba1eaf4b1e" type="hidden" name="section" class="sectionGUID"><input placeholder="Search this course" onBlur="this.setAttribute('value', this.value);" value="" size="25" id="q" type="text" name="q" class="q"><input value="0e4f808380020ca6009633f4757424d6" type="hidden" name="from" class="contextGUID"></form></div><div class="opacity"><div role="main" class="content shadowTwo"><div id="oli-message"><!----></div><div id="paginationtopwrap"><div class="clearfix" id="paginationtop"><div class="pagtopwrapwrap"><div class="pagtopwrap"><div aria-label="page" role="navigation" class="pagtop"><a aria-label="previous" role="navigation" title="Files vs. Databases" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f807f80020ca601da17cb73b7cb68"></a> <a aria-label="previous" role="navigation" title="Flat Files" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f808180020ca600aac8e6daeb4cd9"></a> <span class="pagnum"><form method="get" class="pageForm" style="" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip" id="pagnumtip">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax"><input size="4" autocomplete="off" value="167" type="text" class="paginationInput"> </form></span><a aria-label="next" role="navigation" title="Next: Vertical Scaling in Databases" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/webui/syllabus/module.do?context=0e4f808780020ca600d665bde281f8be"></a></div></div></div><h3><a href="/jcourse/webui/syllabus/module.do?context=0e4f807f80020ca601da17cb73b7cb68" class="module-heading"></a>Databases</h3></div></div><div id="lobjh" class=""><h3>Learning Objectives</h3><ul><li><div class="" id="p03_m01_a">Study the differences between using flat files and databases when searching for data.</div></li></ul></div><div class="contentContain">
+		<div id="N106F1" class="section"><div class="sectionContain ">
+  <h2>Working with MySQL</h2>		
+ 
+	<p>Carnegie Records (CR) would like its favourite consultant (you) to
+		evaluate MySQL (an open source relational database) to load and
+		process the data sets in preparation for querying and analytics so
+		that it can decide whether to adopt flat files or databases for its
+		needs.
+	</p>
+  <ol><li>
+			<p>MySQL should be already installed and running on the AMI supplied for
+			this project. To start a MySQL CLI client and connect to the running
+			MySQL server on your instance, use the following command:</p>
+				<div><pre class="brush: text; gutter: false; highlight: [false]; ">
+					mysql -u root -pdb15319root song_db
+				</pre></div>
+			 
+			<p>In the command above, the username is <code>root</code> and the password
+			is <code>db15319root</code>. The database that you will be using is
+			<code>song_db</code>, which has been already created for you within the
+			AMI.</p>
+		</li><li>
+			
+		  <p>You should now take a closer look at databases and what a
+			database schema is. A database holds the records, fields and cells, of
+			data while a database schema describes how these fields and cells are
+			structured and organized and what types of relationships are mapped
+			between these entities. A database can have multiple tables that are 
+			related to each other. A table is referred to as a relation in the 
+			sense that it is a collection of objects of the same type (rows).
+			The schema defines the structure of the tables and the relations between them.  
+		</p>
+		
+		<p>Before loading CR&rsquo;s records into the database, we need to describe 
+		the database and its fields in a schema, which encapsulates the 
+		structure and relationship of the data. CR has provided two csv 
+		files, <code>million_songs_metadata.csv</code> and <code>million_songs_sales_data.csv</code>. 
+		CR also provided their schemas in Table 1 and Table 2 below. 
+		</p>
+		
+		<table class="table labeled " id="N10723_bx"><tfoot><tr><td class="captionwrap"><span class="caption">Table 1: MySQL Data Schema for <code>million_songs_metadata.csv</code></span></td></tr></tfoot><tbody><tr><td><table cellspacing="0" class="wbtable "><thead><tr><th>Col #</th><th>Name</th><th>MySQL type</th></tr></thead><tbody><tr>
+				<td>1</td>
+				<td>track_id</td>
+				<td>varchar(19)</td>
+			</tr><tr class="e">
+				<td>2</td>
+				<td>title</td>
+				<td>text</td>
+			</tr><tr>
+				<td>3</td>
+				<td>song_id</td>
+				<td>text</td>
+			</tr><tr class="e">
+				<td>4</td>
+				<td>release</td>
+				<td>text</td>
+			</tr><tr>
+				<td>5</td>
+				<td>artist_id</td>
+				<td>text</td>
+			</tr><tr class="e">
+				<td>6</td>
+				<td>artist_mbid</td>
+				<td>text</td>
+			</tr><tr>
+				<td>7</td>
+				<td>artist_name</td>
+				<td>text</td>
+			</tr><tr class="e">
+				<td>8</td>
+				<td>duration</td>
+				<td>double</td>
+			</tr><tr>
+				<td>9</td>
+				<td>artist_familiarity</td>
+				<td>double</td>
+			</tr><tr class="e">
+				<td>10</td>
+				<td>artist_hotttnesss</td>
+				<td>double</td>
+			</tr><tr>
+				<td>11</td>
+				<td>year</td>
+				<td>int(11)</td>
+			</tr></tbody></table></td></tr></tbody></table>
+  	
+  	<table class="table labeled " id="N107BB_bx"><tfoot><tr><td class="captionwrap"><span class="caption">Table 2: MySQL Data Schema for <code>million_songs_sales_data.csv</code></span></td></tr></tfoot><tbody><tr><td><table cellspacing="0" class="wbtable "><thead><tr><th>Col #</th><th>Name</th><th>MySQL type</th></tr></thead><tbody><tr>
+				<td>1</td>
+				<td>track_id</td>
+				<td>varchar(19)</td>
+			</tr><tr class="e">
+				<td>2</td>
+				<td>sales_date</td>
+				<td>datetime</td>
+			</tr><tr>
+				<td>3</td>
+				<td>sales_count</td>
+				<td>int(11)</td>
+			</tr></tbody></table></td></tr></tbody></table>
+		
+		  <p>CR has asked you to create two tables within the database according to the schemas. 
+		  They have provided a <code>~/songs/create_tables.sql</code> file for you to get started.</p>
+		  
+		  <p><em class="bold">Note</em>: MySQL has some keywords that cannot be used in 
+		  queries. When a table or column name contains a keyword use the 
+		  backtick (<code>`</code>) as an escape sequence. Example - <code>`keyword`</code>
+		  </p>
+		  
+		  <p><em class="bold">Note</em>: The MySQL package pre-installed in the AMI provided 
+		  is version 5.5. Make sure you search through the documentation for the 
+		  correct version when looking for command references.
+		  </p></li><li><p>After creating the tables (<code>songs</code> &amp; <code>sales</code>), you can use the 
+		  following command to verify the schema of that table:</p>
+		  
+		    <div><pre class="brush: text; gutter: false; highlight: [false]; ">
+		    DESCRIBE songs;
+		    DESCRIBE sales;
+		    </pre></div>
+		    
+		   <p>After executing these commands, you should compare and verify that they match with the 
+		   information provided in tables 1 and 2 above.</p>
+		 </li><li>
+		  <p>You now need to find the appropriate command to load the database from the 
+		  supplied files, <code>million_songs_metadata.csv</code> and <code>million_songs_sales.csv</code>. 
+		  You can use
+		  either a SQL command from within the MySQL CLI client, or use the 
+		  <code>mysqlimport</code> utility to load the records from the CSV file
+		  into the database. Please note down the command you have used and paste it
+		  into the checkpoint below, when asked.</p>
+		  
+		  </li><li>
+		  <p>To verify whether the data has been successfully loaded into the database,
+		  you can list the first 10 records of the
+		  table using the <code>SELECT</code> command:</p>
+		  <div><pre class="brush: text; gutter: false; ">SELECT * FROM songs LIMIT 10;</pre></div>
+		  </li><li>			
+			<p>The equivalent SQL command of the Beatles awk command from the previous part is:</p>
+			<div><pre class="brush: text; gutter: false; ">SELECT * FROM songs WHERE artist_name LIKE '%The Beatles%';</pre></div>
+			</li><li>
+			<p>
+			Similarly the Michael Jackson query whould look like:</p>
+			<div><pre class="brush: text; gutter: false; ">SELECT * FROM songs WHERE artist_name LIKE '%michael jackson%'AND year &gt;= 1980 AND year &lt; 1990 ;</pre></div>
+
+		</li><li>
+         	While evaluating flat files you have used awk to compute the average song length (using the  <code>duration</code> field) over the million songs.  The equivalent SQL command is:
+         				<div><pre class="brush: text; gutter: false; ">SELECT AVG(duration) FROM songs;</pre></div>
+         	
+		</li><li>
+			<p>Now you have successfully built the tables and made simple queries.
+				Since the dataset is quite large, CR wants you to ensure that the
+			    database repsonds rapidly to queries. As an informed consultant, you will consider
+				creating an indexed database to improve performance. A database index
+				helps speed up the retrieval of data from tables. When you query data
+				from a table, MySQL checks if the indexes exist. Then MySQL uses the
+				indexes to select exact physical corresponding rows of the table
+				instead of scanning the whole table. You conclude that you should
+				create an index on the columns of the table from which you often query
+				the data. Notice that all primary key columns are in the primary index
+				of the table automatically. In the following steps, you are going to
+				compare the MySQL query response times before creating the index with
+				the time recorded after creating the index. Take note of the following
+				four MySQL query response times before indexing:
+			</p>
+			
+			<div><pre class="brush: text; highlight: [false]; ">
+				SELECT * FROM songs WHERE duration=(SELECT MAX(duration) FROM songs);
+				SELECT * FROM songs ORDER BY duration desc limit 5;
+				SELECT * FROM songs WHERE duration=(SELECT min(duration) FROM songs);
+				SELECT * FROM songs ORDER BY duration asc limit 5;
+		
+			</pre></div>
+		</li><li>
+			<p>Now you want to create an index for the table songs. Create an index
+				for one column to improve the speed of the queries above. Which column
+				do you think you should create the index for? Create an index on the
+				column you think is the most reasonable. Please note down the command
+				you have used when creating the index and paste it into the checkpoint
+				quiz. Creating an index might take a while since MySQL has to build
+				and maintain the index table. The payoff is in speeding up all
+				subsequent queries that could take advantage of the index. After that
+				has finished, exit MySQL and restart it using the following command</p>
+		<div><pre class="brush: text; gutter: false; highlight: [false]; ">
+			sudo service mysql restart 
+		</pre></div>
+		<p>Then relaunch the <code>mysql</code> client, and re-run the  four SQL queries above, noting the new times (&ldquo;after index&rdquo;) for the quiz.</p>
+		</li><li>Sometimes SQL queries are more complicated than their <code>grep</code>/<code>awk</code> counterparts.
+		Write SQL queries that will return the same results as the following commands you used while evaluating flat files.
+		<div><pre class="brush: text; gutter: false; highlight: [false]; ">
+          grep -P 'The Beatles' million_songs_metadata.csv
+          grep -i -P 'The Beatles' million_songs_metadata.csv
+        </pre></div>
+		Note each query for the quiz. (Hint: The SQL <code>LIKE</code> operator is case insensitive by default).</li><li><em class="bold">Note</em>: You are going to perform some SQL queries in the 
+		checkpoint quiz related to <code>JOIN</code> and <code>GROUP BY</code> using the same two tables. If you do not want to lose data, do not
+	terminate your instance until
+	you finish the checkpoint quiz, or take a snapshot of your current
+	instance to save everything.
+
+	<p>After you have experienced the basics of MySQL, it is time to move
+		forward on Aggregate Functions.The aggregate functions allow you to
+		perform calculations on a set of records and return a single value.
+		The most common aggregate functions include <code>SUM</code>, <code>AVG</code>, <code>MAX</code>, <code>MIN</code> and
+		<code>COUNT</code>. Aggregate functions are often used with the MySQL <code>GROUP BY</code>
+		keyword to perform calculations on each subgroup and return a single
+		value for each subgroup. The MySQL <code>GROUP BY</code> keyword is used with the
+		<code>SELECT</code> statement to group rows into subgroups by one or more columns
+		or expressions. It is extremely useful when several records belong to
+		a category and other records in the same table belong to another
+		category and you want to compare between different categories rather
+		than a single record. The following statement illustrates the MySQL
+		<code>GROUP BY</code> keyword syntax:</p>
+		
+		<div><pre class="brush: text; gutter: false; highlight: [false]; ">
+		SELECT c1, c2, &hellip; cn, aggregate_function(expression)
+		FROM table
+		WHERE where_conditions
+		GROUP BY c1, c2, &hellip; cn;
+		</pre></div>
+		<p>For example, the query about the total sales for each of the recent 10 days looks like:</p> 
+		<div><pre class="brush: text; gutter: false; ">
+		SELECT sales_date, SUM(sales_count) AS total_sales 
+		FROM sales 
+		GROUP BY sales_date 
+		ORDER BY sales_date DESC 
+		LIMIT 10;</pre></div>
+		</li><li>The MySQL JOIN keyword is used to query data from two or more related tables. In MySQL, <code>JOIN</code>, <code>CROSS JOIN</code> and <code>INNER JOIN</code> are syntactic equivalents (they can replace each other). The following illustrates a sample <code>JOIN</code> syntax:
+		<div><pre class="brush: text; ">
+		#select statement
+			SELECT c1,c2,....cn
+			FROM join_table;
+		#join_table
+			table1 [INNER|CROSS] JOIN table2 [join_condition]
+		#join_condition:
+			ON conditional_expr
+			USING (column_list)
+		</pre></div>
+		<p>INNER JOIN builds the Cartesian product between specified tables,
+			that is, each and every row in the first table is joined to each and
+			every row in the second table based on the join condition. Here all the
+			track_ids in table songs have corresponding records in table sales.
+			We are going to only cover INNER JOIN.
+		</p>
+		
+		<table cellspacing="0" class="wbtable " align="center"><thead><tr><th>What about <code>OUTER JOIN</code>?</th></tr></thead><tbody><tr>
+			<td><code>OUTER JOIN</code> identifies rows without a match in the joined table.
+				Outer joins combine two or more tables in a way that some columns may
+				have <code>NULL</code> values. MySQL separates <code>OUTER JOINS</code> 
+				into <code>LEFT</code> or <code>RIGHT JOINS</code>
+				depending on which table provides the unmatched data. In a <code>LEFT JOIN</code>,
+				the unmatched records from the table on the left side of the <code>JOIN</code>
+				clause are returned. In a <code>RIGHT JOIN</code>, the unmatched records from the
+				table on the right side of the <code>JOIN</code> clause are returned. When no match
+				was found, MySQL sets the value of columns from the joined table to
+				<code>NULL</code>. This is important for example when you want to select all records
+				from a reference table that have no related data in another.
+			</td>
+		</tr></tbody></table>
+		
+		<p>For example, the query that shows the title of the song that has the most sales count looks like:
+		</p>
+		
+		<div><pre class="brush: text; gutter: false; highlight: [false]; ">
+		SELECT songs.title, SUM(sales_count) AS total_sale FROM songs INNER JOIN sales ON songs.track_id = sales.track_id GROUP BY sales.track_id ORDER BY total_sale DESC LIMIT 10;
+		</pre></div>
+		</li><li>
+			<p>While further exploring methods to improve the performance of databases,
+			you consider <em class="bold">sharding</em>. The concept of sharding, or horizontal
+			partitioning, is a database design principle whereby <em class="bold">rows</em> of a database
+			table are held separately, rather than being split into <em class="bold">columns</em>. Each
+			partition forms a part of a shard, which may in turn be located on a
+			separate database server or physical location.
+			There are numerous advantages to this partitioning approach. As databases
+			grow, it is time-consuming to search through whole tables. Thus, using
+			sharding, tables are divided and distributed into multiple servers, the
+			total number of rows in each table in each database is reduced. This
+			reduces the index size, which generally improves search performance. A
+			database shard can be placed on separate hardware, and multiple shards
+			can be placed on multiple machines. This enables a distribution of the
+			database over a large number of machines, which means that the database
+			performance can be spread out over multiple machines, greatly improving
+			performance for certain queries.</p>
+			
+			<p>However, sharding also brings new challenges. There are several disadvantages, for example:</p>
+			<ol><li>A heavier reliance on the interconnect between servers</li><li>Increased latency when querying, especially where more than one shard must be searched.</li><li>Data or indices are often only sharded one way, so that some searches are optimal, and others are slow or impossible. For example, after sharding, it is time-consuming to iterate through the whole table. As an example, calculating the average of a single column across shards will require a higher latency compared to an unsharded database.</li><li>Systems fail frequently, consistency and recovery in an unsharded database is easy. However, issues of consistency and durability due to the more complex failure modes of a set of servers, which often result in systems making no guarantees about cross-shard consistency or durability.
+				</li></ol>
+		</li><li>Now that you have explored both files and databases, you can
+			realize that both of these storage systems have advantages and
+			disadvantages. Files can be flexible and portable, can hold structured
+			and unstructured data, and is easy to implement and modify. Databases
+			on the other hand can represent relationships among data, and has easy
+			rollback of transactions in case of failure. Moreover, there are more
+			advantages and disadvantages about files and database waiting for you
+			to explore. For files, security can be achieved only through file
+			permissions while databases supports fine grain level security. The
+			access mode for files is sequential, thus it is slower when the files
+			are larger. But for databases, it is more concurrent. Further, reads
+			and updates can be rule-based in databases using constraints which
+			ensures data consistency. When updating databases, a specific record can
+			be updated, on the other hand, file contents have to be scanned when
+			updating data. Furthermore, you can easily rollback transactions in
+			case of a failure in a database while you cannot do that with files.
+			Databases, however, suffer for the disadvantage of maintaining
+			transaction consistency which is expensive.
+		</li><li>Complete the following checkpoint quiz when ready. Remember to terminate the instance when you are done with the checkpoint.</li></ol>
+		
+		<p>Besides the penalties mentioned in recitation and/or on Piazza, penalties accrue for the following:</p>
+		<table cellspacing="0" class="wbtable " align="center"><thead><tr><th>Violation</th><th align="left">Penalty of the project grade</th></tr></thead><tbody><tr>
+				<td align="left">Spending more than $4 for this project checkpoint</td>
+				<td>-10%</td>
+			</tr><tr class="e">
+				<td align="left">Spending more than $8 for this project checkpoint</td>
+				<td>-100%</td>
+			</tr><tr>
+				<td align="left">Failing to tag all your resources for this project</td>
+				<td>-10%</td>
+			</tr><tr class="e">
+				<td align="left">Using any instance other than <code>m1.small</code></td>
+				<td>-10%</td>
+			</tr></tbody></table>
+		
+		
+		<p><em class="bold">Useful References</em>:</p>
+		
+		<ul><li><a href="http://www.gnu.org/software/gawk/manual/gawk.html" id="_i_0" target="_blank">GNU Reference for AWK</a></li><li><a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?grep" id="_i_1" target="_blank">UNIX man page for grep</a></li><li><a href="http://dev.mysql.com/doc/refman/5.5/en/" id="_i_2" target="_blank">MySQL 5.5 Reference</a></li></ul>
+		
+		</div></div>
+
+
+
+		<div class="activitywrap purpose checkpoint wbactivity"><div class="activityhead"><!----><a id="_p03_m01_checkpoint_1" class="purposeType purposecheckpoint" title="   Assess    your progress." href="/jcourse/webui/resolver/link/resource.do?src=0e4f808380020ca6009633f4757424d6&dst=_p03_m01_checkpoint_1" target="_blank"><span class="scnReader">Checkpoint</span></a><div class="activityinfo"><!----></div></div><div class="actContain"><h3><a href="/jcourse/webui/resolver/link/resource.do?src=0e4f808380020ca6009633f4757424d6&dst=_p03_m01_checkpoint_1" title="Opens in new window" class="checkpoint" target="_blank">File vs. Database</a></h3></div></div>
+
+	</div></div></div><div class="paginationBt"><div class="pagtopwrapwrap2"><div class="pagtopwrap2"><div aria-label="page" role="navigation" class="pagtop2"><a aria-label="previous" role="navigation" title="Files vs. Databases" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f807f80020ca601da17cb73b7cb68"></a> <a aria-label="previous" role="navigation" title="Flat Files" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f808180020ca600aac8e6daeb4cd9"></a> <span class="pagnum2"><form method="get" class="pageForm2" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip2">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax2"><input size="1" autocomplete="off" value="167" type="text" class="paginationInput2"> </form></span><a aria-label="next" role="navigation" title="Next: Vertical Scaling in Databases" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/webui/syllabus/module.do?context=0e4f808780020ca600d665bde281f8be"></a></div></div></div></div><div role="contentinfo" id="tinyfooter"><a class="oli" href="/">Open Learning Initiative</a><br><span class="license" title="Creative Commons License"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license"><img src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License"></a> Unless otherwise noted this work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+			</span></div></div></body></html>

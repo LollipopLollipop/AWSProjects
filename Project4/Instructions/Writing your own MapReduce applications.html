@@ -1,0 +1,120 @@
+<!DOCTYPE html><html><head xmlns:md="http://oli.web.cmu.edu/metadata/"><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="IE=9" http-equiv="X-UA-Compatible"><meta content="/repository/presentation/whirlwind-1.2/" name="themePath"><title>Writing your own MapReduce applications</title><base href="https://oli.cmu.edu/repository/webcontent/fda7217280020ca6017598f75d250b76/projects/_p04_project_4/_p04_m01_mapreduce_intro/x-oli-workbook_page/_p04_m01_3_mapred_3.xml"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/reset.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/learning_content.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/azool.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/style.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxCore.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxModal.css"><!--[if lte IE 7.0]>
+        <link rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles/ie/ie7.css" type="text/css" />
+        <![endif]-->
+        <!--[if lte IE 6]>
+        <link rel="stylesheet" href="/branding/css/ielte6.css" type="text/css" />
+        <![endif]--><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.css"><!--[if IE 7]><![endif]--><script src="/repository/presentation/whirlwind-1.2/web/scripts/swfobject.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-core-1.4.5-full-compat.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-more-1.4.0.1.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootests.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Core.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Modal.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/azool.js" type="text/javascript"></script><script src="/oa.js" type="text/javascript"></script><script type="text/javascript" src="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.js">//</script><script type="text/javascript">var AZ = AZ ? AZ : {};
+AZ.d = {'courseKey': 'F14-CC-PSA', 'pageNumber': '179'};
+</script><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shCore.css"><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shThemeEclipse.css"><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shCore.js" type="text/javascript"> </script><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shBrushPlain.js" type="text/javascript"> </script><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shBrushJava.js" type="text/javascript"> </script><script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = '/repository/presentation/whirlwind-1.2/web/scripts//syntax/clipboard.swf';SyntaxHighlighter.all();</script></head><body class="workbook_page"><div class="contain"><div role="banner" class="header"><div class="oliClassTitle"><a class="logo"></a><h1><a title="15319/15619 Cloud Computing (Fall 2014)" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">15319/15619 Cloud Computing (Fall 2014)</a></h1></div><div aria-label="system" role="navigation" class="user"><h3>System Navigation</h3><ul class="userCredentials"><li class="userName"><a title="Edit my account" id="username" href="/jcourse/webui/myaccount/edit.do?user=dingz@andrew.cmu.edu">Ding ZHAO</a></li> <li class="login"><a title="Logout of the Open Learning Initiative." class="signout" href="/jcourse/webui/logout.do?from=0e4f80ad80020ca600dca92fd7ead029">
+                            [  Sign Out  ]
+						</a></li></ul><div class="clear"></div><ul class="userHelp"><li><a title="Access Key + C" accesskey="C" class="home" id="myCourses" href="/jcourse/webui/myhome.do">My Courses</a>|
+				</li><li><a title="Access Key + S" accesskey="S" class="mimetypes_x-office-address-book" id="syllabus" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Syllabus</a>|
+			</li><li><span class="coursenav"> <a class="active" href="/jcourse/webui/syllabus/outline.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&from=0e4f80ad80020ca600dca92fd7ead029">
+	      
+	        
+			Outline
+	    </a></span>|
+			</li><li><a onclick="openMdWin(this.href, 'activity');return false;" title="Ask OLI technical support team" href="/jcourse/webui/help.do">Help</a>|
+			</li><li id="moreBtn2"><a aria-haspopup="true" href="" tabindex="" title="More" accesskey="M" id="moreBtn">
+					More
+				</a></li></ul></div><div class="shadowOne" id="wn"><span class="controlpanel"> <a target="_blank" href="/jcourse/GradebookClient/index.html?myscores&section=0e4f7c4380020ca600aa44ba1eaf4b1e&col=0e4f80a980020ca6017450db619de8c3"><span class="gradebook">My Scores</span></a><a href="/jcourse/webui/mycourses/reports/practice.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&context=0e4f80a980020ca6017450db619de8c3"><span class="studentDashboard">Available Practice</span></a></span><span class="supportPanel"> <a title="Check if my computer is configured properly for this course." href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><span class="categories_preferences-system">Test My System</span></a> <a title="Send email to Majd Sakr" href="mailto:msakr@ANDREW.CMU.EDU"><span class="actions_mail-message-new">Email Sakr</span></a> <a onclick="openMdWin(this.href, 'activity');return false;" class="wnTechSupport" title="Ask OLI technical support team" href="/jcourse/webui/help.do"><span class="actions_mail-message-new">Email Tech Support</span></a></span></div></div><div aria-haspopup="true" aria-label="Unit" role="navigation" class="lessonHead"><h2 tabindex="" accesskey="u" id="0e4f80a680020ca60101a82a64234a1e"><a tabindex="" href="javascript:;"><span>Unit&nbsp;::</span>Project 4</a></h2></div><div class="expand shadowOne"><ul id="topLvl"></ul></div><div aria-label="module, page" role="navigation" class="subNavigation"><a aria-label="previous, module" role="navigation" accesskey="," class="prev oneclick" href="javascript:;"></a><a aria-label="next, module" role="navigation" accesskey="." class="next oneclick" href="javascript:;"></a><div class="module"><ul id="moduleUl"><li class="current"><a id="0e4f80a980020ca6017450db619de8c3" title="Module  MapReduce" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f80a980020ca6017450db619de8c3"><b><span>MapReduce</span></b></a></li><li><a id="0e4f80b080020ca6017364ad0ff28f09" title="Module  Input Text Predictor: NGram Generation" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f80b080020ca6017364ad0ff28f09"><b><span>Input Text Predictor: NGram Generation</span></b></a></li><li><a id="0e4f80b880020ca60029a70054690ff1" title="Module  Input Text Predictor: Language Model and User Interface" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f80b880020ca60029a70054690ff1"><b><span>Input Text Predictor: Language Model and User Interface</span></b></a></li></ul></div><div class="subMenu shadowOne" id="subMenuExpand"><ul id="jsonSubMenu"></ul></div></div><div class="searchBox"><form method="get" action="/jcourse/search/search.do" id="searchForm"><input value="0e4f7c4380020ca600aa44ba1eaf4b1e" type="hidden" name="section" class="sectionGUID"><input placeholder="Search this course" onBlur="this.setAttribute('value', this.value);" value="" size="25" id="q" type="text" name="q" class="q"><input value="0e4f80ad80020ca600dca92fd7ead029" type="hidden" name="from" class="contextGUID"></form></div><div class="opacity"><div role="main" class="content shadowTwo"><div id="oli-message"><!----></div><div id="paginationtopwrap"><div class="clearfix" id="paginationtop"><div class="pagtopwrapwrap"><div class="pagtopwrap"><div aria-label="page" role="navigation" class="pagtop"><a aria-label="previous" role="navigation" title="Apache Hadoop MapReduce" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f80aa80020ca6004d0cad316ecc53"></a> <a aria-label="previous" role="navigation" title="MapReduce Programming Examples" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f80ab80020ca60121d5b905c348f7"></a> <span class="pagnum"><form method="get" class="pageForm" style="" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip" id="pagnumtip">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax"><input size="4" autocomplete="off" value="179" type="text" class="paginationInput"> </form></span><a aria-label="next" role="navigation" title="Next: Input Text Predictor: NGram Generation" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/webui/syllabus/module.do?context=0e4f80b080020ca6017364ad0ff28f09"></a></div></div></div><h3><a href="/jcourse/webui/syllabus/module.do?context=0e4f80a980020ca6017450db619de8c3" class="module-heading"></a>Writing your own MapReduce applications</h3></div></div><div class="contentContain">
+		
+		<div id="N106ED" class="section"><div class="sectionContain ">
+			<h2>Inverted Index</h2>
+			
+			
+				<p>In this section, your task is to write a Hadoop MapReduce program that will build an inverted index of 
+				documents. An inverted index is a map associating words or phrases with individual documents.
+				
+				For example, assume we have two files, A and B. A contains the words <code>blue</code>
+				and <code>house</code>, while B contains the words <code>red</code> and <code>house</code>.
+				The inverted index for these two file would be:</p>
+				
+				<div><pre class="brush: text; gutter: false; ">
+				blue: A
+				house: A,B
+				red: B
+				</pre></div>
+				
+				<p><em class="bold">Note</em>: For this checkpoint, assign the tag with Key: <code>Project</code> and Value: <code>4.1</code> for all resources.
+			</p>	
+			<p>Please visit the <a href="https://piazza.com/class/hxs4b3o2lox5f9?cid=1953" id="_i_0" target="_blank">Piazza
+						post</a> for any updates regarding this part of the Project.</p>	
+				
+				<p>One approach to perform inverted indexing in MapReduce is to configure the mapper to take each word
+				in the line (after the stop words are removed) and output the word followed by the name of the file
+				that the word appears in. Since files are chunked by HDFS and each mapper gets an independent chunk, the filename 
+				corresponding to an input is not immediately available. However, in MapReduce 1.0 (Hadoop 1.xx), the <code>Context</code> and <code>FileSplit</code> classes
+				allow you to fetch the name of the current file being processed by a Map task. Adding the following code
+				to your Map function will do the trick:</p>
+				
+				<div><pre class="brush: java; gutter: false; ">
+				FileSplit fs = (FileSplit) context.getInputSplit();
+				String location = fs.getPath().getName();
+				</pre></div>
+				
+				<p>Once the Mapper is configured to output words followed by their filename, you can configure the reducer to
+				iterate over all of the values for a particular key. You can then emit a list of filenames associated with each word and store
+				the result in HDFS. Sample output from your program should be as follows:</p>
+				
+				<div><pre class="brush: text; gutter: false; highlight: [false]; ">
+				word1 : file1 file4 file8
+				word2 : file3 file7 file9				
+				</pre></div>
+				
+				<p>Once you have compiled and tested your code, please run it over a dataset comprising of a subset of books from  <a href="http://www.gutenberg.org" id="_i_1" target="_blank">Project Gutenberg</a>.
+				The dataset is stored in <code>s3://15319_book_dataset/</code>. 
+				You will want to download and extract the dataset before loading it into HDFS. Please mount and use ephemeral storage as the root partition (<code>/</code>)
+				will not have enough space. The dataset contains about 6500 e-books in plain format, and is roughly 6.5 GB uncompressed.
+				Please use ephemeral storage for input dataset decompression as the root partition (<code>/</code>) will not have enough space. 
+				By default, the ephemeral storage is mounted at <code>/mnt</code> on each instance in an EMR cluster once they are provisioned.</p>
+				
+				<p>Notes and Assumptions:</p>
+				
+				<ol><li>This programming assignment must be completed using the native Java MapReduce framework.</li><li>While you are free to use any version of MapReduce to complete this task, all of our examples
+				  and code samples follow the API version 1.x (<code>org.hadoop.mapreduce</code>).</li><li>Use an 5-node(1 master, 4 core) EMR cluster, all of which are running <code>m1.small</code>.</li><li>Treat all words as case-insensitive. Words such as <code>life</code> and <code>LIFE</code> should
+				  be treated as the same, you can choose to output the case-insensitive version of the word.</li><li>All punctuation should be stripped and replaced with a space. The word <code>don't</code> will then
+				  become <code>don t</code>.</li><li>If you attempting the bonus below, remove the stop words after stripping punctuation.</li><li>You can visit the main page of your Hadoop cluster at <code>http://&lt;master-public-DNS-name&gt;:9100
+				  </code> to view your jobs and their progress. Port 9100 on your instance will have to be opened in security groups
+				  first for your browser to be able to access the page.</li></ol>
+				
+			
+		
+		</div></div>
+		
+		<div id="N10779" class="section"><div class="sectionContain ">
+		<h2>Bonus: Stop Word Removal</h2>
+		
+		<p>In NLP, <a href="http://en.wikipedia.org/wiki/Stop_words" id="_i_2" target="_blank">stop word</a> removal is a common preprocessing step so 
+				that punctuation and frequently occurring words such as "and, the" etc. 
+				are removed. This allows the index to have terms that are more relevant to search queries.
+				You can find a list of stop words <a href="http://jmlr.csail.mit.edu/papers/volume5/lewis04a/a11-smart-stop-list/english.stop" id="_i_3" target="_blank">here</a>. 
+				For the bonus, your task is to filter out these stop words within your hadoop program, before they are indexed and output by your reducer. 
+				Your solution must be scalable and allow for the use of an arbitrarily long dictionary of stop words.
+				We recommend using a <a href="http://hadoop.apache.org/docs/r1.0.4/mapred_tutorial.html#DistributedCache" id="_i_4" target="_blank">Distributed Cache</a> in this
+				application.</p>
+				
+		
+		
+		</div></div>
+		
+		<p>Besides the penalties mentioned in recitation and/or on Piazza, penalties accrue for the following:</p>
+		<table cellspacing="0" class="wbtable " align="center"><thead><tr><th align="left">Violation</th><th align="left">Penalty of the project grade</th></tr></thead><tbody><tr>
+				<td align="left">Using any instance other than <code>m1.small</code> in your cluster</td>
+				<td>-10%</td>
+			</tr><tr class="e">
+				<td align="left">Spending more than $10 for this project checkpoint</td>
+				<td>-10%</td>
+			</tr><tr>
+				<td align="left">Spending more than $20 for this project checkpoint</td>
+				<td>-100%</td>
+			</tr><tr class="e">
+				<td align="left">Failing to tag all your resources for this project (Key:Project, Value:
+					4.1)</td>
+				<td>-10%</td>
+			</tr></tbody></table>	
+		
+		<div class="activitywrap purpose checkpoint wbactivity"><div class="activityhead"><!----><a id="_p04_m01_checkpoint_1" class="purposeType purposecheckpoint" title="   Assess    your progress." href="/jcourse/webui/resolver/link/resource.do?src=0e4f80ad80020ca600dca92fd7ead029&dst=_p04_m01_checkpoint_1" target="_blank"><span class="scnReader">Checkpoint</span></a><div class="activityinfo"><!----></div></div><div class="actContain"><h3><a href="/jcourse/webui/resolver/link/resource.do?src=0e4f80ad80020ca600dca92fd7ead029&dst=_p04_m01_checkpoint_1" title="Opens in new window" class="checkpoint" target="_blank">Hadoop MapReduce</a></h3></div></div>
+
+	</div></div></div><div class="paginationBt"><div class="pagtopwrapwrap2"><div class="pagtopwrap2"><div aria-label="page" role="navigation" class="pagtop2"><a aria-label="previous" role="navigation" title="Apache Hadoop MapReduce" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f80aa80020ca6004d0cad316ecc53"></a> <a aria-label="previous" role="navigation" title="MapReduce Programming Examples" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f80ab80020ca60121d5b905c348f7"></a> <span class="pagnum2"><form method="get" class="pageForm2" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip2">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax2"><input size="1" autocomplete="off" value="179" type="text" class="paginationInput2"> </form></span><a aria-label="next" role="navigation" title="Next: Input Text Predictor: NGram Generation" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/webui/syllabus/module.do?context=0e4f80b080020ca6017364ad0ff28f09"></a></div></div></div></div><div role="contentinfo" id="tinyfooter"><a class="oli" href="/">Open Learning Initiative</a><br><span class="license" title="Creative Commons License"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license"><img src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License"></a> Unless otherwise noted this work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+			</span></div></div></body></html>

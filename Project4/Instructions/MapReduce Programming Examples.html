@@ -1,0 +1,195 @@
+<!DOCTYPE html><html><head xmlns:md="http://oli.web.cmu.edu/metadata/"><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="IE=9" http-equiv="X-UA-Compatible"><meta content="/repository/presentation/whirlwind-1.2/" name="themePath"><title>MapReduce Programming Examples</title><base href="https://oli.cmu.edu/repository/webcontent/fda7217280020ca6017598f75d250b76/projects/_p04_project_4/_p04_m01_mapreduce_intro/x-oli-workbook_page/_p04_m01_2_mapred_2.xml"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/reset.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/learning_content.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/azool.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/style.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxCore.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxModal.css"><!--[if lte IE 7.0]>
+        <link rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles/ie/ie7.css" type="text/css" />
+        <![endif]-->
+        <!--[if lte IE 6]>
+        <link rel="stylesheet" href="/branding/css/ielte6.css" type="text/css" />
+        <![endif]--><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.css"><!--[if IE 7]><![endif]--><script src="/repository/presentation/whirlwind-1.2/web/scripts/swfobject.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-core-1.4.5-full-compat.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-more-1.4.0.1.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootests.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Core.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Modal.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/azool.js" type="text/javascript"></script><script src="/oa.js" type="text/javascript"></script><script type="text/javascript" src="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.js">//</script><script type="text/javascript">var AZ = AZ ? AZ : {};
+AZ.d = {'courseKey': 'F14-CC-PSA', 'pageNumber': '178'};
+
+/* <![CDATA[ */
+swfobject.embedSWF('../webcontent/youplayer.swf',
+ 'o_i_3',
+ '640',
+ '480',
+ '10.2',
+ (Browser.Platform.mac ? null : '/repository/presentation/whirlwind-1.2/web/scripts/expressInstall.swf'),
+{'movie_identifier':'_i_3', 'version':'10.2', 'expressinstall':'%2Frepository%2Fpresentation%2Fwhirlwind-1.2%2Fweb%2Fscripts%2FexpressInstall.swf', 'log_service_url':'%2Flog%2Fserver', 'user_guid':'dingz%40andrew.cmu.edu', 'session_id':'1c9670f380020ca600ba8cf7e8309e55', 'auth_token':'s%3D1c9670f380020ca600ba8cf7e8309e55%26u%3Ddingz%40andrew.cmu.edu%26h%3D1875afe0f644fa4f255efe8eb57dd363', 'container_id':'0e4f80ab80020ca60121d5b905c348f7', 'source_id':'FLASH_PSEUDO_TUTOR', 'dataset_name':'F14-CC-PSA', 'problem_name':'youplayer', 'school_name':'Carnegie+Mellon+University', 'class_name':'F14-CC-PSA', 'class_description':'15319%2F15619+Cloud+Computing+%28Fall+2014%29%3A+Aug+2014+-+Jan+2015', 'video_id':'3O5e6zGb1dw', 'fs':'1', 'object_height':'480', 'object_width':'640', 'br':'br',},
+ {
+			
+			scale: 'showall', allowScriptAccess: 'always', swLiveConnect: 'true', 
+			wmode: 'white'},
+ {},
+ false);
+  /* ]]> */
+
+/* <![CDATA[ */
+swfobject.embedSWF('../webcontent/youplayer.swf',
+ 'o_i_4',
+ '640',
+ '480',
+ '10.2',
+ (Browser.Platform.mac ? null : '/repository/presentation/whirlwind-1.2/web/scripts/expressInstall.swf'),
+{'movie_identifier':'_i_4', 'version':'10.2', 'expressinstall':'%2Frepository%2Fpresentation%2Fwhirlwind-1.2%2Fweb%2Fscripts%2FexpressInstall.swf', 'log_service_url':'%2Flog%2Fserver', 'user_guid':'dingz%40andrew.cmu.edu', 'session_id':'1c9670f380020ca600ba8cf7e8309e55', 'auth_token':'s%3D1c9670f380020ca600ba8cf7e8309e55%26u%3Ddingz%40andrew.cmu.edu%26h%3D1875afe0f644fa4f255efe8eb57dd363', 'container_id':'0e4f80ab80020ca60121d5b905c348f7', 'source_id':'FLASH_PSEUDO_TUTOR', 'dataset_name':'F14-CC-PSA', 'problem_name':'youplayer', 'school_name':'Carnegie+Mellon+University', 'class_name':'F14-CC-PSA', 'class_description':'15319%2F15619+Cloud+Computing+%28Fall+2014%29%3A+Aug+2014+-+Jan+2015', 'video_id':'iWGqAhViyfY', 'fs':'1', 'object_height':'480', 'object_width':'640', 'br':'br',},
+ {
+			
+			scale: 'showall', allowScriptAccess: 'always', swLiveConnect: 'true', 
+			wmode: 'white'},
+ {},
+ false);
+  /* ]]> */
+</script><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shCore.css"><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shThemeEclipse.css"><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shCore.js" type="text/javascript"> </script><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shBrushJava.js" type="text/javascript"> </script><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shBrushBash.js" type="text/javascript"> </script><script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = '/repository/presentation/whirlwind-1.2/web/scripts//syntax/clipboard.swf';SyntaxHighlighter.all();</script></head><body class="workbook_page"><div class="contain"><div role="banner" class="header"><div class="oliClassTitle"><a class="logo"></a><h1><a title="15319/15619 Cloud Computing (Fall 2014)" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">15319/15619 Cloud Computing (Fall 2014)</a></h1></div><div aria-label="system" role="navigation" class="user"><h3>System Navigation</h3><ul class="userCredentials"><li class="userName"><a title="Edit my account" id="username" href="/jcourse/webui/myaccount/edit.do?user=dingz@andrew.cmu.edu">Ding ZHAO</a></li> <li class="login"><a title="Logout of the Open Learning Initiative." class="signout" href="/jcourse/webui/logout.do?from=0e4f80ab80020ca60121d5b905c348f7">
+                            [  Sign Out  ]
+						</a></li></ul><div class="clear"></div><ul class="userHelp"><li><a title="Access Key + C" accesskey="C" class="home" id="myCourses" href="/jcourse/webui/myhome.do">My Courses</a>|
+				</li><li><a title="Access Key + S" accesskey="S" class="mimetypes_x-office-address-book" id="syllabus" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Syllabus</a>|
+			</li><li><span class="coursenav"> <a class="active" href="/jcourse/webui/syllabus/outline.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&from=0e4f80ab80020ca60121d5b905c348f7">
+	      
+	        
+			Outline
+	    </a></span>|
+			</li><li><a onclick="openMdWin(this.href, 'activity');return false;" title="Ask OLI technical support team" href="/jcourse/webui/help.do">Help</a>|
+			</li><li id="moreBtn2"><a aria-haspopup="true" href="" tabindex="" title="More" accesskey="M" id="moreBtn">
+					More
+				</a></li></ul></div><div class="shadowOne" id="wn"><span class="controlpanel"> <a target="_blank" href="/jcourse/GradebookClient/index.html?myscores&section=0e4f7c4380020ca600aa44ba1eaf4b1e&col=0e4f80a980020ca6017450db619de8c3"><span class="gradebook">My Scores</span></a><a href="/jcourse/webui/mycourses/reports/practice.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&context=0e4f80a980020ca6017450db619de8c3"><span class="studentDashboard">Available Practice</span></a></span><span class="supportPanel"> <a title="Check if my computer is configured properly for this course." href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><span class="categories_preferences-system">Test My System</span></a> <a title="Send email to Majd Sakr" href="mailto:msakr@ANDREW.CMU.EDU"><span class="actions_mail-message-new">Email Sakr</span></a> <a onclick="openMdWin(this.href, 'activity');return false;" class="wnTechSupport" title="Ask OLI technical support team" href="/jcourse/webui/help.do"><span class="actions_mail-message-new">Email Tech Support</span></a></span></div></div><div aria-haspopup="true" aria-label="Unit" role="navigation" class="lessonHead"><h2 tabindex="" accesskey="u" id="0e4f80a680020ca60101a82a64234a1e"><a tabindex="" href="javascript:;"><span>Unit&nbsp;::</span>Project 4</a></h2></div><div class="expand shadowOne"><ul id="topLvl"></ul></div><div aria-label="module, page" role="navigation" class="subNavigation"><a aria-label="previous, module" role="navigation" accesskey="," class="prev oneclick" href="javascript:;"></a><a aria-label="next, module" role="navigation" accesskey="." class="next oneclick" href="javascript:;"></a><div class="module"><ul id="moduleUl"><li class="current"><a id="0e4f80a980020ca6017450db619de8c3" title="Module  MapReduce" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f80a980020ca6017450db619de8c3"><b><span>MapReduce</span></b></a></li><li><a id="0e4f80b080020ca6017364ad0ff28f09" title="Module  Input Text Predictor: NGram Generation" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f80b080020ca6017364ad0ff28f09"><b><span>Input Text Predictor: NGram Generation</span></b></a></li><li><a id="0e4f80b880020ca60029a70054690ff1" title="Module  Input Text Predictor: Language Model and User Interface" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f80b880020ca60029a70054690ff1"><b><span>Input Text Predictor: Language Model and User Interface</span></b></a></li></ul></div><div class="subMenu shadowOne" id="subMenuExpand"><ul id="jsonSubMenu"></ul></div></div><div class="searchBox"><form method="get" action="/jcourse/search/search.do" id="searchForm"><input value="0e4f7c4380020ca600aa44ba1eaf4b1e" type="hidden" name="section" class="sectionGUID"><input placeholder="Search this course" onBlur="this.setAttribute('value', this.value);" value="" size="25" id="q" type="text" name="q" class="q"><input value="0e4f80ab80020ca60121d5b905c348f7" type="hidden" name="from" class="contextGUID"></form></div><div class="opacity"><div role="main" class="content shadowTwo"><div id="oli-message"><!----></div><div id="paginationtopwrap"><div class="clearfix" id="paginationtop"><div class="pagtopwrapwrap"><div class="pagtopwrap"><div aria-label="page" role="navigation" class="pagtop"><a aria-label="previous" role="navigation" title="MapReduce" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f80a980020ca6017450db619de8c3"></a> <a aria-label="previous" role="navigation" title="Apache Hadoop MapReduce" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f80aa80020ca6004d0cad316ecc53"></a> <span class="pagnum"><form method="get" class="pageForm" style="" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip" id="pagnumtip">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax"><input size="4" autocomplete="off" value="178" type="text" class="paginationInput"> </form></span><a aria-label="next" role="navigation" title="Next: Writing your own MapReduce applications" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/workbook/activity/page?context=0e4f80ad80020ca600dca92fd7ead029"></a></div></div></div><h3><a href="/jcourse/webui/syllabus/module.do?context=0e4f80a980020ca6017450db619de8c3" class="module-heading"></a>MapReduce Programming Examples</h3></div></div><div class="contentContain">
+		<div id="N106E5" class="section"><div class="sectionContain ">
+			<h2>Wordcount</h2>
+			
+			<p>In this example, we will compile and 
+			run a <code>WordCount</code> program to process text files and report the number 
+			of times each word appears in the input files.</p>
+			
+			<p><em class="bold">Note</em>: For this checkpoint, assign the tag with Key: <code>Project</code> and Value: <code>4.1</code> for all resources.
+			</p>	
+			<p>Please visit the <a href="https://piazza.com/class/hxs4b3o2lox5f9?cid=1953" id="_i_0" target="_blank">Piazza
+						post</a> for any updates regarding this part of the Project.</p>
+			
+			
+			<p>For help on the various <code>hadoop</code> command line syntaxes, we shall refer you 
+			to the <a href="http://hadoop.apache.org/docs/r1.0.4/mapred_tutorial.html" id="_i_1" target="_blank">MapReduce Tutorial</a>
+			and <a href="http://hadoop.apache.org/docs/r1.0.4/commands_manual.html" id="_i_2" target="_blank">HDFS Command Guide</a>.</p>
+			
+			<p>The following video will cover the classical Wordcount Java example for Hadoop:</p>
+			
+			<div class="activitywrap  flash"><div class="activityhead"><!----><div class="activityinfo"><!----></div></div><div class="actContain"><div class="activity flash"><div style="min-width:640px;min-height:480px;" class="flash_obj" id="_i_3"><div id="o_i_3"><div style="width:640px;height:125px;" class="noflash"><div class="code"><p>Adobe Flash Player is required.</p><p><a target="_blank" href="http://get.adobe.com/flashplayer/">Get
+									Adobe<sup>&reg;</sup> Flash<sup>&reg;</sup> Player.</a></p><p><a target="_blank" href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Test My System</a></p></div></div></div></div> </div></div><div class="captionwrap"><span class="caption">Hadoop Wordcount Example</span></div></div>
+				 
+			<p><em class="bold">Note</em>: In the video, we have compiled the Wordcount example in Eclipse to run on the cluster. Newer versions 
+			of Eclipse and/or the JDK may use JRE 1.8, which is not compatible with JRE 1.7 that is typically found on EMR clusters.
+			Please compile the code using the correct JRE, or compile the program on the cluster as described below.
+			</p>
+			
+			<p>The java code for Wordcount is presented below. Please note that the code
+			snippet presented below is based on MapReduce 1.0 (Hadoop 1.xx), which uses
+			the <code>org.apache.hadoop.mapreduce</code> library. This code works in the
+			EMR AMI 2.4.6 version (Hadoop 1.0.3):</p>
+			
+<div title="WordCount.java"><pre class="brush: java; ">        
+import java.io.IOException;
+import java.util.*;
+        
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.conf.*;
+import org.apache.hadoop.io.*;
+import org.apache.hadoop.mapreduce.*;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
+        
+public class WordCount {
+        
+ public static class Map extends Mapper&lt;LongWritable, Text, Text, IntWritable&gt; {
+    private final static IntWritable one = new IntWritable(1);
+    private Text word = new Text();
+        
+    public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+        String line = value.toString();
+        StringTokenizer tokenizer = new StringTokenizer(line);
+        while (tokenizer.hasMoreTokens()) {
+            word.set(tokenizer.nextToken());
+            context.write(word, one);
+        }
+    }
+ } 
+        
+ public static class Reduce extends Reducer&lt;Text, IntWritable, Text, IntWritable&gt; {
+
+    public void reduce(Text key, Iterable&lt;IntWritable&gt; values, Context context) 
+      throws IOException, InterruptedException {
+        int sum = 0;
+        for (IntWritable val : values) {
+            sum += val.get();
+        }
+        context.write(key, new IntWritable(sum));
+    }
+ }
+        
+ public static void main(String[] args) throws Exception {
+    Configuration conf = new Configuration();
+        
+    Job job = new Job(conf, "wordcount");
+    job.setJarByClass(WordCount.class);
+    job.setOutputKeyClass(Text.class);
+    job.setOutputValueClass(IntWritable.class);
+        
+    job.setMapperClass(Map.class);
+    job.setReducerClass(Reduce.class);
+        
+    job.setInputFormatClass(TextInputFormat.class);
+    job.setOutputFormatClass(TextOutputFormat.class);
+        
+    FileInputFormat.addInputPath(job, new Path(args[0]));
+    FileOutputFormat.setOutputPath(job, new Path(args[1]));
+        
+    job.waitForCompletion(true);
+ }
+        
+}
+</pre></div>
+			
+			<p><em>Code Walkthrough</em>: The code consists of the <code>Wordcount</code> class, which also has two subclasses; <code>Map</code> and <code>Reduce</code>. The <code>main</code> method of the class (lines 38 through 58) sets up the Map Reduce job by defining the input and output types, map and reduce classes to be used, as well as the input and output paths (in this example, they are set to be the first and second command line parameters respectively.</p> 
+<p>The input format used for this example is the <code>TextInputFormat</code>. HDFS automatically breaks files into chunks (default 64 MB) and stores it on the file system. When a MapReduce job is launched, each file block gets a Map task to process it. The <code>TextInputFormat</code> class automatically splits each block into records for each line. The map task iterates over each record and performs a map operation over each record. A map operation receives an entire line from the text file as input; The byte offset of that line is the key and the value is the text content of that line. In this example, the Map function simply tokenizes the line, and emits each token as a key, with the value 1. These are forwarded to the reduce function.</p>
+
+<p>The key-value pairs that are emitted from the Map operation are sorted and sent to the reducers in what is known as the shuffle operation. The key space is partitioned across the number of reducers, but a reducer is guaranteed to receive all the values for a particular key that is assigned to it. Since the extracted token on each line acts as the key, each reducer is guaranteed to receive all the values (1s) for a token. 
+			</p>
+			
+			<p>Follow the steps below to compile and run the program:</p>
+			
+			<div class="activitywrap  flash"><div class="activityhead"><!----><div class="activityinfo"><!----></div></div><div class="actContain"><div class="activity flash"><div style="min-width:640px;min-height:480px;" class="flash_obj" id="_i_4"><div id="o_i_4"><div style="width:640px;height:125px;" class="noflash"><div class="code"><p>Adobe Flash Player is required.</p><p><a target="_blank" href="http://get.adobe.com/flashplayer/">Get
+									Adobe<sup>&reg;</sup> Flash<sup>&reg;</sup> Player.</a></p><p><a target="_blank" href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Test My System</a></p></div></div></div></div> </div></div><div class="captionwrap"><span class="caption">Running a Hadoop Program on EMR</span></div></div>
+			
+			<ol><li>Login to the master instance of your hadoop cluster to author the <code>WordCount.java</code> file.</li><li>Compile your code and package it as a jar using the following commands:
+				<div><pre class="brush: bash; ">
+				mkdir wordcount_classes
+				javac -classpath ${HADOOP_HOME}/hadoop-core.jar -d wordcount_classes WordCount.java 
+				jar -cvf wordcount.jar -C wordcount_classes/ .
+				</pre></div>
+				Please note the trailing <code>.</code> at the end of the <code>jar</code> command. 
+				If you have trouble finding the <code>jar</code> command in your instance, a version may be located
+				in <code>/usr/lib/jvm/*/bin</code>
+				</li><li>To prepare the input, you can either create a simple text file and upload it to HDFS using the 
+				command <code>hadoop dfs -put &lt;filename&gt; /wordcount/input</code>, or
+				for a much larger dataset, you can run <code>RandomTextWriter</code> in the hadoop examples jar file 
+				with the parameter <code>/wordcount/input</code> to generate the input data. This uses the
+				configuration to generate about 40 GB of data, (10 GB of data per node), which can take a while
+				to complete. Once the program has finished, use the HDFS commands to check the contents of <code>/wordcount/input</code></li><li>Run your MapReduce jar file (<code>wordcount.jar</code>) over <code>/wordcount/input</code>. Use
+				<code>/wordcount/output</code> as the destination for your output files. </li><li>Once the program has completed execution, you can use the <code>hadoop dfs</code> commands to inspect and copy
+				the output of your program.</li></ol>
+			
+		</div></div>
+		
+		<div id="N107AE" class="section"><div class="sectionContain ">
+		<h2>Hadoop Sort</h2>
+		
+		<p>In this example, we will run a simple Sort application that is located in the Hadoop examples jar. For this purpose, we will use the <code>RandomWriter</code> example program to randomly generate binary data into input files which will be sorted by the sort application. </p>
+		
+		<p>The sort application itself is quite rudimentary, it uses the MapReduce framework to sort data, the Map operation simply transmits the data as key,value pairs and these pairs are globally sorted when they arrive at the reduce phase through the shuffle operation. This is an example of a binary application in Hadoop.</p>
+		
+		<ol><li>Run <code>RandomWriter</code> using the parameter <code>/sort/input</code> to generate the input data. Use the default
+			configuration to generate 10 GB of data per node.</li><li>Run the Hadoop Sort example over <code>/sort/input</code> and store the results in <code>/sort/output</code>.</li></ol>
+		
+		
+		</div></div>
+		<p>Click through to the next page when you are ready.</p>
+
+	</div></div></div><div class="paginationBt"><div class="pagtopwrapwrap2"><div class="pagtopwrap2"><div aria-label="page" role="navigation" class="pagtop2"><a aria-label="previous" role="navigation" title="MapReduce" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f80a980020ca6017450db619de8c3"></a> <a aria-label="previous" role="navigation" title="Apache Hadoop MapReduce" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f80aa80020ca6004d0cad316ecc53"></a> <span class="pagnum2"><form method="get" class="pageForm2" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip2">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax2"><input size="1" autocomplete="off" value="178" type="text" class="paginationInput2"> </form></span><a aria-label="next" role="navigation" title="Next: Writing your own MapReduce applications" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/workbook/activity/page?context=0e4f80ad80020ca600dca92fd7ead029"></a></div></div></div></div><div role="contentinfo" id="tinyfooter"><a class="oli" href="/">Open Learning Initiative</a><br><span class="license" title="Creative Commons License"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license"><img src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License"></a> Unless otherwise noted this work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+			</span></div></div></body></html>

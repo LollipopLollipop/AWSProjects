@@ -1,0 +1,210 @@
+<!DOCTYPE html><html><head xmlns:md="http://oli.web.cmu.edu/metadata/"><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="IE=9" http-equiv="X-UA-Compatible"><meta content="/repository/presentation/whirlwind-1.2/" name="themePath"><title>Language Model Generation</title><base href="https://oli.cmu.edu/repository/webcontent/fda7217280020ca6017598f75d250b76/projects/_p04_project_4/_p04_m03_language_model/x-oli-workbook_page/_p04_m03_language_model_1.xml"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/reset.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/learning_content.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/azool.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/style.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxCore.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxModal.css"><!--[if lte IE 7.0]>
+        <link rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles/ie/ie7.css" type="text/css" />
+        <![endif]-->
+        <!--[if lte IE 6]>
+        <link rel="stylesheet" href="/branding/css/ielte6.css" type="text/css" />
+        <![endif]--><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.css"><!--[if IE 7]><![endif]--><script src="/repository/presentation/whirlwind-1.2/web/scripts/swfobject.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-core-1.4.5-full-compat.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-more-1.4.0.1.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootests.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Core.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Modal.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/azool.js" type="text/javascript"></script><script src="/oa.js" type="text/javascript"></script><script type="text/javascript" src="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.js">//</script><script type="text/javascript">var AZ = AZ ? AZ : {};
+AZ.d = {'courseKey': 'F14-CC-PSA', 'pageNumber': '184'};
+</script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shCore.css"><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shThemeEclipse.css"><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shCore.js" type="text/javascript"> </script><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shBrushPlain.js" type="text/javascript"> </script><script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = '/repository/presentation/whirlwind-1.2/web/scripts//syntax/clipboard.swf';SyntaxHighlighter.all();</script></head><body class="workbook_page"><div class="contain"><div role="banner" class="header"><div class="oliClassTitle"><a class="logo"></a><h1><a title="15319/15619 Cloud Computing (Fall 2014)" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">15319/15619 Cloud Computing (Fall 2014)</a></h1></div><div aria-label="system" role="navigation" class="user"><h3>System Navigation</h3><ul class="userCredentials"><li class="userName"><a title="Edit my account" id="username" href="/jcourse/webui/myaccount/edit.do?user=dingz@andrew.cmu.edu">Ding ZHAO</a></li> <li class="login"><a title="Logout of the Open Learning Initiative." class="signout" href="/jcourse/webui/logout.do?from=0e4f80ba80020ca6011c910386ea0fcd">
+                            [  Sign Out  ]
+						</a></li></ul><div class="clear"></div><ul class="userHelp"><li><a title="Access Key + C" accesskey="C" class="home" id="myCourses" href="/jcourse/webui/myhome.do">My Courses</a>|
+				</li><li><a title="Access Key + S" accesskey="S" class="mimetypes_x-office-address-book" id="syllabus" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Syllabus</a>|
+			</li><li><span class="coursenav"> <a class="active" href="/jcourse/webui/syllabus/outline.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&from=0e4f80ba80020ca6011c910386ea0fcd">
+	      
+	        
+			Outline
+	    </a></span>|
+			</li><li><a onclick="openMdWin(this.href, 'activity');return false;" title="Ask OLI technical support team" href="/jcourse/webui/help.do">Help</a>|
+			</li><li id="moreBtn2"><a aria-haspopup="true" href="" tabindex="" title="More" accesskey="M" id="moreBtn">
+					More
+				</a></li></ul></div><div class="shadowOne" id="wn"><span class="controlpanel"> <a target="_blank" href="/jcourse/GradebookClient/index.html?myscores&section=0e4f7c4380020ca600aa44ba1eaf4b1e&col=0e4f80b880020ca60029a70054690ff1"><span class="gradebook">My Scores</span></a><a href="/jcourse/webui/mycourses/reports/practice.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&context=0e4f80b880020ca60029a70054690ff1"><span class="studentDashboard">Available Practice</span></a></span><span class="supportPanel"> <a title="Check if my computer is configured properly for this course." href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><span class="categories_preferences-system">Test My System</span></a> <a title="Send email to Majd Sakr" href="mailto:msakr@ANDREW.CMU.EDU"><span class="actions_mail-message-new">Email Sakr</span></a> <a onclick="openMdWin(this.href, 'activity');return false;" class="wnTechSupport" title="Ask OLI technical support team" href="/jcourse/webui/help.do"><span class="actions_mail-message-new">Email Tech Support</span></a></span></div></div><div aria-haspopup="true" aria-label="Unit" role="navigation" class="lessonHead"><h2 tabindex="" accesskey="u" id="0e4f80a680020ca60101a82a64234a1e"><a tabindex="" href="javascript:;"><span>Unit&nbsp;::</span>Project 4</a></h2></div><div class="expand shadowOne"><ul id="topLvl"></ul></div><div aria-label="module, page" role="navigation" class="subNavigation"><a aria-label="previous, module" role="navigation" accesskey="," class="prev oneclick" href="javascript:;"></a><a aria-label="next, module" role="navigation" accesskey="." class="next oneclick" href="javascript:;"></a><div class="module"><ul id="moduleUl"><li><a id="0e4f80a980020ca6017450db619de8c3" title="Module  MapReduce" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f80a980020ca6017450db619de8c3"><b><span>MapReduce</span></b></a></li><li><a id="0e4f80b080020ca6017364ad0ff28f09" title="Module  Input Text Predictor: NGram Generation" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f80b080020ca6017364ad0ff28f09"><b><span>Input Text Predictor: NGram Generation</span></b></a></li><li class="current"><a id="0e4f80b880020ca60029a70054690ff1" title="Module  Input Text Predictor: Language Model and User Interface" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f80b880020ca60029a70054690ff1"><b><span>Input Text Predictor: Language Model and User Interface</span></b></a></li></ul></div><div class="subMenu shadowOne" id="subMenuExpand"><ul id="jsonSubMenu"></ul></div></div><div class="searchBox"><form method="get" action="/jcourse/search/search.do" id="searchForm"><input value="0e4f7c4380020ca600aa44ba1eaf4b1e" type="hidden" name="section" class="sectionGUID"><input placeholder="Search this course" onBlur="this.setAttribute('value', this.value);" value="" size="25" id="q" type="text" name="q" class="q"><input value="0e4f80ba80020ca6011c910386ea0fcd" type="hidden" name="from" class="contextGUID"></form></div><div class="opacity"><div role="main" class="content shadowTwo"><div id="oli-message"><!----></div><div id="paginationtopwrap"><div class="clearfix" id="paginationtop"><div class="pagtopwrapwrap"><div class="pagtopwrap"><div aria-label="page" role="navigation" class="pagtop"><a aria-label="previous" role="navigation" title="NGram Generation" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f80b380020ca600e503989f7f3a1e"></a> <a aria-label="previous" role="navigation" title="Input Text Predictor: Language Model and User Interface" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f80b880020ca60029a70054690ff1"></a> <span class="pagnum"><form method="get" class="pageForm" style="" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip" id="pagnumtip">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax"><input size="4" autocomplete="off" value="184" type="text" class="paginationInput"> </form></span><a aria-label="next" role="navigation" title="Next: User Interface" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/workbook/activity/page?context=0e4f80bb80020ca6013496eafab74641"></a></div></div></div><h3><a href="/jcourse/webui/syllabus/module.do?context=0e4f80b880020ca60029a70054690ff1" class="module-heading"></a>Language Model Generation</h3></div></div><div class="contentContain">
+		<p>In the previous part of the project, we generated the n-gram counts for a text corpus using a MapReduce job.</p>
+		
+		<p>In this part we will compute a statistical language model using the n-gram counts and store them in an efficient manner so that they can be accessed easily from a web interface.</p>
+		<p><em class="bold">Note</em>: For this checkpoint, assign the tag
+			with Key: <code>Project</code> and Value: <code>4.3</code> for all resources. Please visit the  <a href="https://piazza.com/class/hxs4b3o2lox5f9?cid=2297" id="_i_0" target="_blank">Piazza
+				post</a> for any updates regarding this part of the Project.	</p>
+		
+		<p>A statistical language model is a collection of probabilities of words appearing after a phrase. Using the n-gram counts as input, the probability of a word appearing after a phrase can be expressed in simple terms as:</p>
+		
+		<table class="formula" align="center"><tr><td>
+			<math display="block" overflow="scroll">
+			  <mrow>
+			    <mi>Pr</mi>
+			    <mfenced open="(" close=")">
+			      <mrow>
+			        <mi>word</mi>
+			        <mtext fontfamily="Times New Roman">&nbsp;</mtext>
+			        <mo>|</mo>
+			        <mtext fontfamily="Times New Roman">&nbsp;</mtext>
+			        <mi>phrase</mi>
+			      </mrow>
+			    </mfenced>
+			    <mtext fontfamily="Times New Roman">&nbsp;</mtext>
+			    <mo>=</mo>
+			    <mtext fontfamily="Times New Roman">&nbsp;</mtext>
+			    <mfrac>
+			      <mrow>
+			        <mi>Count</mi>
+			        <mo stretchy="false">(</mo>
+			        <mi>phrase</mi>
+			        <mo>+</mo>
+			        <mi>word</mi>
+			        <mo stretchy="false">)</mo>
+			      </mrow>
+			      <mrow>
+			        <mi>Count</mi>
+			        <mo stretchy="false">(</mo>
+			        <mi>phrase</mi>
+			        <mo stretchy="false">)</mo>
+			      </mrow>
+			    </mfrac>
+			  </mrow>
+			</math>
+		</td></tr></table>
+		
+		<p>As an example, consider the following input:</p>
+		
+		<div><pre class="brush: text; gutter: false; ">
+		this 	                 1000
+		this is	                 500
+		this is a	         	 125
+		this is a blue	         60
+		this is a blue house     20
+		</pre></div>
+		
+		<p>The following probabilities can be calculated:</p>
+		<table class="formula" align="center"><tr><td>
+		<math display="block" overflow="scroll">
+		  <mrow>
+		    <mi>Pr</mi>
+		    <mfenced open="(" close=")">
+		      <mrow>
+		        <mi>is</mi>
+		        <mtext fontfamily="Times New Roman">&nbsp;</mtext>
+		        <mo>|</mo>
+		        <mtext fontfamily="Times New Roman">&nbsp;</mtext>
+		        <mi>this</mi>
+		      </mrow>
+		    </mfenced>
+		    <mtext fontfamily="Times New Roman">&nbsp;</mtext>
+		    <mo>=</mo>
+		    <mtext fontfamily="Times New Roman">&nbsp;</mtext>
+		    <mfrac>
+		      <mrow>
+		        <mi>Count</mi>
+		        <mo stretchy="false">(</mo>
+		        <mi>this</mi>
+		        <mtext fontfamily="Times New Roman">&nbsp;</mtext>
+		        <mi>is</mi>
+		        <mo stretchy="false">)</mo>
+		      </mrow>
+		      <mrow>
+		        <mi>Count</mi>
+		        <mo stretchy="false">(</mo>
+		        <mi>this</mi>
+		        <mo stretchy="false">)</mo>
+		      </mrow>
+		    </mfrac>
+		    <mo>=</mo>
+		    <mfrac>
+		      <mn>500</mn>
+		      <mn>1000</mn>
+		    </mfrac>
+		    <mo>=</mo>
+		    <mn>0.5</mn>
+		  </mrow>
+		</math>
+		</td></tr></table>
+		
+		<table class="formula" align="center"><tr><td>
+		<math display="block" overflow="scroll">
+		  <mrow>
+		    <mi>Pr</mi>
+		    <mfenced open="(" close=")">
+		      <mrow>
+		        <mi>a</mi>
+		        <mtext fontfamily="Times New Roman">&nbsp;</mtext>
+		        <mo>|</mo>
+		        <mtext fontfamily="Times New Roman">&nbsp;</mtext>
+		        <mi>this is</mi>
+		      </mrow>
+		    </mfenced>
+		    <mtext fontfamily="Times New Roman">&nbsp;</mtext>
+		    <mo>=</mo>
+		    <mtext fontfamily="Times New Roman">&nbsp;</mtext>
+		    <mfrac>
+		      <mrow>
+		        <mi>Count</mi>
+		        <mo stretchy="false">(</mo>
+		        <mi>this</mi>
+		        <mtext fontfamily="Times New Roman">&nbsp;</mtext>
+		        <mi>is</mi>
+		        <mtext fontfamily="Times New Roman">&nbsp;</mtext>
+		        <mi>a</mi>
+		        <mo stretchy="false">)</mo>
+		      </mrow>
+		      <mrow>
+		        <mi>Count</mi>
+		        <mo stretchy="false">(</mo>
+		        <mi>this</mi>
+		        <mtext fontfamily="Times New Roman">&nbsp;</mtext>
+		        <mi>is</mi>
+		        <mo stretchy="false">)</mo>
+		      </mrow>
+		    </mfrac>
+		    <mo>=</mo>
+		    <mfrac>
+		      <mn>125</mn>
+		      <mn>500</mn>
+		    </mfrac>
+		    <mo>=</mo>
+		    <mn>0.25</mn>
+		  </mrow>
+		</math>
+		</td></tr></table>
+		
+		<div id="N1084D" class="section"><div class="sectionContain ">
+		<h2>Task</h2>
+		
+		<p>Your task is to generate the statistical language model for all words and phrases appearing in the n-gram counts generated from a text corpus. You must complete this task using a MapReduce job that reads the input file from HDFS and writes the output file to HBase. Specifically, you must:</p>
+		
+		<ol><li>Develop a schema in HBase to store the words appearing after phrases and their probabilities. You must also account for how the data is likely to be accessed from the user interface. Users will type a phrase and will expect to see an ordered list of the next word that the user is &ldquo;most&rdquo; likely to type. </li><li>Write a Mapreduce program to read the n-gram counts generated from the previous checkpoint, and process them to generate the probabilities as outlined above. The output from the MapReduce program should be written directly to an HBase table, following the schema that you have designed in step 1. </li></ol>
+		
+		<p><em class="bold">Note</em>: For this checkpoint, assign the tag with Key: <code>Project</code> and Value: <code>4.3</code> for all resources</p>	
+		
+		<p>The information below will help you in these tasks, once you have completed building the language model, please proceed to the next page to connect it to the User Interface.</p>
+		
+		
+		</div></div>
+		<div id="N10871" class="section"><div class="sectionContain ">
+			<h2>Hints, Assumptions, and References:</h2>
+			
+				<ol><li>You can use the ngrams generated from the previous checkpoint. If you need to re-create the ngrams, you may use <em>either</em> the Project Gutenberg dataset or the Wikipedia Text corpus, both
+					of which are preprocessed and ready for use on S3. See the table below for locations.</li><li>If you are using the Wikipedia data set, we recommend that you directly load the dataset into HDFS in gzipped format and enable compression for
+					inputs in your MapReduce program.</li><li>You can launch a cluster that has both HBase and Hadoop automatically using EMR.</li><li>You will want to ignore phrases that appear below a certain threshold, say <em>t</em>, from your n-gram count for your statistical language model to be accurate. <em>t</em> should be a command-line parameter to your MapReduce application.  You may test your generator with <em>t=2</em> and then refine as necessary. </li><li>For a given phrase, store only the top <em>n</em> words with the highest probabilities. This value should also be a command-line parameter to your MapReduce application. You can start with <em>n = 5</em>, and refine it as you see fit.</li><li>We recommend using <code>GenericOptionsParser</code> class, along with <code>apache.commons.cli</code> packages to parse command line options, but this is not necessary.</li><li>Use no more than 5 instances to complete the MapReduce job. Use spot pricing for instances that are larger than m1.small, if they are cheaper than the on-demand pricing.</li><li>HBase is covered in the Storage Module of the course; Practical aspects of HBase are available at <a href="http://hbase.apache.org/book/book.html" id="_i_1" target="_blank">http://hbase.apache.org/book/</a>. <em class="italic">Hadoop, The Definitive Guide</em> by Tom White includes a good chapter on HBase. In addition, <em class="italic">HBase, The Definitive Guide</em> by Lars George is also a good reference. </li><li>As always, create a small test set to verify your approach and algorithm before running it over the entire dataset. </li><li>Once you have loaded the phrases, words and their associated probabilities into HBase, please use the <code>hbase shell</code> to test out some get operations. </li></ol>
+			
+			
+		
+		</div></div>
+		
+		<div id="N108C3" class="section"><div class="sectionContain ">
+			<h2>Resources</h2>
+			
+				<table cellspacing="0" class="wbtable " align="center"><thead><tr><th>Resource</th><th>Location</th></tr></thead><tbody><tr>
+						<td>Gutenberg Dataset</td>
+						<td><code>s3://15-319-s13/book-dataset/pg_00</code> to <code>pg_38</code></td>
+					</tr><tr class="e">
+						<td>Wikipedia Dataset</td>
+						<td><code>https://s3.amazonaws.com/15-319-s13/wiki-dataset/part00.txt.gz</code> to <code>part63.txt.gz</code></td>
+					</tr></tbody></table>
+			
+		</div></div>
+		
+		
+		
+		
+		
+		
+	</div></div></div><div class="paginationBt"><div class="pagtopwrapwrap2"><div class="pagtopwrap2"><div aria-label="page" role="navigation" class="pagtop2"><a aria-label="previous" role="navigation" title="NGram Generation" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f80b380020ca600e503989f7f3a1e"></a> <a aria-label="previous" role="navigation" title="Input Text Predictor: Language Model and User Interface" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f80b880020ca60029a70054690ff1"></a> <span class="pagnum2"><form method="get" class="pageForm2" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip2">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax2"><input size="1" autocomplete="off" value="184" type="text" class="paginationInput2"> </form></span><a aria-label="next" role="navigation" title="Next: User Interface" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/workbook/activity/page?context=0e4f80bb80020ca6013496eafab74641"></a></div></div></div></div><div role="contentinfo" id="tinyfooter"><a class="oli" href="/">Open Learning Initiative</a><br><span class="license" title="Creative Commons License"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license"><img src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License"></a> Unless otherwise noted this work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+			</span></div></div></body></html>

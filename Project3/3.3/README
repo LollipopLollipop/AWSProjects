@@ -1,0 +1,39 @@
+doBind.sh:
+	shell scripts to be executed at the startup of each instance 
+	placed at the home dirctory /home/ubuntu/
+	cron job to execute doBind.sh: 
+		@reboot bash /home/ubuntu/doBind.sh
+
+calcTPS.sh:
+	shell script to calculate real time TPS Utilization and put data to custommetric using CloudWatch CLI 
+	CloudWatch CLI Tools are installed on the AMI I created, execution parameters are also set in this script, credentials are set accordingly in credential-file-path.template.
+	placed at the home directory 
+	this script should be executed in the background for every 1 minute, cron code to accomplish this goal: 
+		*/1 * * * * /home/ubuntu/calcTPS.sh
+	
+calcTPS.py:
+	python code performing actual calculation of TPS Utilization, called in calcTPS.sh
+
+
+
+use cron to configure background job:
+"crontab -e"
+then add the two lines mentioned above；
+@reboot bash /home/ubuntu/doBind.sh
+*/1 * * * * /home/ubuntu/calcTPS.sh
+
+
+
+AMI created in this project；
+ami-98e868f0
+dingz-project3-image
+
+
+
+
+Metric created for this project:
+Metric Name: TPSUtilization
+Dimension: instance:sysbench, servertype:MySQL
+Namespace:DingService
+
+

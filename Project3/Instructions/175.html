@@ -1,0 +1,274 @@
+<!DOCTYPE html><html><head xmlns:md="http://oli.web.cmu.edu/metadata/"><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="IE=9" http-equiv="X-UA-Compatible"><meta content="/repository/presentation/whirlwind-1.2/" name="themePath"><title>Database Services in AWS</title><base href="https://oli.cmu.edu/repository/webcontent/fda7217280020ca6017598f75d250b76/projects/_p03_project_3/_p03_m01_databases/x-oli-workbook_page/_p03_m01_7_dynamodb_hbase.xml"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/reset.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/learning_content.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/azool.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/style.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxCore.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxModal.css"><!--[if lte IE 7.0]>
+        <link rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles/ie/ie7.css" type="text/css" />
+        <![endif]-->
+        <!--[if lte IE 6]>
+        <link rel="stylesheet" href="/branding/css/ielte6.css" type="text/css" />
+        <![endif]--><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.css"><!--[if IE 7]><![endif]--><script src="/repository/presentation/whirlwind-1.2/web/scripts/swfobject.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-core-1.4.5-full-compat.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-more-1.4.0.1.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootests.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Core.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Modal.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/azool.js" type="text/javascript"></script><script src="/oa.js" type="text/javascript"></script><script type="text/javascript" src="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.js">//</script><script type="text/javascript">var AZ = AZ ? AZ : {};
+AZ.d = {'courseKey': 'F14-CC-PSA', 'pageNumber': '175'};
+</script><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shCore.css"><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shThemeEclipse.css"><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shCore.js" type="text/javascript"> </script><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shBrushBash.js" type="text/javascript"> </script><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shBrushPlain.js" type="text/javascript"> </script><script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = '/repository/presentation/whirlwind-1.2/web/scripts//syntax/clipboard.swf';SyntaxHighlighter.all();</script></head><body class="workbook_page"><div class="contain"><div role="banner" class="header"><div class="oliClassTitle"><a class="logo"></a><h1><a title="15319/15619 Cloud Computing (Fall 2014)" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">15319/15619 Cloud Computing (Fall 2014)</a></h1></div><div aria-label="system" role="navigation" class="user"><h3>System Navigation</h3><ul class="userCredentials"><li class="userName"><a title="Edit my account" id="username" href="/jcourse/webui/myaccount/edit.do?user=dingz@andrew.cmu.edu">Ding ZHAO</a></li> <li class="login"><a title="Logout of the Open Learning Initiative." class="signout" href="/jcourse/webui/logout.do?from=0e4f809a80020ca6004f6e8c1f416e0f">
+                            [  Sign Out  ]
+						</a></li></ul><div class="clear"></div><ul class="userHelp"><li><a title="Access Key + C" accesskey="C" class="home" id="myCourses" href="/jcourse/webui/myhome.do">My Courses</a>|
+				</li><li><a title="Access Key + S" accesskey="S" class="mimetypes_x-office-address-book" id="syllabus" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Syllabus</a>|
+			</li><li><span class="coursenav"> <a class="active" href="/jcourse/webui/syllabus/outline.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&from=0e4f809a80020ca6004f6e8c1f416e0f">
+	      
+	        
+			Outline
+	    </a></span>|
+			</li><li><a onclick="openMdWin(this.href, 'activity');return false;" title="Ask OLI technical support team" href="/jcourse/webui/help.do">Help</a>|
+			</li><li id="moreBtn2"><a aria-haspopup="true" href="" tabindex="" title="More" accesskey="M" id="moreBtn">
+					More
+				</a></li></ul></div><div class="shadowOne" id="wn"><span class="controlpanel"> <a target="_blank" href="/jcourse/GradebookClient/index.html?myscores&section=0e4f7c4380020ca600aa44ba1eaf4b1e&col=0e4f809780020ca600b2808990fdcd15"><span class="gradebook">My Scores</span></a><a href="/jcourse/webui/mycourses/reports/practice.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&context=0e4f809780020ca600b2808990fdcd15"><span class="studentDashboard">Available Practice</span></a></span><span class="supportPanel"> <a title="Check if my computer is configured properly for this course." href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><span class="categories_preferences-system">Test My System</span></a> <a title="Send email to Majd Sakr" href="mailto:msakr@ANDREW.CMU.EDU"><span class="actions_mail-message-new">Email Sakr</span></a> <a onclick="openMdWin(this.href, 'activity');return false;" class="wnTechSupport" title="Ask OLI technical support team" href="/jcourse/webui/help.do"><span class="actions_mail-message-new">Email Tech Support</span></a></span></div></div><div aria-haspopup="true" aria-label="Unit" role="navigation" class="lessonHead"><h2 tabindex="" accesskey="u" id="0e4f807c80020ca6008491878136e895"><a tabindex="" href="javascript:;"><span>Unit&nbsp;::</span>Project 3</a></h2></div><div class="expand shadowOne"><ul id="topLvl"></ul></div><div aria-label="module, page" role="navigation" class="subNavigation"><a aria-label="previous, module" role="navigation" accesskey="," class="prev oneclick" href="javascript:;"></a><a aria-label="next, module" role="navigation" accesskey="." class="next oneclick" href="javascript:;"></a><div class="module"><ul id="moduleUl"><li><a id="0e4f807f80020ca601da17cb73b7cb68" title="Module  Files vs. Databases" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f807f80020ca601da17cb73b7cb68"><b><span>Files vs. Databases</span></b></a></li><li><a id="0e4f808780020ca600d665bde281f8be" title="Module  Vertical Scaling in Databases" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f808780020ca600d665bde281f8be"><b><span>Vertical Scaling in Databases</span></b></a></li><li><a id="0e4f809080020ca601c500941f6401a7" title="Module  Horizontal Scaling in Databases" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f809080020ca601c500941f6401a7"><b><span>Horizontal Scaling in Databases</span></b></a></li><li class="current"><a id="0e4f809780020ca600b2808990fdcd15" title="Module  Working with NoSQL: DynamoDB / HBase" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f809780020ca600b2808990fdcd15"><b><span>Working with NoSQL: DynamoDB / HBase</span></b></a></li></ul></div><div class="subMenu shadowOne" id="subMenuExpand"><ul id="jsonSubMenu"></ul></div></div><div class="searchBox"><form method="get" action="/jcourse/search/search.do" id="searchForm"><input value="0e4f7c4380020ca600aa44ba1eaf4b1e" type="hidden" name="section" class="sectionGUID"><input placeholder="Search this course" onBlur="this.setAttribute('value', this.value);" value="" size="25" id="q" type="text" name="q" class="q"><input value="0e4f809a80020ca6004f6e8c1f416e0f" type="hidden" name="from" class="contextGUID"></form></div><div class="opacity"><div role="main" class="content shadowTwo"><div id="oli-message"><!----></div><div id="paginationtopwrap"><div class="clearfix" id="paginationtop"><div class="pagtopwrapwrap"><div class="pagtopwrap"><div aria-label="page" role="navigation" class="pagtop"><a aria-label="previous" role="navigation" title="Working with NoSQL: DynamoDB / HBase" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f809780020ca600b2808990fdcd15"></a> <a aria-label="previous" role="navigation" title="Write Scalability" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f809880020ca6015e1f3b7bfc2a3d"></a> <span class="pagnum"><form method="get" class="pageForm" style="" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip" id="pagnumtip">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax"><input size="4" autocomplete="off" value="175" type="text" class="paginationInput"> </form></span><a aria-label="next" role="navigation" title="Next: MapReduce" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/webui/syllabus/module.do?context=0e4f80a980020ca6017450db619de8c3"></a></div></div></div><h3><a href="/jcourse/webui/syllabus/module.do?context=0e4f809780020ca600b2808990fdcd15" class="module-heading"></a>Database Services in AWS</h3></div></div><div id="lobjh" class=""><h3>Learning Objectives</h3><ul><li><div class="" id="p03_m01_f">Evaluate various provisioned database services in AWS, in terms of performance and costs.</div></li></ul></div><div class="contentContain">
+
+		<div id="N106F2" class="section"><div class="sectionContain ">
+
+			<h2>Provisioned Databases</h2>
+			
+				<p>In this project module we will introduce you to database services on AWS. These services
+					enable users to rapidly configure and deploy a database system without having to
+					manually launch and configure instances and database software. You will compare
+					the performance of a manually provisioned MySQL database with Amazon&rsquo;s
+					Relational Database Service (RDS) and a NoSQL database service (Amazon&rsquo;s
+					DynamoDB). The comparison will mostly be on a read-only workload to yield
+					interesting insights on the performance and cost benefits of each system. </p>
+				<p><a href="http://aws.amazon.com/rds/" id="_i_0" target="_blank">RDS</a> is a service provided by AWS which allows
+					users to configure and deploy relational databases using AWS infrastructure. RDS
+					provides users with a configured relational database instance of their choosing
+					(MySQL, Oracle, MS SQL server, and others), running on specifically tuned
+					database instance types, with optional performance enhancements such as
+					provisioned IOPS storage. RDS will manage the database on behalf of the user,
+					including the upgrading of the database software and backups, during
+					user-specified maintenance windows.</p>
+				<p><a href="http://aws.amazon.com/rds/" id="_i_1" target="_blank">Amazon's DynamoDB</a> is a NoSQL distributed
+					database, similar to HBase or Cassandra. As a NoSQL Database, DynamoDB's
+					functionality is limited compared to SQL databases- this is to ensure
+					consistently high performance at very large scales. As an application developer
+					using DynamoDB, your only parameters are how much read and write throughput your
+					application needs- you do not have to worry about scaling, tuning, replication,
+					etc. </p>
+				<p><em>Caution</em>: Some the services you will be using for this project are
+					expensive when left running or configured incorrectly. Please plan ahead and pay
+					special attention to the instructions before provisioning any resources.</p>
+				
+				<p><em class="bold">Note</em>: 
+				Please visit the <a href="https://piazza.com/class/hxs4b3o2lox5f9?cid=1791" id="_i_2" target="_blank">Piazza
+						post</a> for any updates regarding this part of the Project.</p>
+				
+				<p>For this checkpoint, assign the tag with Key: <code>Project</code> and Value: <code>3.5</code> for all resources</p>
+				
+				<p>All databases will be tested against a YCSB benchmark. We recommend performing
+					all the tests in one sitting, using the same YCSB instance in order to obtain
+					consistent results and avoid redundant costs.</p>	
+					
+			
+		</div></div>
+		<div id="N10728" class="section"><div class="sectionContain ">
+			<h2>YCSB Configuration</h2>
+			
+				<p>The following YCSB configuration should be used with all the databases that will
+					be evaluated as part of this project:<ol><li>To run the benchmark, provision a <code>m1.large</code> machine and boot
+							it using the YCSB AMI (<code>ami-226fe84a</code>). Since this AMI is
+							based on Amazon Linux, you can log in using the username
+								<code>ec2-user</code>. This will be the client machine from which
+							you run all your tests.</li><li>Make sure the security group assigned to this machine is configured to
+							allow all TCP, UDP, and ICMP traffic.</li><li> Create a <code>records.props</code> file in the YCSB root directory, if it does not exist
+							already. This time, set <code>recordcount=500000</code>.</li></ol></p>
+			
+		</div></div>
+		<div id="N1074E" class="section"><div class="sectionContain ">
+			<h2>Task 1: RDS Benchmarks</h2>
+			
+				<p>The first database service we will evaluate is RDS. We will provision an
+					RDS-managed MySQL database and run YCSB to test its performance.</p>
+				<div id="N10758" class="section"><div class="sectionContain ">
+					<h3>Setting up RDS</h3>
+					
+						<ol><li>Log in to AWS console and navigate to the top Amazon RDS home
+								page.</li><li>Launch a new MySQL database instance with the following settings:<ol><li>Select Yes for Production instance </li><li>DB Instance Class - db.m3.medium</li><li>Multi AZ Deployment - No</li><li>Storage Type - Provisioned IOPS SSD</li><li>Allocated Storage - 100GB</li><li>Provisioned IOPS - 1000 </li><li>Configure the security group to allow 3306</li></ol></li><li>Note down your DB&rsquo;s endpoint URL. </li></ol>
+					
+				</div></div>
+				<div id="N10784" class="section"><div class="sectionContain ">
+					<h3>Run YCSB on RDS</h3>
+					
+						<ol><li>In order to run YCSB on RDS, we need to create the required databases and tables. We can
+								do this by using a MySQL client to connect to RDS and execute the
+								required commands in the client shell. We can do all of this in the
+								YCSB instance.</li><li>SSH to the YCSB instance using the username &ldquo;<code>ec2-user</code>&rdquo; and install MySQL
+								Client:<div><pre class="brush: bash; gutter: false; ">sudo yum install mysql</pre></div>
+							</li><li> Launch the client and connect to RDS using the
+								command:<div><pre class="brush: bash; gutter: false; ">mysql -u &lt;username&gt; -p&lt;password&gt; -h &lt;RDS Endpoint URL&gt;</pre></div>
+							</li><li>Create the database test using the
+								command:<div><pre class="brush: text; gutter: false; ">CREATE DATABASE test;</pre></div></li><li>Create the required tables in "test"
+								database:<div><pre class="brush: text; gutter: false; ">USE test;
+CREATE TABLE usertable(YCSB_KEY VARCHAR (255) PRIMARY KEY,   FIELD1 TEXT, FIELD2 TEXT,   FIELD3 TEXT, FIELD4 TEXT,   FIELD5 TEXT, FIELD6 TEXT,   FIELD7 TEXT, FIELD8 TEXT,   FIELD9 TEXT, FIELD10 TEXT);</pre></div></li><li>For this test, we will use the YCSB version located in the <code>ycsb0.1.4</code>
+								directory. Configure the JDBC endpoint in
+									<code>jdbc-binding/conf/db.properties</code>:<div><pre class="brush: text; gutter: false; ">jdbc:mysql://&lt;server&gt;/&lt;databaseName&gt;</pre></div>In
+								addition, supply the required credentials that you provided while
+								launching the RDS instance in this file to allow YCSB to connect and
+								perform the benchmarks.</li><li>Load RDS with YCSB benchmark data. Please replace the <code>AndrewID</code> portion of
+								the command below with your
+								AndrewID:<div><pre class="brush: bash; gutter: false; ">bin/ycsb load jdbc -P workloads/workloada -P jdbc-binding/conf/db.properties -P records.props -s 1&gt;  &lt;AndrewID&gt;_RDS_summary_file_loaddata  2&gt; &lt;AndrewID&gt;_RDS_results_file_loaddata</pre></div>Run
+								the benchmark three times, record the average throughput and
+								latency. Note down all the results for the checkpoint quiz.</li><li>Run the YCSB tests for <code>workloada</code> (Read only). Please
+								replace the <code>AndrewID</code> portion of the command below with
+								your
+								AndrewID:<div><pre class="brush: bash; gutter: false; ">time bin/ycsb run jdbc -P workloads/workloada -P jdbc-binding/conf/db.properties -P records.props -p operationcount=500000 -s 1&gt; &lt;AndrewID&gt;_RDS_summary_file 2&gt; &lt;AndrewID&gt;_RDS_results_file
+</pre></div>Run
+								the benchmark three times, record the average throughput and
+								latency. Note down all the results for the checkpoint quiz.</li></ol>
+					
+				</div></div>
+				<p>Now that you have worked with RDS, think about the ways in which RDS differs from a MySQL
+					instance that you provision, configure and deploy yourself. What are the pros
+					and cons of each? What aspects of the running and management of a database
+					instance does RDS simplify? What do you need to do to scale an RDS instance? Is
+					the cost structure of RDS reasonable? </p>
+			
+		</div></div>
+		<div id="N107E0" class="section"><div class="sectionContain ">
+			<h2>Task 2: DynamoDB Benchmarks</h2>
+			
+				<p>The second database we will evaluate is DynamoDB. In this task, we will create a DynamoDB
+					database and run YCSB to evaluate its performance.</p>
+				<table cellspacing="0" class="wbtable " align="center"><thead><tr><th align="left">Warning on DyanmoDB costs</th></tr></thead><tbody><tr>
+						<td align="left">Amazon charges DynamoDB users based on the provisioned read
+							and write capacities per hour. You will be charged for the provisioned
+							capacity, irrespective of the actual number of requests that are sent to
+							your DynamoDB table. You can incur extremely high costs if you leave
+							DynamoDB provisioned for even a few hours. Calculate your costs
+							beforehand to avoid going over the project limit. Please complete all
+							tests in one sitting and delete the DynamoDB table once you have
+							completed with the checkpoint.</td>
+					</tr></tbody></table>
+				<div id="N107FB" class="section"><div class="sectionContain ">
+					<h3>Setting up Amazon DynamoDB</h3>
+					
+						<p> Perform the following steps to setup DynamoDB for YCSB. Please note that unlike the
+							previous run, we will be using another version of YCSB, located in the
+								<code>~/git_controlled</code> folder.<ol><li> In AWS, create a new DynamoDB table called
+										<code>usertable</code>. Set the primary key type to &lsquo;Hash&rsquo;
+									and the hash attribute name to <code>firstname</code>. Set the
+									Read and Write capacities to 500. Note the region in which AWS
+									creates the table. </li><li>
+									<p>Edit
+											<code>git_controlled/YCSB/dynamodb/conf/dynamodb.properties</code>.
+										Make sure <code>dynamodb.primaryKey</code> is set to
+											<code>firstname</code> and that
+											<code>dynamodb.endpoint</code> is set to the region in
+										which AWS created the dynamodb table (e.g.,
+											<code>us-east-1</code>). Also make sure
+											<code>debug</code> is set to &lsquo;false&rsquo; in this file.</p>
+								</li><li>Edit the
+										<code>git_controlled/YCSB/dynamodb/conf/AWSCredentials.properties</code>
+									file with your AWS access key and secret key. </li></ol>
+						</p>
+					
+				</div></div>
+				<div id="N10834" class="section"><div class="sectionContain ">
+					<h3>Running the DynamoDB Benchmarks</h3>
+					
+						<p> In this section, we will apply &lsquo;Workload A&rsquo; to DynamoDB, which should consist of only
+							reads. Before you run the benchmark on DynamoDB, make sure that in the
+							Workload A file(<code>git_controlled/YCSB/workloads/workloada</code>),
+								<code>readproportion</code> is set to 1 while other proportions are
+							set to zero and <code>requestdistribution</code> is set to
+								<code>uniform</code>. </p>
+						<p>Now, load the dataset into the DynamoDB table. From the YCSB directory
+								(<code>git_controlled/YCSB/</code>), run the following command:
+							(Please replace the <code>AndrewID</code> portion of the command below
+							with your AndrewID)</p>
+						<div><pre class="brush: bash; gutter: false; ">
+      time ./bin/ycsb load dynamodb -P workloads/workloada -P records.props -P dynamodb/conf/dynamodb.properties -threads 50 -s 1&gt; &lt;AndrewID&gt;_dynamodb_summary_file_loaddata 2&gt; &lt;AndrewID&gt;_dynamodb_results_file_loaddata
+      </pre></div>
+						<p> In the command above, <code>1&gt;</code> refers to standard output, while
+								<code>2&gt;</code> refers to standard error. Pay special attention
+							to the output written to standard output (STDOUT) from loading the
+							table. The throughput should be half of your write capacity. Also note
+							that the YCSB command itself has been prepended with the unix
+								<code>time</code> command, which will also return the time taken to
+							complete the execution.</p>
+						<p>Run ycsb on Workload A via an &lsquo;unthrottled run&rsquo;, where your writing speed is not
+							artificially limited by the YSCB client program, using the following
+							command:  </p>
+						<div><pre class="brush: bash; gutter: false; ">
+			time ./bin/ycsb run dynamodb -P workloads/workloada -P records.props -P dynamodb/conf/dynamodb.properties -threads 50 -p operationcount=500000 -s  1&gt; &lt;AndrewID&gt;_dynamodb_summary_file_unthrottled 2&gt; &lt;AndrewID&gt;_dynamodb_results_file_unthrottled
+			</pre></div>
+						<p><em class="bold">Note</em>: YCSB may provide occasional warnings and
+							errors mentioning that the level of provisioned throughput was exceeded.
+							Ensure that your provisioned capacity is set to 500 for the tests. You
+							can ignore the error/warning if it persists. (Please replace the
+								<code>AndrewID</code> portion of the command below with your
+							AndrewID)</p>
+						<p>What should the maximum throughput be given that each database record is
+							slightly larger than 1KB and that YCSB is using eventually consistent
+							reads? What is the actual average throughput achieved?</p>
+						<p>Actual throughput and the numbers needed to calculate average latency can be found in the
+							summary file. Where is the knee in the curve? Calculate the cost of
+							running this DynamoDB table for a month (31 days) with the capacity
+							provisioned to it. Assume 10 units of read capacity costs costs
+							$0.0065/hr and 50 units of write capacity costs $0.0065/hr. Keep all
+							your calculations ready for the checkpoint quiz.</p>
+					
+				</div></div>
+			
+		</div></div>
+		<div id="N1087F" class="section"><div class="sectionContain ">
+			<h2>Task 3: Manually Configured MySQL</h2>
+			
+				<p>Let&rsquo;s see how a traditional, manually-configured EC2 instance running MySQL stacks up against
+					RDS and DynamoDB. For this test, we will use the YCSB version located in the
+						<code>ycsb0.1.4</code> directory.</p>
+				<ol><li>Launch one <code>m3.medium</code> instance (<code>ami-0656eb6e</code>), which has MySQL
+						already installed on it.</li><li>Create the tables required for the YCSB benchmark as you did above in Task 1. </li><li>Configure the appropriate endpoint and credentials in
+							<code>jdbc-binding/conf/db.properties</code></li><li>Load the YCSB data. Please replace the <code>AndrewID</code> portion of the command below
+						with your
+						AndrewID:<div><pre class="brush: bash; gutter: false; ">bin/ycsb load jdbc -P workloads/workloada -P jdbc-binding/conf/db.properties -P records.props -s 1&gt;  &lt;AndrewID&gt;_mysql_summary_file_loaddata  2&gt; &lt;AndrewID&gt;_mysql_results_file_loaddata</pre></div></li><li>Run the YCSB tests for <code>workloada</code> (Read only). Please replace
+						the <code>AndrewID</code> portion of the command below with your
+						AndrewID:<div><pre class="brush: bash; gutter: false; ">time bin/ycsb run jdbc -P workloads/workloada -P jdbc-binding/conf/db.properties -P records.props -p operationcount=500000 -s 1&gt; &lt;AndrewID&gt;_mysql_summary_file 2&gt; &lt;AndrewID&gt;_mysql_results_file</pre></div>Run
+						the benchmark three times, record the average throughput and latency. Note
+						down all the results for the checkpoint quiz.</li></ol>
+			
+		</div></div>
+		<div id="N108BA" class="section"><div class="sectionContain ">
+			<h2>Task 4: Can we outperform RDS/DynamoDB?</h2>
+			
+				<p>After completing Task 3, can we achieve the same throughput and latency of DynamoDB/RDS using
+					a manually provisioned MySQL instance? If not, how can we tune the MySQL
+					parameters in our instance to achieve better results? Given a budget 1$/hour for
+					total design, how would you design your MySQL database solution to achieve the
+					same or more throughput than DynamoDB? How would you choose the correct instance
+					type and tune parameters in MySQL? Can you achieve the same or less latency in
+					MySQL compared to DynamoDB? If not, why? What about horizontal scaling of your
+					MySQL instance? All these factors can be considered to obtain your "tuned" MySQL
+					instance to compete with RDS and DynamoDB. </p>
+				<p>(<em class="bold">Hint</em>: To tune your MySQL instance, first you can use command
+						&ldquo;<code>SHOW VARIABLES&rdquo;</code> in MySQL to show different variables you can
+					tune. Then go to <code>my.cnf</code> under directory<code> /etc/mysql </code>to
+					add or change the value of variables you want to tune. After you finish editing
+						<code>my.cnf</code>, restart MySQL so that it can implement the changes. You
+					can also find other ways to tune MySQL variables by using the MySQL command. You
+					can search for these by yourself.</p>
+				<p>You may find it is relatively effective to tune <code>innodb_buffer_pool_size</code> and
+					other variables related to cache size and buffer size. You may also find that
+					MySQL does not allow you to set variables at any value. If your variable reach
+					the limit of MySQL, it will not restart successfully. Thus, it is advised to set
+						<code>innodb_buffer_pool_size</code> between 100MB and 1GB, you can find the
+					best value for other variables by yourself). </p>
+			
+		</div></div>
+		
+		<p>Besides the penalties mentioned in recitation and/or on Piazza, penalties accrue for the following:</p>
+		<table cellspacing="0" class="wbtable " align="center"><thead><tr><th align="left">Violation</th><th align="left">Penalty of the project grade</th></tr></thead><tbody><tr>
+				<td align="left">Spending more than $20 for this project checkpoint</td>
+				<td>-10%</td>
+			</tr><tr class="e">
+				<td align="left">Spending more than $40 for this project checkpoint</td>
+				<td>-100%</td>
+			</tr><tr>
+				<td align="left">Failing to tag all your resources for this project (Key:Project, Value:
+					3.5)</td>
+				<td>-10%</td>
+			</tr></tbody></table>	
+  
+  <div class="activitywrap purpose checkpoint wbactivity"><div class="activityhead"><!----><a id="_p03_m01_checkpoint_5" class="purposeType purposecheckpoint" title="   Assess    your progress." href="/jcourse/webui/resolver/link/resource.do?src=0e4f809a80020ca6004f6e8c1f416e0f&dst=_p03_m01_checkpoint_5" target="_blank"><span class="scnReader">Checkpoint</span></a><div class="activityinfo"><!----></div></div><div class="actContain"><h3><a href="/jcourse/webui/resolver/link/resource.do?src=0e4f809a80020ca6004f6e8c1f416e0f&dst=_p03_m01_checkpoint_5" title="Opens in new window" class="checkpoint" target="_blank">Provisioned Databases</a></h3></div></div>
+	</div></div></div><div class="paginationBt"><div class="pagtopwrapwrap2"><div class="pagtopwrap2"><div aria-label="page" role="navigation" class="pagtop2"><a aria-label="previous" role="navigation" title="Working with NoSQL: DynamoDB / HBase" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f809780020ca600b2808990fdcd15"></a> <a aria-label="previous" role="navigation" title="Write Scalability" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f809880020ca6015e1f3b7bfc2a3d"></a> <span class="pagnum2"><form method="get" class="pageForm2" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip2">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax2"><input size="1" autocomplete="off" value="175" type="text" class="paginationInput2"> </form></span><a aria-label="next" role="navigation" title="Next: MapReduce" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/webui/syllabus/module.do?context=0e4f80a980020ca6017450db619de8c3"></a></div></div></div></div><div role="contentinfo" id="tinyfooter"><a class="oli" href="/">Open Learning Initiative</a><br><span class="license" title="Creative Commons License"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license"><img src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License"></a> Unless otherwise noted this work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+			</span></div></div></body></html>

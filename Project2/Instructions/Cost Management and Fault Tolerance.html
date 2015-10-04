@@ -1,0 +1,282 @@
+<!DOCTYPE html><html><head xmlns:md="http://oli.web.cmu.edu/metadata/"><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="IE=9" http-equiv="X-UA-Compatible"><meta content="/repository/presentation/whirlwind-1.2/" name="themePath"><title>Cost Management and Fault Tolerance</title><base href="https://oli.cmu.edu/repository/webcontent/fda7217280020ca6017598f75d250b76/projects/_p02_project_2/_p02_m04_autoscaling/x-oli-workbook_page/_p02_m04_1_autoscale.xml"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/reset.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/learning_content.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/azool.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/style.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxCore.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxModal.css"><!--[if lte IE 7.0]>
+        <link rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles/ie/ie7.css" type="text/css" />
+        <![endif]-->
+        <!--[if lte IE 6]>
+        <link rel="stylesheet" href="/branding/css/ielte6.css" type="text/css" />
+        <![endif]--><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.css"><!--[if IE 7]><![endif]--><script src="/repository/presentation/whirlwind-1.2/web/scripts/swfobject.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-core-1.4.5-full-compat.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-more-1.4.0.1.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootests.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Core.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Modal.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/azool.js" type="text/javascript"></script><script src="/oa.js" type="text/javascript"></script><script type="text/javascript" src="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.js">//</script><script type="text/javascript">var AZ = AZ ? AZ : {};
+AZ.d = {'courseKey': 'F14-CC-PSA', 'pageNumber': '164'};
+</script><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shCore.css"><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shThemeEclipse.css"><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shCore.js" type="text/javascript"> </script><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shBrushPlain.js" type="text/javascript"> </script><script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = '/repository/presentation/whirlwind-1.2/web/scripts//syntax/clipboard.swf';SyntaxHighlighter.all();</script></head><body class="workbook_page"><div class="contain"><div role="banner" class="header"><div class="oliClassTitle"><a class="logo"></a><h1><a title="15319/15619 Cloud Computing (Fall 2014)" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">15319/15619 Cloud Computing (Fall 2014)</a></h1></div><div aria-label="system" role="navigation" class="user"><h3>System Navigation</h3><ul class="userCredentials"><li class="userName"><a title="Edit my account" id="username" href="/jcourse/webui/myaccount/edit.do?user=dingz@andrew.cmu.edu">Ding ZHAO</a></li> <li class="login"><a title="Logout of the Open Learning Initiative." class="signout" href="/jcourse/webui/logout.do?from=0e4f807780020ca601a238815d4373e5">
+                            [  Sign Out  ]
+						</a></li></ul><div class="clear"></div><ul class="userHelp"><li><a title="Access Key + C" accesskey="C" class="home" id="myCourses" href="/jcourse/webui/myhome.do">My Courses</a>|
+				</li><li><a title="Access Key + S" accesskey="S" class="mimetypes_x-office-address-book" id="syllabus" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Syllabus</a>|
+			</li><li><span class="coursenav"> <a class="active" href="/jcourse/webui/syllabus/outline.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&from=0e4f807780020ca601a238815d4373e5">
+	      
+	        
+			Outline
+	    </a></span>|
+			</li><li><a onclick="openMdWin(this.href, 'activity');return false;" title="Ask OLI technical support team" href="/jcourse/webui/help.do">Help</a>|
+			</li><li id="moreBtn2"><a aria-haspopup="true" href="" tabindex="" title="More" accesskey="M" id="moreBtn">
+					More
+				</a></li></ul></div><div class="shadowOne" id="wn"><span class="controlpanel"> <a target="_blank" href="/jcourse/GradebookClient/index.html?myscores&section=0e4f7c4380020ca600aa44ba1eaf4b1e&col=0e4f807580020ca601ef5d1cc06eb368"><span class="gradebook">My Scores</span></a><a href="/jcourse/webui/mycourses/reports/practice.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&context=0e4f807580020ca601ef5d1cc06eb368"><span class="studentDashboard">Available Practice</span></a></span><span class="supportPanel"> <a title="Check if my computer is configured properly for this course." href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><span class="categories_preferences-system">Test My System</span></a> <a title="Send email to Majd Sakr" href="mailto:msakr@ANDREW.CMU.EDU"><span class="actions_mail-message-new">Email Sakr</span></a> <a onclick="openMdWin(this.href, 'activity');return false;" class="wnTechSupport" title="Ask OLI technical support team" href="/jcourse/webui/help.do"><span class="actions_mail-message-new">Email Tech Support</span></a></span></div></div><div aria-haspopup="true" aria-label="Unit" role="navigation" class="lessonHead"><h2 tabindex="" accesskey="u" id="0e4f805b80020ca6003d5223beb6c69f"><a tabindex="" href="javascript:;"><span>Unit&nbsp;::</span>Project 2</a></h2></div><div class="expand shadowOne"><ul id="topLvl"></ul></div><div aria-label="module, page" role="navigation" class="subNavigation"><a aria-label="previous, module" role="navigation" accesskey="," class="prev oneclick" href="javascript:;"></a><a aria-label="next, module" role="navigation" accesskey="." class="next oneclick" href="javascript:;"></a><div class="module"><ul id="moduleUl"><li><a id="0e4f805d80020ca601b79285e8642616" title="Module  Introduction and APIs" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f805d80020ca601b79285e8642616"><b><span>Introduction and APIs</span></b></a></li><li><a id="0e4f806c80020ca6018cb1867646cfa9" title="Module  Elastic Load Balancing" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f806c80020ca6018cb1867646cfa9"><b><span>Elastic Load Balancing</span></b></a></li><li class="current"><a id="0e4f807580020ca601ef5d1cc06eb368" title="Module  AutoScaling on Amazon" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f807580020ca601ef5d1cc06eb368"><b><span>AutoScaling on Amazon</span></b></a></li></ul></div><div class="subMenu shadowOne" id="subMenuExpand"><ul id="jsonSubMenu"></ul></div></div><div class="searchBox"><form method="get" action="/jcourse/search/search.do" id="searchForm"><input value="0e4f7c4380020ca600aa44ba1eaf4b1e" type="hidden" name="section" class="sectionGUID"><input placeholder="Search this course" onBlur="this.setAttribute('value', this.value);" value="" size="25" id="q" type="text" name="q" class="q"><input value="0e4f807780020ca601a238815d4373e5" type="hidden" name="from" class="contextGUID"></form></div><div class="opacity"><div role="main" class="content shadowTwo"><div id="oli-message"><!----></div><div id="paginationtopwrap"><div class="clearfix" id="paginationtop"><div class="pagtopwrapwrap"><div class="pagtopwrap"><div aria-label="page" role="navigation" class="pagtop"><a aria-label="previous" role="navigation" title="A Day at the MSB (with AutoScaling)" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f807080020ca601e38630e32759ef"></a> <a aria-label="previous" role="navigation" title="AutoScaling on Amazon" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f807580020ca601ef5d1cc06eb368"></a> <span class="pagnum"><form method="get" class="pageForm" style="" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip" id="pagnumtip">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax"><input size="4" autocomplete="off" value="164" type="text" class="paginationInput"> </form></span><a aria-label="next" role="navigation" title="Next: Files vs. Databases" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/webui/syllabus/module.do?context=0e4f807f80020ca601da17cb73b7cb68"></a></div></div></div><h3><a href="/jcourse/webui/syllabus/module.do?context=0e4f807580020ca601ef5d1cc06eb368" class="module-heading"></a>Cost Management and Fault Tolerance</h3></div></div><div id="lobjh" class=""><h3>Learning Objectives</h3><ul><li><div class="" id="p02_m04_autoscale">Develop programs that manage cloud resources, while dealing with resource failures and meeting budget constraints</div></li></ul></div><div class="contentContain">
+		<div id="N106E8" class="section"><div class="sectionContain ">
+			<h2>MSB Project Management</h2>
+			
+	
+			<p><em class="bold">Note</em>: Please check <a href="https://piazza.com/class/hxs4b3o2lox5f9?cid=849" id="_i_0" target="_blank">the pinned post on Piazza</a> for any last-minute updates and changes to this project write-up.</p>
+			
+			<p><em class="bold">Note</em>: For this project checkpoint, ensure that your program/script tags all resources with the Key: <code>Project</code> and Value: <code>2.3</code>.</p>
+			
+
+				<p>After lots of hard work (and high rps), you finally made it to
+					the top. Yes, you are now a Project Manager at the MSB!
+					Being a PM is
+					not as easy as you expected (still, it should be easier
+					than being a
+					Junior Systems Architect). You are now expected to
+					deal directly
+					with one of the motivating factors for the cloud--
+					cost management.
+					There are several factors motivating this push
+					towards cost
+					efficiency.
+				</p>
+
+				<p>Unfortunately the MSB was recently breached (despite asking all
+					users to type in their usernames!). Because of this data breach
+					(code name DownwardNeeds), there is now a lot of oversight on the
+					MSB, and their budget has shrunk considerably. You need to ensure
+					that your data center meets the new budget requirements.
+				</p>
+				
+				<p>Due to the data breach, the MSB is changing all keys pertaining
+					to any target&rsquo;s device logs. By calling the update-password page on a
+					data center, a new key is generated at the backend and is used to
+					re-encrypt all the tracking data about the target. For instance:
+				</p>
+
+				<div class="image shouldbeleft"><img src="../webcontent/msb_screenshot_0.png" id="_i_1" class=" popimg" onclick="loadImageFromPage(this);"></div>
+				
+				<p>This week, your testing program will call this page to change 
+				keys for all tracked devices. This is all automated by the data center
+				instances. All you need to ensure is that you programatically scale up and down according
+				to the load. Before being able to do this, you 
+				need to understand some useful techniques to complete the test.
+				</p>
+				
+				<div id="N10716" class="section"><div class="sectionContain ">
+					<h3>Simple Notification Service</h3>
+					
+						<p>The first thing you realize when you become a PM, is that
+							everything runs on emails. Every small change in the
+							configuration of the data center gets recorded somewhere. You
+							need to provide all these emails to the Checkpoint Committee for
+							Point Allotment  (this means it should be in your S3 bucket 
+							within your zip file to be submitted). Fortunately, the MSB 
+							is good at tracking emails.
+							For the data center, a special AWS service called the Simple
+							Notification Service is used for this purpose.
+						</p>
+						<p>Amazon's Simple Notification Service (SNS) is used to
+							automatically send you emails regarding Auto Scale events, to
+							keep track of your instances within an Auto Scaling group:
+						</p>
+
+						<ol><li>
+								In the AWS Management Console, click on
+								<em class="bold">SNS</em>.
+							</li><li>
+								Click on <em class="bold">Create New Topic</em>, specify a name and description when prompted.
+							</li><li>
+								Once the Topic is created, note down the
+								<em class="bold">Amazon Resource Number (ARN)</em>.
+							</li><li>Subscribe to the topic using your email address and confirm
+								the subscription when you receive an email.
+							</li></ol>
+
+						<p>SNS can be configured to notify you of all Scale Out and Scale
+							In activities.
+						</p>
+					
+				</div></div>
+
+				<div id="N10743" class="section"><div class="sectionContain ">
+					<h3>Fault Management</h3>
+					
+						<p>Since you are no longer able to afford the best and the fastest equipment,
+							your data center servers have become old and buggy - they tend to
+							crash regularly. The Load Balancer will continue to send traffic to these
+							buggy servers until they are no longer marked as healthy.
+							You need to ensure that most of these requests are not lost by
+							setting up the ELB to detect and respond to failure. You should 
+							also be able to pinpoint exactly when each of your data 
+							center's instances failed.
+						</p>
+					
+				</div></div>
+			
+		</div></div>
+
+		<div id="N10751" class="section"><div class="sectionContain ">
+			<h2>Job Retainment Examination</h2>
+			
+				<p>Due to budget cuts, the MSB has begun a retrenchment drive. Each
+					project manager is given three chances to demonstrate their ability
+					to build a cost-efficient data center. Each test can take a maximum
+					of 24 hours (including any warm up time). The actual test covers 20
+					hours.
+				</p>
+				
+				<table cellspacing="0" class="wbtable " align="center"><thead><tr><th align="center">A Note on Time Warping</th></tr></thead><tbody><tr>
+	<td align="left">For the rest of this module, you can assume that 1 hour of
+		time in the write-up corresponds to 5 minutes of MSB-time. Thus a
+		100-minute test corresponds to 20-hour-long &ldquo;test period&rdquo; leaving
+		enough time for warm ups.</td>
+		</tr></tbody></table>
+		
+		<p>Your costs are based on the instance-hours (one instance-hour is 5
+	minutes of usage). You may use m1 or m3 small, medium or large
+	instances for this project. You will be charged the corresponding
+	on-demand price.<em class="bold"> You have to use less than 80 instance-hours during the test to get a full score.</em>
+</p>
+<table cellspacing="0" class="wbtable " align="center"><thead><tr><th align="center">A Note on Instance-Hours</th></tr></thead><tbody><tr>
+			<td align="left">An instance-hour is the unit of cost when one m3.medium instance is billed for a period of one hour. For the purposes of our tests, time-warping makes 1 hour of MSB time correspond to 5 minutes of real time. Similarly, if you have three instances that are launched together for 8 minutes, you will be charged for 3 instances * 2 hours = 6 instance-hours.
+<p>			The instance-hours for m1/m3.small/medium/large are based on the on-demand prices.</p>
+<p>For e.g. m3.medium costs 7 cents per hour on-demand, whereas m1.medium costs 8.7 cents. Thus using an m1.medium for 1 hour is equivalent to using 1.24 instance hours whereas an m1.small (4.4 cents) corresponds to 0.62 instance hours.</p>
+			</td>
+		</tr></tbody></table>
+		
+		<p>The primary objective of this test is to maximize the requests per second (rps) while minimizing cost. 
+		For every minute of the test, you provide a value to the agents based on the rps. The amount earned per &ldquo;minute&rdquo; is based on the lookup table below:
+		</p>
+				<table cellspacing="0" class="wbtable " align="center"><thead><tr><th>RPS </th><th align="center">Value to Organization</th></tr></thead><tbody><tr>
+				<td>0-500</td>
+				<td>0.5 cents</td>
+			</tr><tr class="e">
+				<td>500-1000</td>
+				<td>1 cent</td>
+			</tr><tr>
+				<td>1000-1500</td>
+				<td>2 cents</td>
+			</tr><tr class="e">
+				<td>1500-1750</td>
+				<td>3 cents</td>
+			</tr><tr>
+				<td>1750-2000</td>
+				<td>4 cents</td>
+			</tr><tr class="e">
+				<td>2000-2250</td>
+				<td>6 cents</td>
+			</tr><tr>
+				<td>2250+</td>
+				<td>10 cents</td>
+			</tr></tbody></table>
+		
+		
+		<p>Once you have created ARNs for SNS using the AWS web console, you can proceed with the steps below.</p>
+		<p>In order to pass the Job Retainment Examination, you have to write a program or script that performs the following tasks:</p>
+		
+		<ol><li>Create and manage an ELB such that:
+				<ul><li>The ELB redirects <code>HTTP:80</code> requests to <code>HTTP:80</code> on the instance</li><li>Record the DNS Name of the created ELB</li><li>Set up the page <code>/heartbeat?username=&lt;yourandrewid&gt;</code> as the ELB health check page</li><li><em class="bold">Note</em>: If you remember from last week, a data center instance needs to be &ldquo;activated&rdquo; by passing it your username. This step ensures that the ELB passes your username to your data center instances.
+					</li></ul>
+			</li><li>Create a Launch Configuration for the instances that will become part of the auto scaling group, with the following parameters:
+				<ul><li>AMI ID: <code>ami-3c8f3a54</code></li><li>Instance Type: You can choose from (m1-m3) small/medium/large</li><li>Detailed Monitoring: enabled</li></ul>
+			</li><li>Analyse the traffic pattern and figure out a good rule for Scale Out and Scale In operations. We define the following rules to give you an idea of the various parameters that need to be set. Please note that you may find it difficult to achieve a passing grade using these parameters.
+				<ul><li>Minimum Instance Size: 1
+					</li><li>Maximum Instance Size: 5</li><li>Desired Instance Capacity: 1</li><li>ELB Name: &lt;MyELB&gt; (choose your ELB name, make sure it is alphanumeric)
+					</li></ul>
+			</li><li>Create clever Auto Scale Policies that will fit the traffic pattern:
+				<ul><li>Create a <code>ScaleOut</code> policy that automatically adds a single instance to the auto scaling group.
+				</li><li>Create a <code>ScaleIn</code> policy that automatically removes a single instance from the auto scaling group.
+				</li><li>Link your Auto Scaling group to your ELB.
+				</li></ul>
+			</li><li>Create CloudWatch Alarms that invoke the appropriate policy for the following scenarios. Please note that you may find it difficult to achieve a passing grade using these parameters and we provide them as an example. You can use any metrics you find useful from CloudWatch:
+				<ul><li>Scale out when the group's CPU load exceeds 80% on average over a 5 minute interval.
+					</li><li>Scale in when the group's CPU load is below 20% on average over a 5 minute interval.
+					</li></ul>
+			</li><li>Link the CloudWatch Alarms to the ScaleOut and ScaleIn rules of your Auto Scaling Group.
+			</li><li>Link your ARNs to the AutoScalingGroup. There should be separate emails for instance launch and termination.
+			</li><li>Create a load generator (<code>ami-f40ba19c</code>) instance of size <code>m3.medium</code> and activate it using the following URL:
+				<div><pre class="brush: text; gutter: false; highlight: [false]; ">http://&lt;load-generator&gt;/username?username=&lt;your_andrew_id&gt;</pre></div>
+				<p><em class="bold">Note: Do not use any load generator other than m3.medium.</em></p>
+			</li><li>Before launching the test, you may wish to warm up your load balancer by visiting the URL: 
+			<code>http://&lt;load-generator-dns&gt;/warmup</code>. Enter your ELB DNS and a <code>testId</code> of your choice here. 
+			In case you have forgotten from last week, a testId is a unique alphanumeric string that you 
+			should assign to each of your tests, so that you can view the logs later. You may choose to 
+			do this step multiple times until you are satisfied that your ELB has warmed up. The 
+			instance-hours used in the warm up phase do not count towards your final grade.
+			</li><li>Once your ELB is warmed up (by now you  should know how to do this), start the test by visiting the URL:
+			<code>http://&lt;your-load-generator-dns&gt;/begin-phase-3</code>
+			</li><li>Once again, enter your ELB DNS and a testId of your choice here. This will start a 100-minute long test. You can view the progress of the test using the URL:
+			<div class="image shouldbeleft"><img src="../webcontent/msb_screenshot_1.png" id="_i_2" class=" popimg" onclick="loadImageFromPage(this);"></div>
+			</li><li>Your code should request the following HTTP URL:
+			<div><pre class="brush: text; gutter: false; highlight: [false]; ">
+			http://&lt;your-load-generator-dns&gt;/begin-phase-3?dns=&lt;your-elb-dns&gt;&amp;testId=&lt;your-test-id&gt;
+			</pre></div>
+			</li><li>You can view the progress of this test using the page:
+			<div><pre class="brush: text; gutter: false; highlight: [false]; ">http://&lt;your-load-generator-dns&gt;/view-logs?name=result_&lt;yourUsername&gt;_&lt;yourTestId&gt;</pre></div>
+			<div class="image shouldbeleft"><img src="../webcontent/msb_screenshot_2.png" id="_i_3" class=" popimg" onclick="loadImageFromPage(this);"></div>
+			
+			<p>The third line of the page will contain a traffic pattern token. You need to enter this token in the checkpoint quiz. It helps us identify you and the traffic pattern used for your test while grading.
+			</p>
+			</li><li>You can monitor your ELB using the web console:
+			<div class="image shouldbeleft"><img src="../webcontent/msb_screenshot_3.png" id="_i_4" class=" popimg" onclick="loadImageFromPage(this);"></div>
+			<p>The graph above is for HTTP 2xx requests (successful requests). There are other graphs for failed HTTP requests (non-2xx). If you are seeing a large number of non-2xx pages, it indicates that you have misconfigured your ELB or that you are not scaling fast enough to handle the spikes. It could also mean that the data center VM has gone down, but you are not removing it from the ELB in time.
+			</p>
+			</li><li>Instances will fail during this test. Monitor them using the &ldquo;Unhealthy Hosts&rdquo; graph of the ELB. Note down how long they take to recover to a healthy state. Think about how you can speed up this process.
+
+			<div class="image shouldbeleft"><img src="../webcontent/failed_host.png" id="_i_5" class=" popimg" onclick="loadImageFromPage(this);"></div>
+			
+			<p>For instance, this shows 3 data center nodes failing simultaneously for 3 minutes. By running the test once, you should have an intuition for how likely a failure is.</p>
+			</li><li>The test will give you updates of the rps for the good traffic every minute. You can see them at the URL:
+			<div><pre class="brush: text; gutter: false; highlight: [false]; ">
+			http://&lt;your-load-generator&gt;/view-logs?name=result_&lt;username&gt;_&lt;testId&gt;.txt
+			</pre></div>
+			
+			<div class="image shouldbeleft"><img src="../webcontent/msb_screenshot_4.png" id="_i_6" class=" popimg" onclick="loadImageFromPage(this);"></div>
+			</li><li>You can still view a sample of 100 requests recently received by a data center instance using 
+			the URL: <code>http://&lt;any-data-center-instance&gt;/view-logs</code>
+			<p>This page updates every 5 seconds and could give you an intuition about what is happening on your system.
+						<img src="../webcontent/msb_screenshot_5.png" id="_i_7" onclick="loadImageFromPage(this);">
+			
+			</p>
+			</li><li>At the end of the &ldquo;100 minutes&rdquo;, you will be told your average rps for the entire test, the value provided (in dollars) and given a final token to hand in. Please submit these in the OLI checkpoint quiz.
+			<div class="image shouldbeleft"><img src="../webcontent/msb_screenshot_6.png" id="_i_8" class=" popimg" onclick="loadImageFromPage(this);"></div>
+
+			<p>Your code should terminate all resources (make sure you save the results from the load generator and copy the required graphs from the load balancer). Once terminated, you can calculate the instance-hours either by using the CloudWatch alarms that you used to Scale Out and Scale In, or by using the &ldquo;Healthy Hosts&rdquo; chart on the ELB Monitoring View. Your SNS emails will be a very accurate source of information.</p>
+			</li></ol>
+		
+				<p>Besides the penalties mentioned in recitation and/or on Piazza, penalties accrue for the following:</p>
+						<table cellspacing="0" class="wbtable " align="center"><thead><tr><th>Violation</th><th align="left">Penalty of the project grade</th></tr></thead><tbody><tr>
+								<td align="left">Spending more than $15 for this project checkpoint</td>
+								<td>-10%</td>
+							</tr><tr class="e">
+								<td align="left">Spending more than $30 for this project checkpoint</td>
+								<td>-100%</td>
+							</tr><tr>
+								<td align="left">Failing to tag all your resources (EC2 instances, ELB, ASG) for this project</td>
+								<td>-10%</td>
+							</tr><tr class="e">
+								<td align="left">Submitting your AWS credentials in your code on S3 for grading</td>
+								<td>-10%</td>
+							</tr><tr>
+								<td align="left">Using any instance other than <code>m3.medium</code> for the load generator</td>
+								<td>-10%</td>
+							</tr><tr class="e">
+								<td align="left">Using any instance other than m1/m3 small, medium, large for the data center instances</td>
+								<td>-10%</td>
+							</tr><tr>
+								<td align="left">Not submitting valid tokens in the checkpoint</td>
+								<td>-100%</td>
+							</tr><tr class="e">
+								<td align="left">Not submitting a valid S3 link for your submission</td>
+								<td>-100%</td>
+							</tr></tbody></table>
+						
+						
+
+			
+		</div></div>
+		<div class="activitywrap purpose checkpoint wbactivity"><div class="activityhead"><!----><a id="_p02_m03_checkpoint_3" class="purposeType purposecheckpoint" title="   Assess    your progress." href="/jcourse/webui/resolver/link/resource.do?src=0e4f807780020ca601a238815d4373e5&dst=_p02_m03_checkpoint_3" target="_blank"><span class="scnReader">Checkpoint</span></a><div class="activityinfo"><!----></div></div><div class="actContain"><h3><a href="/jcourse/webui/resolver/link/resource.do?src=0e4f807780020ca601a238815d4373e5&dst=_p02_m03_checkpoint_3" title="Opens in new window" class="checkpoint" target="_blank">MSB Management Test</a></h3></div></div>
+
+	</div></div></div><div class="paginationBt"><div class="pagtopwrapwrap2"><div class="pagtopwrap2"><div aria-label="page" role="navigation" class="pagtop2"><a aria-label="previous" role="navigation" title="A Day at the MSB (with AutoScaling)" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f807080020ca601e38630e32759ef"></a> <a aria-label="previous" role="navigation" title="AutoScaling on Amazon" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f807580020ca601ef5d1cc06eb368"></a> <span class="pagnum2"><form method="get" class="pageForm2" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip2">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax2"><input size="1" autocomplete="off" value="164" type="text" class="paginationInput2"> </form></span><a aria-label="next" role="navigation" title="Next: Files vs. Databases" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/webui/syllabus/module.do?context=0e4f807f80020ca601da17cb73b7cb68"></a></div></div></div></div><div role="contentinfo" id="tinyfooter"><a class="oli" href="/">Open Learning Initiative</a><br><span class="license" title="Creative Commons License"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license"><img src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License"></a> Unless otherwise noted this work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+			</span></div></div></body></html>

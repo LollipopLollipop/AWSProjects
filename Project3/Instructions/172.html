@@ -1,0 +1,298 @@
+<!DOCTYPE html><html><head xmlns:md="http://oli.web.cmu.edu/metadata/"><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="IE=9" http-equiv="X-UA-Compatible"><meta content="/repository/presentation/whirlwind-1.2/" name="themePath"><title>Horizontal Scaling</title><base href="https://oli.cmu.edu/repository/webcontent/fda7217280020ca6017598f75d250b76/projects/_p03_project_3/_p03_m01_databases/x-oli-workbook_page/_p03_m01_5_horizontal_scaling.xml"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/reset.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/learning_content.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/azool.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/style.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxCore.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxModal.css"><!--[if lte IE 7.0]>
+        <link rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles/ie/ie7.css" type="text/css" />
+        <![endif]-->
+        <!--[if lte IE 6]>
+        <link rel="stylesheet" href="/branding/css/ielte6.css" type="text/css" />
+        <![endif]--><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.css"><!--[if IE 7]><![endif]--><script src="/repository/presentation/whirlwind-1.2/web/scripts/swfobject.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-core-1.4.5-full-compat.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-more-1.4.0.1.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootests.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Core.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Modal.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/azool.js" type="text/javascript"></script><script src="/oa.js" type="text/javascript"></script><script type="text/javascript" src="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.js">//</script><script type="text/javascript">var AZ = AZ ? AZ : {};
+AZ.d = {'courseKey': 'F14-CC-PSA', 'pageNumber': '172'};
+</script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shCore.css"><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shThemeEclipse.css"><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shCore.js" type="text/javascript"> </script><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shBrushPlain.js" type="text/javascript"> </script><script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = '/repository/presentation/whirlwind-1.2/web/scripts//syntax/clipboard.swf';SyntaxHighlighter.all();</script></head><body class="workbook_page"><div class="contain"><div role="banner" class="header"><div class="oliClassTitle"><a class="logo"></a><h1><a title="15319/15619 Cloud Computing (Fall 2014)" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">15319/15619 Cloud Computing (Fall 2014)</a></h1></div><div aria-label="system" role="navigation" class="user"><h3>System Navigation</h3><ul class="userCredentials"><li class="userName"><a title="Edit my account" id="username" href="/jcourse/webui/myaccount/edit.do?user=dingz@andrew.cmu.edu">Ding ZHAO</a></li> <li class="login"><a title="Logout of the Open Learning Initiative." class="signout" href="/jcourse/webui/logout.do?from=0e4f809280020ca60021affbb28bbe9f">
+                            [  Sign Out  ]
+						</a></li></ul><div class="clear"></div><ul class="userHelp"><li><a title="Access Key + C" accesskey="C" class="home" id="myCourses" href="/jcourse/webui/myhome.do">My Courses</a>|
+				</li><li><a title="Access Key + S" accesskey="S" class="mimetypes_x-office-address-book" id="syllabus" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Syllabus</a>|
+			</li><li><span class="coursenav"> <a class="active" href="/jcourse/webui/syllabus/outline.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&from=0e4f809280020ca60021affbb28bbe9f">
+	      
+	        
+			Outline
+	    </a></span>|
+			</li><li><a onclick="openMdWin(this.href, 'activity');return false;" title="Ask OLI technical support team" href="/jcourse/webui/help.do">Help</a>|
+			</li><li id="moreBtn2"><a aria-haspopup="true" href="" tabindex="" title="More" accesskey="M" id="moreBtn">
+					More
+				</a></li></ul></div><div class="shadowOne" id="wn"><span class="controlpanel"> <a target="_blank" href="/jcourse/GradebookClient/index.html?myscores&section=0e4f7c4380020ca600aa44ba1eaf4b1e&col=0e4f809080020ca601c500941f6401a7"><span class="gradebook">My Scores</span></a><a href="/jcourse/webui/mycourses/reports/practice.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&context=0e4f809080020ca601c500941f6401a7"><span class="studentDashboard">Available Practice</span></a></span><span class="supportPanel"> <a title="Check if my computer is configured properly for this course." href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><span class="categories_preferences-system">Test My System</span></a> <a title="Send email to Majd Sakr" href="mailto:msakr@ANDREW.CMU.EDU"><span class="actions_mail-message-new">Email Sakr</span></a> <a onclick="openMdWin(this.href, 'activity');return false;" class="wnTechSupport" title="Ask OLI technical support team" href="/jcourse/webui/help.do"><span class="actions_mail-message-new">Email Tech Support</span></a></span></div></div><div aria-haspopup="true" aria-label="Unit" role="navigation" class="lessonHead"><h2 tabindex="" accesskey="u" id="0e4f807c80020ca6008491878136e895"><a tabindex="" href="javascript:;"><span>Unit&nbsp;::</span>Project 3</a></h2></div><div class="expand shadowOne"><ul id="topLvl"></ul></div><div aria-label="module, page" role="navigation" class="subNavigation"><a aria-label="previous, module" role="navigation" accesskey="," class="prev oneclick" href="javascript:;"></a><a aria-label="next, module" role="navigation" accesskey="." class="next oneclick" href="javascript:;"></a><div class="module"><ul id="moduleUl"><li><a id="0e4f807f80020ca601da17cb73b7cb68" title="Module  Files vs. Databases" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f807f80020ca601da17cb73b7cb68"><b><span>Files vs. Databases</span></b></a></li><li><a id="0e4f808780020ca600d665bde281f8be" title="Module  Vertical Scaling in Databases" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f808780020ca600d665bde281f8be"><b><span>Vertical Scaling in Databases</span></b></a></li><li class="current"><a id="0e4f809080020ca601c500941f6401a7" title="Module  Horizontal Scaling in Databases" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f809080020ca601c500941f6401a7"><b><span>Horizontal Scaling in Databases</span></b></a></li><li><a id="0e4f809780020ca600b2808990fdcd15" title="Module  Working with NoSQL: DynamoDB / HBase" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f809780020ca600b2808990fdcd15"><b><span>Working with NoSQL: DynamoDB / HBase</span></b></a></li></ul></div><div class="subMenu shadowOne" id="subMenuExpand"><ul id="jsonSubMenu"></ul></div></div><div class="searchBox"><form method="get" action="/jcourse/search/search.do" id="searchForm"><input value="0e4f7c4380020ca600aa44ba1eaf4b1e" type="hidden" name="section" class="sectionGUID"><input placeholder="Search this course" onBlur="this.setAttribute('value', this.value);" value="" size="25" id="q" type="text" name="q" class="q"><input value="0e4f809280020ca60021affbb28bbe9f" type="hidden" name="from" class="contextGUID"></form></div><div class="opacity"><div role="main" class="content shadowTwo"><div id="oli-message"><!----></div><div id="paginationtopwrap"><div class="clearfix" id="paginationtop"><div class="pagtopwrapwrap"><div class="pagtopwrap"><div aria-label="page" role="navigation" class="pagtop"><a aria-label="previous" role="navigation" title="Vertical Scaling" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f808b80020ca601339e0fb6a21121"></a> <a aria-label="previous" role="navigation" title="Horizontal Scaling in Databases" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f809080020ca601c500941f6401a7"></a> <span class="pagnum"><form method="get" class="pageForm" style="" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip" id="pagnumtip">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax"><input size="4" autocomplete="off" value="172" type="text" class="paginationInput"> </form></span><a aria-label="next" role="navigation" title="Next: Working with NoSQL: DynamoDB / HBase" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/webui/syllabus/module.do?context=0e4f809780020ca600b2808990fdcd15"></a></div></div></div><h3><a href="/jcourse/webui/syllabus/module.do?context=0e4f809080020ca601c500941f6401a7" class="module-heading"></a>Horizontal Scaling</h3></div></div><div id="lobjh" class=""><h3>Learning Objectives</h3><ul><li><div class="" id="p03_m01_c">Evaluate the horizontal scaling options for databases in AWS, in terms of performance and costs.</div></li></ul></div><div class="contentContain">
+	<p>As the load increases on a database system, one approach is to simply replicate the 
+	database on many hosts so that queries to the database can be satisfied by several 
+	replicas of the database.</p>
+	
+	<p>In order to provide you with working experience in this regard, in this part of 
+	the project, you will construct a horizontally scaling database
+	infrastructure using the tools in AWS. We shall present a scenario below
+	along with a list of tasks to complete. </p>
+	
+	<p><em class="bold">Note</em>: For this checkpoint, assign the tag with Key: <code>Project</code> and Value: <code>3.3</code> for all resources</p>	
+	<p>Please visit the <a href="https://piazza.com/class/hxs4b3o2lox5f9?cid=1341" id="_i_0" target="_blank">Piazza post</a> for any updates regarding this part of the Project.</p>
+	<div id="N10703" class="section"><div class="sectionContain ">
+	<h2>Scenario</h2>
+	
+	<p>Your company has a popular website, which has a strong
+		database requirement. You are a member of the database team, and your
+		task is to create a group of read-only clones of the master database -
+		this is a valid approach when the
+		traffic comes from read (<code>SELECT</code>) statements.
+		</p>
+		
+		<p>The daily traffic pattern looks like the following image:</p>
+		
+		<div class="image shouldbeleft"><img src="../webcontent/daily2.png" id="_i_1" class=" popimg" onclick="loadImageFromPage(this);"></div>
+		
+		<p>The daily traffic pattern shows peaks around 4-9pm and valleys around 3-4am (UTC)</p>
+		
+		<p>The weekly traffic pattern is as follows:</p>
+		
+		<div class="image shouldbeleft"><img src="../webcontent/weekly2.png" id="_i_2" class=" popimg" onclick="loadImageFromPage(this);"></div>
+
+	<p>You can notice that Sundays have an overall peak, gradually
+		decreasing daily, with a larger drop on Fridays and Saturdays.</p>
+		
+
+	<p>
+		Based on projections by the marketing department, your company expects
+		web traffic to grow
+		<em>12%</em>
+		over the next year, so you will expect your database
+		Requests-per-Second to increase at the same rate.
+	</p>
+
+	<p>
+		<em class="highlight">Task 1</em>: Your first task will be to take the weekly data (
+		<code>s3://15619public/proj3/week0.csv</code>
+		) and create a projection (in a spreadsheet or csv file) for the next year. The data in the <code>week0.csv</code> file starts
+		at Sunday 00:00 UTC and ends at Saturday 23:00 UTC, with each row representing one hour. Call the original week 0,
+		and each subsequent 1, 2, 3... 52 (also add 1 day to make 365 days).
+		Each week's traffic should show an increase of ((12%/52) times week0) from the previous week. You will
+		use these projected traffic numbers for checkpoint quiz and the following tasks
+		below.
+	</p>
+	
+	<p><em class="bold">Note</em>: The data presented in Task 1 (week0) should not be considered for the following tasks.</p>
+
+	<p><em class="highlight">Task 2</em>: You have found from the previous part of the project what the
+		Transactions-per-Second (TPS) is for the <code>m1.large</code> instance
+		type with different storage options (SSD and Magnetic Disk). Use similar methods (and the AMI from
+		Project 3.2 - <code> ami-0656eb6e</code>) to determine the theoretical max TPS for 
+		a single <code>m1.small</code> to access a database that is included as part of the AMI on the local EBS root partition. 
+		(Hint: You do not need to partition and mount, you can start from Populating the Partition with 
+		Data for MySQL on page 169)</p>
+		
+		<p>You will use m1.small instance types in an Auto-Scaling Group (ASG) behind an Elastic Load Balancer (ELB) for 
+		the next task. After measuring the TPS, create a new AMI on this instance, which will be used in task 3.2 below</p>
+		
+		<p><em class="bold">Note</em>: In this project, you are only going to run the benchmarks for m1.small. For m1.large 
+		(SSD &amp; Magnetic), you can reuse the results from p3.2, you do not need to run those benchmarks again.</p>
+		
+	</div></div>
+		
+		<div id="N10757" class="section"><div class="sectionContain ">
+	<h2>Cost Projections</h2>
+	
+	<p> The Accounting department wants to have a
+		projected cost for the following year, for your database servers.
+		Assume that to provide consistent response time for users, you cannot
+		load each server more than 75% of its max capacity (in TPS). The total
+		number of servers you will need is:</p>
+		
+		<table class="formula" align="center"><tr><td><math display="block" overflow="scroll">
+			  <mrow>
+			    <mfenced open="&lceil;" close="&rceil;">
+			      <mfrac>
+			        <mrow>
+			          <mi>projected</mi>
+			          <mo>_</mo>
+			          <mi>TPS</mi>
+			        </mrow>
+			        <mrow>
+			          <mn>75</mn>
+			          <mo>%</mo>
+			          <mtext fontfamily="Times New Roman">&nbsp;</mtext>
+			          <mo lspace="2px" rspace="2px">&times;</mo>
+			          <mi>max</mi>
+			          <mo>_</mo>
+			          <mi>TPS</mi>
+			          <mo>_</mo>
+			          <mi>per</mi>
+			          <mo>_</mo>
+			          <mi>server</mi>
+			        </mrow>
+			      </mfrac>
+			    </mfenced>
+			  </mrow>
+			</math>
+		</td></tr></table>
+		
+		<p><em class="bold">Note</em>: The number of servers is not a fixed value. You are supposed to calculate the number of servers for each hour.</p>
+		
+		<p>Since AWS charges per-hour, you could
+		potentially increase (or decrease) the number of database servers on
+		an hourly basis.</p>
+		<p>
+			<em class="highlight">Task 3.1</em>:
+	To figure out if the current set of servers are able to handle the required
+	QPS (Queries per Second), we have to rely on some metrics. These metrics will be used by an
+	autoscaling group to decide whether to add to or remove instances from the Auto
+	Scaling Group, which is behind a load balancer. The metrics you have been
+	using (CPU, network, and disk I/O) are built into EC2 and work without
+	any help from the guest OS. They are free when collected at 5-minute
+	intervals (called "Basic Monitoring"), but if you want "Detailed"
+	1-minute intervals it costs more ($3.50 per instance per month, or ~$0.005
+	per Instance-hour). To reduce the cost of detailed monitoring and
+	to get a better performance metric, we want to build and use a custom
+	metric (Custom metrics cost $0.50 per metric per Instance per month, or ~$0.0007 per
+	metric per Instance-hour, and are only billed during hours in which new data is
+	sent to CloudWatch - more information on CloudWatch pricing <a href="http://aws.amazon.com/cloudwatch/pricing/" id="_i_3" target="_blank">here</a>).
+		</p>
+		
+		<p><em class="bold">Note</em>: You do NOT have to turn on detailed metrics 
+		in order to use Custom Metrics.</p>
+		
+		<p>In this module, we will report Transactions-per-second of the MySQL 
+		server to CloudWatch.  Your custom metric will need to report 
+		"TPS Utilization", which is the ratio of the current TPS divided by the 
+		maximum capability of your m1.small Instance. To get the current TPS, consider
+		the following mysql commands:
+		</p>
+		
+		<div><pre class="brush: text; ">
+		show status like 'Queries';
+		show status like 'Uptime';		
+		</pre></div>
+		
+		<ul><li>Note that each of the above commands counts as 3 queries to mysqld, 
+		  so you will have to add (or subtract) 6 to get the correct number of 
+		  queries.</li><li>Every sysbench Transaction = 16 queries (so find queries-per-second 
+		  first, then divide by 16).
+		  </li><li>The unit for your metric will be percentage.</li></ul>
+		
+		<p>In order to send a custom metric value to CloudWatch, you need some way 
+		of authenticating. The CloudWatch CLI Tools use a credentials file where 
+		you enter your Access and Secret Keys. There is also a CloudWatch 
+		Monitoring Script (perl) that can use credentials files, but can also use 
+		IAM (Identity and Access Management) Roles. You can build custom 
+		applications with the APIs which can also use Roles to gain temporary 
+		security credentials for specific purposes. Using IAM is more secure than 
+		putting your credentials on an Instance, because if that system has a 
+		security breach, the amount of damage an intruder can do to your AWS 
+		account is minimized. The use of IAM is optional for this project, we just wanted to 
+		point it out as a best practice.</p>
+		
+		<p>When you launch an Instance, you can assign it an IAM Role (you cannot 
+		change which role that instance uses during its lifetime, but you can 
+		modify the role  and those changes take place immediately). A role's policy will look similar 
+		to this:
+		</p>
+		
+		<div><pre class="brush: text; ">
+		{
+		  "Statement": [
+		    {
+		      "Action": [
+		        "cloudwatch:*"
+		      ],
+		      "Effect": "Allow",
+		      "Resource": [
+		        "*"
+		      ]
+		    },
+		    {
+		      "Action": [
+		        "ec2:DescribeTags"
+		      ],
+		      "Effect": "Allow",
+		      "Resource": [
+		        "*"
+		      ]
+		    }
+		  ]
+		}
+		</pre></div>
+		
+		<p>In a role policy, you need a minimum action authority of 
+		<code>cloudwatch:PutMetricData</code> to add custom metrics (full list of 
+		Actions <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Operations.html" id="_i_4" target="_blank">here</a>), and <code>ec2:DescribeTags</code> is needed when using an 
+		AutoScaling Group.
+		</p>
+		
+		<p>Use <code>m1.small</code> instances as the server (which runs <code>mysql</code>) and 
+		the client (which runs <code>sysbench</code>). You can use any storage type 
+		that you have used before. Use sysbench to generate varying loads, by 
+		changing the number of threads and/or processes. Figure out a way to 
+		send out a custom &ldquo;TPS Utilization&rdquo; metric to the cloudwatch every one 
+		minute. Verify that the Cloudwatch metric reported is the 
+		same TPS that sysbench is reporting on the client side. </p>
+		
+		<p><em class="highlight">Task 3.2</em>:
+		Now that we have a custom metric, we can do auto-scaling. But we still have 
+		a problem. The autoscaling group dynamically adds/removes servers. We cannot 
+		manually partition an EBS, mount it, copy data and start mysql whenever a 
+		server is added. That defeats the purpose of autoscaling. Hence you can use
+		the AMI you created in Task 2, which does all these things when it gets booted.
+		Remember to include the code which sends custom metrics to CloudWatch in the AMI.  
+		You should use your new AMI while creating auto-scaling group.
+		</p>
+		
+		<p>
+		You must test the feasibility of Auto-scaling based on the new custom 
+		metric. Do this testing with m1.small and ordinary EBS storage, using Policy of Min=1, Max=4, 
+		Desired=1.  Again use sysbench to generate varying loads, by changing the 
+		number of threads and/or processes. Verify that the Cloudwatch metric 
+		reported is the same TPS that sysbench is reporting on the client side 
+		(or sum of multiple clients).
+		</p>
+		
+		
+		<p>
+			<em class="highlight">Task 4</em>:
+			Calculate <em>maximum-Transactions-per-dollar</em>  (i.e. The number of maximum transactions you can serve 
+			for every dollar you spend) for each instance scenario (m1.small), 
+			m1.large + EBS (SSD). m1.large + EBS(Magnetic), assuming
+			all have one 200GB EBS volume (Magnetic, no Snapshots) attached as well.
+			Do not include Network/Bandwidth, ELB, or CloudWatch costs for this task. Record your
+			findings for the Checkpoint Quiz.
+		</p>
+		
+		<p>
+			<em class="highlight">Task 5</em>:
+			Using the Instance type with the highest Transactions-per-dollar you found
+			above, calculate the total projected cost of your databases for a year.
+			For this task, include ELB costs (assume 1kB per transaction) and CloudWatch (1
+			custom metric and Detailed monitoring per Instance). Still exclude
+			outbound network/bandwidth costs (other than ELB). Record your findings
+			for the Checkpoint Quiz.			
+		</p>	
+
+		
+		</div></div>
+	
+	<div id="N10814" class="section"><div class="sectionContain ">
+	<h2>Notes, Assumptions and Hints</h2>
+	
+		<ul><li>You can use port 22 (SSH) for ELB Health Checks since that port is already open.  There is a specific Security Group added for your ELB, if you want to add that to your Firewall rules.  Do not use port 3306 (MySQL) for ELB Health Checks - mysqld thinks these are malformed requests and may subsequently block regular requests coming from ELB.</li><li>For your time calculations, Assume 1 year = 365 days = 52 weeks + 1 day = 8760 hours; 1 month = 730 hours.</li><li>1 kB = 1000 Bytes ; 1MB = 1000 kB; 1GB = 1000 MB; 1TB = 1000 GB.</li><li>For EBS calculations, assume 1 transaction = 1 IOP.  Each Instance will get its own 500GB volume.  This size does not change throughout the year.</li><li>The <a href="http://calculator.s3.amazonaws.com/calc5.html" id="_i_5" target="_blank">AWS Monthly Calculator</a> might be helpful for getting an idea of total costs.</li><li>Assume that AWS prices will not increase within a year.</li><li>Use <em>On-Demand</em> pricing for us-east (N. Virginia)</li></ul>
+	
+	</div></div>
+	
+	<p>Besides the penalties mentioned in recitation and/or on Piazza, penalties accrue for the following:</p>
+							<table cellspacing="0" class="wbtable " align="center"><thead><tr><th>Violation</th><th align="left">Penalty of the project grade</th></tr></thead><tbody><tr>
+									<td align="left">Using any instance other than <code>m1.small</code> in your cluster</td>
+									<td>-10%</td>
+								</tr><tr class="e">
+									<td align="left">Spending more than $8 for this project checkpoint</td>
+									<td>-10%</td>
+								</tr><tr>
+									<td align="left">Spending more than $16 for this project checkpoint</td>
+									<td>-100%</td>
+								</tr><tr class="e">
+									<td align="left">Failing to tag all your resources for this project (Key:Project, Value: 3.3)</td>
+									<td>-10%</td>
+								</tr></tbody></table>	
+		
+				<div class="activitywrap purpose checkpoint wbactivity"><div class="activityhead"><!----><a id="_p03_m01_checkpoint_3" class="purposeType purposecheckpoint" title="   Assess    your progress." href="/jcourse/webui/resolver/link/resource.do?src=0e4f809280020ca60021affbb28bbe9f&dst=_p03_m01_checkpoint_3" target="_blank"><span class="scnReader">Checkpoint</span></a><div class="activityinfo"><!----></div></div><div class="actContain"><h3><a href="/jcourse/webui/resolver/link/resource.do?src=0e4f809280020ca60021affbb28bbe9f&dst=_p03_m01_checkpoint_3" title="Opens in new window" class="checkpoint" target="_blank">Horizontal Scaling</a></h3></div></div>
+		
+	</div></div></div><div class="paginationBt"><div class="pagtopwrapwrap2"><div class="pagtopwrap2"><div aria-label="page" role="navigation" class="pagtop2"><a aria-label="previous" role="navigation" title="Vertical Scaling" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f808b80020ca601339e0fb6a21121"></a> <a aria-label="previous" role="navigation" title="Horizontal Scaling in Databases" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f809080020ca601c500941f6401a7"></a> <span class="pagnum2"><form method="get" class="pageForm2" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip2">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax2"><input size="1" autocomplete="off" value="172" type="text" class="paginationInput2"> </form></span><a aria-label="next" role="navigation" title="Next: Working with NoSQL: DynamoDB / HBase" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/webui/syllabus/module.do?context=0e4f809780020ca600b2808990fdcd15"></a></div></div></div></div><div role="contentinfo" id="tinyfooter"><a class="oli" href="/">Open Learning Initiative</a><br><span class="license" title="Creative Commons License"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license"><img src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License"></a> Unless otherwise noted this work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+			</span></div></div></body></html>

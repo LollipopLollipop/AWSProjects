@@ -1,0 +1,281 @@
+<!DOCTYPE html><html><head xmlns:md="http://oli.web.cmu.edu/metadata/"><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="IE=9" http-equiv="X-UA-Compatible"><meta content="/repository/presentation/whirlwind-1.2/" name="themePath"><title>Vertical Scaling</title><base href="https://oli.cmu.edu/repository/webcontent/fda7217280020ca6017598f75d250b76/projects/_p03_project_3/_p03_m01_databases/x-oli-workbook_page/_p03_m01_4_checkpoint.xml"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/reset.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/learning_content.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/azool.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/style.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxCore.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxModal.css"><!--[if lte IE 7.0]>
+        <link rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles/ie/ie7.css" type="text/css" />
+        <![endif]-->
+        <!--[if lte IE 6]>
+        <link rel="stylesheet" href="/branding/css/ielte6.css" type="text/css" />
+        <![endif]--><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.css"><!--[if IE 7]><![endif]--><script src="/repository/presentation/whirlwind-1.2/web/scripts/swfobject.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-core-1.4.5-full-compat.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-more-1.4.0.1.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootests.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Core.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Modal.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/azool.js" type="text/javascript"></script><script src="/oa.js" type="text/javascript"></script><script type="text/javascript" src="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.js">//</script><script type="text/javascript">var AZ = AZ ? AZ : {};
+AZ.d = {'courseKey': 'F14-CC-PSA', 'pageNumber': '170'};
+
+/* <![CDATA[ */
+swfobject.embedSWF('../webcontent/youplayer.swf',
+ 'o_i_1',
+ '640',
+ '480',
+ '10.2',
+ (Browser.Platform.mac ? null : '/repository/presentation/whirlwind-1.2/web/scripts/expressInstall.swf'),
+{'movie_identifier':'_i_1', 'version':'10.2', 'expressinstall':'%2Frepository%2Fpresentation%2Fwhirlwind-1.2%2Fweb%2Fscripts%2FexpressInstall.swf', 'log_service_url':'%2Flog%2Fserver', 'user_guid':'dingz%40andrew.cmu.edu', 'session_id':'1c9670f380020ca600ba8cf7e8309e55', 'auth_token':'s%3D1c9670f380020ca600ba8cf7e8309e55%26u%3Ddingz%40andrew.cmu.edu%26h%3D1875afe0f644fa4f255efe8eb57dd363', 'container_id':'0e4f808b80020ca601339e0fb6a21121', 'source_id':'FLASH_PSEUDO_TUTOR', 'dataset_name':'F14-CC-PSA', 'problem_name':'youplayer', 'school_name':'Carnegie+Mellon+University', 'class_name':'F14-CC-PSA', 'class_description':'15319%2F15619+Cloud+Computing+%28Fall+2014%29%3A+Aug+2014+-+Jan+2015', 'video_id':'lUOFLa0DKdc', 'fs':'1', 'object_height':'480', 'object_width':'640', 'br':'br',},
+ {
+			
+			scale: 'showall', allowScriptAccess: 'always', swLiveConnect: 'true', 
+			wmode: 'white'},
+ {},
+ false);
+  /* ]]> */
+</script><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shCore.css"><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shThemeEclipse.css"><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shCore.js" type="text/javascript"> </script><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shBrushPlain.js" type="text/javascript"> </script><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shBrushBash.js" type="text/javascript"> </script><script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = '/repository/presentation/whirlwind-1.2/web/scripts//syntax/clipboard.swf';SyntaxHighlighter.all();</script></head><body class="workbook_page"><div class="contain"><div role="banner" class="header"><div class="oliClassTitle"><a class="logo"></a><h1><a title="15319/15619 Cloud Computing (Fall 2014)" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">15319/15619 Cloud Computing (Fall 2014)</a></h1></div><div aria-label="system" role="navigation" class="user"><h3>System Navigation</h3><ul class="userCredentials"><li class="userName"><a title="Edit my account" id="username" href="/jcourse/webui/myaccount/edit.do?user=dingz@andrew.cmu.edu">Ding ZHAO</a></li> <li class="login"><a title="Logout of the Open Learning Initiative." class="signout" href="/jcourse/webui/logout.do?from=0e4f808b80020ca601339e0fb6a21121">
+                            [  Sign Out  ]
+						</a></li></ul><div class="clear"></div><ul class="userHelp"><li><a title="Access Key + C" accesskey="C" class="home" id="myCourses" href="/jcourse/webui/myhome.do">My Courses</a>|
+				</li><li><a title="Access Key + S" accesskey="S" class="mimetypes_x-office-address-book" id="syllabus" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Syllabus</a>|
+			</li><li><span class="coursenav"> <a class="active" href="/jcourse/webui/syllabus/outline.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&from=0e4f808b80020ca601339e0fb6a21121">
+	      
+	        
+			Outline
+	    </a></span>|
+			</li><li><a onclick="openMdWin(this.href, 'activity');return false;" title="Ask OLI technical support team" href="/jcourse/webui/help.do">Help</a>|
+			</li><li id="moreBtn2"><a aria-haspopup="true" href="" tabindex="" title="More" accesskey="M" id="moreBtn">
+					More
+				</a></li></ul></div><div class="shadowOne" id="wn"><span class="controlpanel"> <a target="_blank" href="/jcourse/GradebookClient/index.html?myscores&section=0e4f7c4380020ca600aa44ba1eaf4b1e&col=0e4f808780020ca600d665bde281f8be"><span class="gradebook">My Scores</span></a><a href="/jcourse/webui/mycourses/reports/practice.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&context=0e4f808780020ca600d665bde281f8be"><span class="studentDashboard">Available Practice</span></a></span><span class="supportPanel"> <a title="Check if my computer is configured properly for this course." href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><span class="categories_preferences-system">Test My System</span></a> <a title="Send email to Majd Sakr" href="mailto:msakr@ANDREW.CMU.EDU"><span class="actions_mail-message-new">Email Sakr</span></a> <a onclick="openMdWin(this.href, 'activity');return false;" class="wnTechSupport" title="Ask OLI technical support team" href="/jcourse/webui/help.do"><span class="actions_mail-message-new">Email Tech Support</span></a></span></div></div><div aria-haspopup="true" aria-label="Unit" role="navigation" class="lessonHead"><h2 tabindex="" accesskey="u" id="0e4f807c80020ca6008491878136e895"><a tabindex="" href="javascript:;"><span>Unit&nbsp;::</span>Project 3</a></h2></div><div class="expand shadowOne"><ul id="topLvl"></ul></div><div aria-label="module, page" role="navigation" class="subNavigation"><a aria-label="previous, module" role="navigation" accesskey="," class="prev oneclick" href="javascript:;"></a><a aria-label="next, module" role="navigation" accesskey="." class="next oneclick" href="javascript:;"></a><div class="module"><ul id="moduleUl"><li><a id="0e4f807f80020ca601da17cb73b7cb68" title="Module  Files vs. Databases" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f807f80020ca601da17cb73b7cb68"><b><span>Files vs. Databases</span></b></a></li><li class="current"><a id="0e4f808780020ca600d665bde281f8be" title="Module  Vertical Scaling in Databases" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f808780020ca600d665bde281f8be"><b><span>Vertical Scaling in Databases</span></b></a></li><li><a id="0e4f809080020ca601c500941f6401a7" title="Module  Horizontal Scaling in Databases" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f809080020ca601c500941f6401a7"><b><span>Horizontal Scaling in Databases</span></b></a></li><li><a id="0e4f809780020ca600b2808990fdcd15" title="Module  Working with NoSQL: DynamoDB / HBase" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f809780020ca600b2808990fdcd15"><b><span>Working with NoSQL: DynamoDB / HBase</span></b></a></li></ul></div><div class="subMenu shadowOne" id="subMenuExpand"><ul id="jsonSubMenu"></ul></div></div><div class="searchBox"><form method="get" action="/jcourse/search/search.do" id="searchForm"><input value="0e4f7c4380020ca600aa44ba1eaf4b1e" type="hidden" name="section" class="sectionGUID"><input placeholder="Search this course" onBlur="this.setAttribute('value', this.value);" value="" size="25" id="q" type="text" name="q" class="q"><input value="0e4f808b80020ca601339e0fb6a21121" type="hidden" name="from" class="contextGUID"></form></div><div class="opacity"><div role="main" class="content shadowTwo"><div id="oli-message"><!----></div><div id="paginationtopwrap"><div class="clearfix" id="paginationtop"><div class="pagtopwrapwrap"><div class="pagtopwrap"><div aria-label="page" role="navigation" class="pagtop"><a aria-label="previous" role="navigation" title="Vertical Scaling in Databases" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f808780020ca600d665bde281f8be"></a> <a aria-label="previous" role="navigation" title="Common Disk Operations in Linux" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f808980020ca601d11aa0db893f0d"></a> <span class="pagnum"><form method="get" class="pageForm" style="" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip" id="pagnumtip">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax"><input size="4" autocomplete="off" value="170" type="text" class="paginationInput"> </form></span><a aria-label="next" role="navigation" title="Next: Horizontal Scaling in Databases" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/webui/syllabus/module.do?context=0e4f809080020ca601c500941f6401a7"></a></div></div></div><h3><a href="/jcourse/webui/syllabus/module.do?context=0e4f808780020ca600d665bde281f8be" class="module-heading"></a>Vertical Scaling</h3></div></div><div id="lobjh" class=""><h3>Learning Objectives</h3><ul><li><div class="" id="p03_m01_b">Evaluate database performance differences caused by using various storage mechanisms available on AWS EC2.</div></li></ul></div><div class="contentContain">
+
+				<p>In this part of the project, we will be experimenting with "Vertical
+					Scaling" for storage, by attaching Magnetic (i.e. spinning disks) and Solid
+					State Drive (SSD) storage devices offered in AWS to instances and
+					measuring their performance for three distinct scenarios:</p>
+					
+					<ol><li>FileIO</li><li>MySQL Database</li><li>HBase cluster</li></ol>
+				<p>As a result of this project checkpoint, we expect you to gain insight on the benefits of employing faster
+				storage systems such as SSD and how that investment translates into improvements for different SQL and NoSQL
+				database systems.</p>
+				
+				<p><em class="bold">Note</em>: For this checkpoint, assign the tag with Key: <code>Project</code> and Value: <code>3.2</code> for all resources</p>	
+				<p>Please visit the <a href="https://piazza.com/class/hxs4b3o2lox5f9?cid=1099" id="_i_0" target="_blank">Piazza post</a> for any updates regarding this part of the Project.</p>
+			<div id="N10717" class="section"><div class="sectionContain ">
+				<h2>FileIO and MySQL Performance Benchmarks</h2>		
+				
+		
+				<p>We will start by benchmarking the FileIO performance for the two types of EBS volumes (Magnetic and General Purpose SSD). Using
+				the same instances, we can also benchmark the performance of MySQL for the two storage types. To get started, launch a <em>Spot Instance</em>:</p>
+				
+				<ul><li>Instance type = m1.large</li><li>AMI = <em>ami-0656eb6e</em>  (same as Project 3.1)</li></ul>
+					
+				<p>We want you test the following scenarios</p>
+				<table cellspacing="0" class="wbtable " align="center"><thead><tr><th>Scenario</th><th>Instance Type</th><th>Storage Type</th><th>Run test from</th></tr></thead><tbody><tr>
+						<td>1</td>
+						<td>m1.large</td>
+						<td>EBS Magnetic Storage</td>
+						<td>localhost</td>
+					</tr><tr class="e">
+						<td>2</td>
+						<td>m1.large</td>
+						<td>EBS General Purpose SSD</td>
+						<td>localhost</td>
+					</tr></tbody></table>
+				
+			
+			    <p>The tips and how-to's presented in the previous reference page will be useful
+			    in completing this project. If those tips and commands are are completely new to you, we suggest 
+				   running through the instructions once on an <code>m1.small</code>instance type, 
+				   just to get more familiar.  This will save money because the 
+				   large instance types are expensive.</p>			   
+				
+				    
+				 <div id="N10769" class="section"><div class="sectionContain ">
+				 <h3>The FileIO Benchmark</h3>
+				 
+					<p>You will be using the <code>sysbench</code> FileIO benchmark to measure
+					disk performance. To run the benchmark for this checkpoint, perform the 
+					following steps:</p>
+					
+					<ol><li>Locate the <code>m1.large</code> instance you have launched above</li><li>Attach a 200 GB EBS volume of the desired type (Magnetic or SSD EBS) using the EC2 console</li><li>SSH to the instance</li><li>Perform the required steps to format and mount the EBS volume into the filesystem on that instance</li><li>Use the <code>sysbench fileio test</code> command with the <code>prepare</code> option to generate 100 GB of data into
+						the attached EBS volume.</li><li>Run <code>sysbench fileio test</code> on the data three times (without allowing for a long delay between runs)</li><li>Record your results for the checkpoint quiz</li><li>Repeat steps 2 to 8 for the next storage type.</li></ol>
+					
+					<p>You can use the same instance and volumes for the MySQL benchmark if you plan to finish this project checkpoint in one sitting. If not, 
+					make sure you unmount the EBS volumes, terminate the instance and delete the EBS volumes, in order to avoid excessive charges.</p>	
+					
+					<p>If you wish to continue with the MySQL benchmarking using the same instance delete the contents of the EBS mount to make space for the MySQL backup files.</p>			 
+				 
+				 </div></div>
+				 
+				 <div id="N107A5" class="section"><div class="sectionContain ">
+				 <h3>The MySQL Benchmark</h3>
+				 
+					<p>You will be using the <code>sysbench</code> OLTP benchmark to measure
+					disk performance for MySQL. To run the benchmark for this checkpoint, perform the 
+					following steps:</p>
+					
+					<ol><li>Locate the <code>m1.large</code> instance you have launched above, or launch a new one if you have terminated the previous instance</li><li>Attach a 200 GB EBS volume of the desired type using the EC2 console, if not already done so for the previous part</li><li>SSH to the instance</li><li>Perform the required steps to format and mount the EBS volume into the filesystem on that instance, if not already done so for the previous part</li><li>Run <code>sysbench</code> OLTP benchmark 3 times (without allowing for a long delay between runs), details for which are in the previous page, under the section "Running sysbench for MySQL"</li><li>Record your results for the checkpoint quiz</li><li>Unmount the disk</li><li>Repeat steps 2 to 7 for each type of EBS volume in the scenario</li></ol>
+					
+					<p>Once completed, save your benchmark results and make sure you terminate the instance and delete the EBS volumes, in order to avoid excessive charges.</p>				 
+				 
+				 </div></div>
+				 
+			
+		</div></div>
+		
+		<div id="N107DA" class="section"><div class="sectionContain ">
+				<h2>HBase Benchmarks</h2>		
+				
+					<p>So far, you have been reporting the performance of a single disk on a single instance using File-IO or OLTP benchmarks. We will
+					now try to assess the effect of disk performance on an HBase cluster.</p>
+					
+					<p>HBase is a column-oriented database management system that runs on top of HDFS. Specifically HBase is a sparse, consistent, distributed, 
+					multidimensional and sorted map. HBase maintains maps of <code>keys</code> to <code>values</code>. Each of these mappings is called 
+					a <code>keyvalue</code> or a <code>cell</code>. In HBase, the key is not a single, flat value. Each key consists of the following 
+					parts: <code>rowkey</code>, <code>column_family</code>, <code>column</code> and <code>timestamp</code>. Thus the mapping becomes:
+					<code>(rowkey, column family, column, timestamp) -&gt; value</code></p>
+					
+					<p><code>rowkey</code> and <code>value</code> are simply bytes, so anything that could be serialized into bytes can be stored into a cell. These cells in 
+					HBase are sorted lexicographically by rowkey which is a very important property as it allows for quick searching. Another 
+					key feature of HBase is that the data can be spread over different machines.</p>
+					
+					<div class="activitywrap  flash"><div class="activityhead"><!----><div class="activityinfo"><!----></div></div><div class="actContain"><div class="activity flash"><div style="min-width:640px;min-height:480px;" class="flash_obj" id="_i_1"><div id="o_i_1"><div style="width:640px;height:125px;" class="noflash"><div class="code"><p>Adobe Flash Player is required.</p><p><a target="_blank" href="http://get.adobe.com/flashplayer/">Get
+									Adobe<sup>&reg;</sup> Flash<sup>&reg;</sup> Player.</a></p><p><a target="_blank" href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Test My System</a></p></div></div></div></div> </div></div><div class="captionwrap"><span class="caption">HBase Demo</span></div></div>
+					
+					<p>HBase is covered in detail in the course content. We recommend reading up on HBase in Unit 4 before beginning this part of the project to learn more.</p>
+					
+					<p>In this part, you will use the
+					<a href="https://github.com/brianfrankcooper/YCSB/" id="_i_2" target="_blank">Yahoo Cloud System Benchmark (YCSB)</a>
+					to compare HBase with different storage back-ends, one Magnetic, and one SSD using EBS. We will be testing HBase performance over the following scenarios:</p>
+					
+					
+					<table cellspacing="0" class="wbtable " align="center"><thead><tr><th>Scenario</th><th>Number of Core Instances</th><th>Instance Type</th><th>HDFS Storage Type</th><th>Run test from</th></tr></thead><tbody><tr>
+						<td>1</td>
+						<td>4</td>
+						<td>m1.large</td>
+						<td>EBS Magnetic Storage</td>
+						<td>YCSB Instance</td>
+					</tr><tr class="e">
+						<td>2</td>
+						<td>4</td>
+						<td>m1.large</td>
+						<td>EBS General Purpose SSD</td>
+						<td>YCSB Instance</td>
+					</tr></tbody></table>
+					
+					<div id="N10860" class="section"><div class="sectionContain ">
+						<h3>YCSB Configuration</h3>
+						
+							<p>
+								To start, obtain a m1.large machine and boot it using the 
+								YCSB AMI (<code>ami-cbc599a2</code>). Since this AMI is based on 
+								Amazon Linux, you can log in using the username <code>ec2-user</code>. 
+								This will be the <em class="bold">client</em> machine from which you run all
+								your
+								tests. Make sure the security group assigned to this machine
+								is
+								configured to allow all TCP, UDP, and ICMP traffic. This can by
+								done by visiting the &lsquo;Security Groups&rsquo; page of the EC2 management
+								console and creating a new inbound and outbound rules for 'All Traffic', &lsquo;All
+								TCP,&rsquo; &lsquo;All UDP,&rsquo; and &lsquo;All ICMP&rsquo; with either the source or
+								destination set to
+								<code>0.0.0.0/0</code>. You should also allow
+								incoming/outgoing SSH connections with
+								source/destination set to
+								<code>0.0.0.0/0</code>.
+								
+								<p>Create a <code>records.props</code> file in the YCSB root directory, if it does not exist already. This file
+								will tell YCSB how many database records to create and the offset at
+								which to start creating records. Note that the offset only matters if
+								we were using multiple YCSB clients and wanted each one to
+								independently generate database entries. Make sure the file contains
+								the following two lines: </p>
+								
+								<div><pre class="brush: text; gutter: false; ">
+								recordcount=1000000
+								insertstart=0 
+								</pre></div>
+								
+							</p>
+						
+					</div></div>
+					
+					<div id="N10887" class="section"><div class="sectionContain ">
+						<h3>Configuring EMR instances to use EBS volumes</h3>
+						
+							<p>We will be using Amazon's Elastic MapReduce (EMR) to provision an HBase cluster for us to use. 
+							HBase uses the Hadoop Distributed File System (HDFS) in order to store data. HDFS is a file system
+							that is distributed over the individual <code>core</code> nodes in an EMR cluster. By default,
+							Amazon configures HDFS in an EMR cluster to use the built-in (instance) storage volumes that
+							come by default in each core EC2 instance. We will re-configure HDFS to use freshly attached
+							EBS volumes and restart the HBase services in order to test HBase performance for the two 
+							scenarios described above. The following steps will illustrate how you can run an EMR
+							cluster to work with HBase and configure it to use EBS as the HDFS storage backend:</p>
+							
+							<ol><li>Launch an EMR cluster with 1 master and 4 core nodes
+									<ul><li>Make sure all instances are <code>m1.large</code></li><li>Choose AMI version 2.4.2 (Hadoop version 1.0.3)</li><li>Remove any existing services such as Pig and Hive and choose to install HBase version <code>0.92</code></li><li>You must specify a key-pair to be able to SSH to the individual instances. Note that the username to use while SSHing
+										to these instances is <code>hadoop</code></li><li>Do not forget to set a tag that will be automatically propagated to the individual instances in the cluster</li><li>Enable "termination protection" and "keep-alive" for your cluster</li></ul>
+								</li><li>Once the cluster is up and ready, you need to do the following for each <code>core</code> node in your cluster
+									<ul><li>Create an EBS volume of the required type of 10 GB, ensure that it's created in the
+									same availability zone as your cluster instances</li><li>Attach the EBS volume to your core instance</li><li>Now would be a good time to modify the security group of the core instances and allow port 22 so that you can
+										SSH to the instances</li><li>You should also modify the security groups of the master and core instances to allow all traffic, especially
+										from your YCSB client node.</li></ul>						
+								</li><li>Once all of your instances have been attached with EBS volumes, you need to individually mount and configure them to work with EBS.
+								SSH to each instance individually and,
+									<ul><li>Format and mount (say, in <code>/mnt/ebs1</code>) the EBS volumes in the instance using the same methods you used in the previous part of the project</li><li>Modify the owner on your mount point to allow the user <code>hadoop:hadoop</code> to access the volume
+											<div><pre class="brush: bash; gutter: false; ">sudo chown -R hadoop:hadoop /mnt/ebs1</pre></div>
+										</li><li>Modify the HDFS configuration to use the new mount point:
+											<ul><li>Open the file <code>/home/hadoop/conf/hdfs-site.xml</code></li><li>Locate the property <code>dfs.data.dir</code></li><li>Change the value of the property to <code>/mnt/ebs1</code></li><li>Save changes to the file and exit</li></ul>
+										</li><li>
+											<p>Now we need to restart the HDFS <code>Datanode</code> daemon process to refresh the configuration. The following command
+											will do this for you:</p>
+											<div><pre class="brush: bash; gutter: false; ">sudo /etc/init.d/hadoop-datanode restart</pre></div>
+											<p>Note that EMR configures these instances to automatically restart any service that is stopped, so ignore any 
+											warning from the command that says that the service is already running. If it was stopped successfully, it will restart automatically.</p>
+										</li><li>You can verify that the <code>datanode</code> is functioning correctly using the following commands:
+											<ul><li><code>jps</code> - this lists all the java processes running on the instance. Verify that the datanode is running here</li><li>You can also inspect the <code>datanode</code> logs: <code>tail -f /mnt/var/log/hadoop/hadoop-hadoop-datanode-*.internal.log</code></li><li>You should see the datanode is functioning correctly without errors.</li></ul>
+										</li></ul>
+								</li><li><p>Once all the core instances have been reconfigured, you can log into the Master node and format the HDFS cluster:</p>
+								<div><pre class="brush: bash; gutter: false; ">~/bin/hadoop namenode -format</pre></div>
+								<p>After a few minutes, you can run the following command to verify that HDFS is healthy with the correct size (10 GB) being reported
+								per datanode:
+								</p>
+								<div><pre class="brush: bash; gutter: false; ">hadoop dfsadmin -report</pre></div>
+								</li><li>We also now need to restart the HBase region server, so that HBase accommodates the changes in HDFS. On each core node, restart
+								the HBase region server as follows:
+									<div><pre class="brush: bash; gutter: false; ">sudo /etc/init.d/hbase-regionserver restart</pre></div>
+								</li><li>Finally, you can restart the HBase master deamon on the master instance of the cluster:
+									<div><pre class="brush: bash; gutter: false; ">sudo /etc/init.d/hbase-master restart</pre></div>
+								</li></ol>			
+						
+						</div></div>
+						<div id="N10947" class="section"><div class="sectionContain ">
+							<h3>Running YCSB on your HBase Cluster</h3>
+						
+							<p>Now that your cluster is ready, we can run the YCSB benchmark on it.</p>
+							<ol><li>First, SSH to the HBase master node and run the following command:
+									<div><pre class="brush: bash; gutter: false; ">hbase org.apache.hadoop.hbase.util.RegionSplitter usertable -c 200 -f family</pre></div>
+									<p><code>-c &lt;region count&gt;</code> Allows us to create a new Table with a pre-split number of regions</p>
+									<p><code>-f &lt;family:family&gt;</code> Specifies the column families to create in the table</p>
+								</li><li>SSH to the YCSB client launched and configured earlier and go to the <code>ycsb-0.1.4</code> directory</li><li>Edit the <code>ycsb0.1.4/hbase-binding/conf/hbase-site.xml</code> to specify the relevant fields of
+								<code>MASTER</code>,<code>ROOTDIR</code> and <code>ZOOKEEPER</code>. They must all be set to the address
+								of the EMR/HBase master node.</li><li>We can now load the HBase cluster with the data required for the benchmark. Run the following command:
+								<div><pre class="brush: bash; gutter: false; ">
+								time bin/ycsb load hbase -p columnfamily=family -P workloads/workloada -P records.props -threads 50 -s 1&gt;  &lt;username&gt;_hbase_summary_file_loaddata  2&gt; &lt;username&gt;_hbase_results_file_loaddata</pre></div>
+								<p>Enter your andrewID in the username fields above</p>
+								</li><li>An important parameter in YCSB is the <code>request arrival rate</code>. This parameter can be used to specify the how often
+								requests are sent to the database during the benchmark. We will be testing the target arrival rates of 800 and 1600. Use the following command to
+								run the benchmark:
+								<div><pre class="brush: bash; gutter: false; ">time bin/ycsb run hbase -p columnfamily=family -P workloads/workloada -p operationcount=200000 -P records.props -threads 50 -s  -target &lt;request arrival rate&gt; 1&gt; &lt;username&gt;_hbase_summary_file_&lt;request arrival rate&gt; 2&gt; &lt;username&gt;_hbase_results_file_&lt;request arrival rate&gt;</pre></div> 
+								</li><li>You can run the test for each target arrival rate three times and record the average throughput, which will be asked in checkpoint quiz. Make sure you run the tests consecutively without a long delay in betweeen. The throughput and other statistics are in the summary file.</li><li>Run the benchmark process for both types of EBS - SSD and Magnetic Disk</li><li>Terminate all your instances once you are done.</li></ol>
+						
+						</div></div>
+						
+						<p>Besides the penalties mentioned in recitation and/or on Piazza, penalties accrue for the following:</p>
+							<table cellspacing="0" class="wbtable " align="center"><thead><tr><th>Violation</th><th align="left">Penalty of the project grade</th></tr></thead><tbody><tr>
+									<td align="left">Using any instance other than <code>m1.large</code> in your cluster</td>
+									<td>-10%</td>
+								</tr><tr class="e">
+									<td align="left">Spending more than $20 for this project checkpoint</td>
+									<td>-10%</td>
+								</tr><tr>
+									<td align="left">Spending more than $40 for this project checkpoint</td>
+									<td>-100%</td>
+								</tr><tr class="e">
+									<td align="left">Failing to tag all your resources for this project (Key:Project, Value: 3.2)</td>
+									<td>-10%</td>
+								</tr></tbody></table>
+				
+		</div></div>
+				<div class="activitywrap purpose checkpoint wbactivity"><div class="activityhead"><!----><a id="_p03_m01_checkpoint_2" class="purposeType purposecheckpoint" title="   Assess    your progress." href="/jcourse/webui/resolver/link/resource.do?src=0e4f808b80020ca601339e0fb6a21121&dst=_p03_m01_checkpoint_2" target="_blank"><span class="scnReader">Checkpoint</span></a><div class="activityinfo"><!----></div></div><div class="actContain"><h3><a href="/jcourse/webui/resolver/link/resource.do?src=0e4f808b80020ca601339e0fb6a21121&dst=_p03_m01_checkpoint_2" title="Opens in new window" class="checkpoint" target="_blank">Vertical Scaling</a></h3></div></div>
+
+		 
+	</div></div></div><div class="paginationBt"><div class="pagtopwrapwrap2"><div class="pagtopwrap2"><div aria-label="page" role="navigation" class="pagtop2"><a aria-label="previous" role="navigation" title="Vertical Scaling in Databases" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f808780020ca600d665bde281f8be"></a> <a aria-label="previous" role="navigation" title="Common Disk Operations in Linux" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f808980020ca601d11aa0db893f0d"></a> <span class="pagnum2"><form method="get" class="pageForm2" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip2">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax2"><input size="1" autocomplete="off" value="170" type="text" class="paginationInput2"> </form></span><a aria-label="next" role="navigation" title="Next: Horizontal Scaling in Databases" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/webui/syllabus/module.do?context=0e4f809080020ca601c500941f6401a7"></a></div></div></div></div><div role="contentinfo" id="tinyfooter"><a class="oli" href="/">Open Learning Initiative</a><br><span class="license" title="Creative Commons License"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license"><img src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License"></a> Unless otherwise noted this work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+			</span></div></div></body></html>

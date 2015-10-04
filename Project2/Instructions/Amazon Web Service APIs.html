@@ -1,0 +1,216 @@
+<!DOCTYPE html><html><head xmlns:md="http://oli.web.cmu.edu/metadata/"><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="IE=9" http-equiv="X-UA-Compatible"><meta content="/repository/presentation/whirlwind-1.2/" name="themePath"><title>Amazon Web Service APIs</title><base href="https://oli.cmu.edu/repository/webcontent/fda7217280020ca6017598f75d250b76/projects/_p02_project_2/_p02_m01_scenario/x-oli-workbook_page/_p02_m01_2_APIs.xml"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/reset.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/learning_content.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/azool.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/style.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxCore.css"><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/styles/mBoxModal.css"><!--[if lte IE 7.0]>
+        <link rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles/ie/ie7.css" type="text/css" />
+        <![endif]-->
+        <!--[if lte IE 6]>
+        <link rel="stylesheet" href="/branding/css/ielte6.css" type="text/css" />
+        <![endif]--><link rel="StyleSheet" type="text/css" href="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.css"><!--[if IE 7]><![endif]--><script src="/repository/presentation/whirlwind-1.2/web/scripts/swfobject.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-core-1.4.5-full-compat.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootools-more-1.4.0.1.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mootests.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Core.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/mBox.Modal.min.js" type="text/javascript"></script><script src="/repository/presentation/whirlwind-1.2/web/scripts/azool.js" type="text/javascript"></script><script src="/oa.js" type="text/javascript"></script><script type="text/javascript" src="/repository/presentation/whirlwind-1.2/web/workbook_page/workbook_page.js">//</script><script type="text/javascript">var AZ = AZ ? AZ : {};
+AZ.d = {'courseKey': 'F14-CC-PSA', 'pageNumber': '158'};
+
+/* <![CDATA[ */
+swfobject.embedSWF('../webcontent/youplayer.swf',
+ 'o_i_0',
+ '640',
+ '480',
+ '10.2',
+ (Browser.Platform.mac ? null : '/repository/presentation/whirlwind-1.2/web/scripts/expressInstall.swf'),
+{'movie_identifier':'_i_0', 'version':'10.2', 'expressinstall':'%2Frepository%2Fpresentation%2Fwhirlwind-1.2%2Fweb%2Fscripts%2FexpressInstall.swf', 'log_service_url':'%2Flog%2Fserver', 'user_guid':'dingz%40andrew.cmu.edu', 'session_id':'1c9670f380020ca600ba8cf7e8309e55', 'auth_token':'s%3D1c9670f380020ca600ba8cf7e8309e55%26u%3Ddingz%40andrew.cmu.edu%26h%3D1875afe0f644fa4f255efe8eb57dd363', 'container_id':'0e4f806780020ca601c7e3edb7fe9c99', 'source_id':'FLASH_PSEUDO_TUTOR', 'dataset_name':'F14-CC-PSA', 'problem_name':'youplayer', 'school_name':'Carnegie+Mellon+University', 'class_name':'F14-CC-PSA', 'class_description':'15319%2F15619+Cloud+Computing+%28Fall+2014%29%3A+Aug+2014+-+Jan+2015', 'video_id':'6Ru_f9WVIno', 'fs':'1', 'object_height':'480', 'object_width':'640', 'br':'br',},
+ {
+			
+			scale: 'showall', allowScriptAccess: 'always', swLiveConnect: 'true', 
+			wmode: 'white'},
+ {},
+ false);
+  /* ]]> */
+</script><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shCore.css"><link type="text/css" rel="stylesheet" href="/repository/presentation/whirlwind-1.2/web/styles//syntax/shThemeEclipse.css"><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shCore.js" type="text/javascript"> </script><script src="/repository/presentation/whirlwind-1.2/web/scripts//syntax/shBrushJava.js" type="text/javascript"> </script><script type="text/javascript">SyntaxHighlighter.config.clipboardSwf = '/repository/presentation/whirlwind-1.2/web/scripts//syntax/clipboard.swf';SyntaxHighlighter.all();</script></head><body class="workbook_page"><div class="contain"><div role="banner" class="header"><div class="oliClassTitle"><a class="logo"></a><h1><a title="15319/15619 Cloud Computing (Fall 2014)" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">15319/15619 Cloud Computing (Fall 2014)</a></h1></div><div aria-label="system" role="navigation" class="user"><h3>System Navigation</h3><ul class="userCredentials"><li class="userName"><a title="Edit my account" id="username" href="/jcourse/webui/myaccount/edit.do?user=dingz@andrew.cmu.edu">Ding ZHAO</a></li> <li class="login"><a title="Logout of the Open Learning Initiative." class="signout" href="/jcourse/webui/logout.do?from=0e4f806780020ca601c7e3edb7fe9c99">
+                            [  Sign Out  ]
+						</a></li></ul><div class="clear"></div><ul class="userHelp"><li><a title="Access Key + C" accesskey="C" class="home" id="myCourses" href="/jcourse/webui/myhome.do">My Courses</a>|
+				</li><li><a title="Access Key + S" accesskey="S" class="mimetypes_x-office-address-book" id="syllabus" href="/jcourse/lms/students/syllabus.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Syllabus</a>|
+			</li><li><span class="coursenav"> <a class="active" href="/jcourse/webui/syllabus/outline.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&from=0e4f806780020ca601c7e3edb7fe9c99">
+	      
+	        
+			Outline
+	    </a></span>|
+			</li><li><a onclick="openMdWin(this.href, 'activity');return false;" title="Ask OLI technical support team" href="/jcourse/webui/help.do">Help</a>|
+			</li><li id="moreBtn2"><a aria-haspopup="true" href="" tabindex="" title="More" accesskey="M" id="moreBtn">
+					More
+				</a></li></ul></div><div class="shadowOne" id="wn"><span class="controlpanel"> <a target="_blank" href="/jcourse/GradebookClient/index.html?myscores&section=0e4f7c4380020ca600aa44ba1eaf4b1e&col=0e4f805d80020ca601b79285e8642616"><span class="gradebook">My Scores</span></a><a href="/jcourse/webui/mycourses/reports/practice.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e&context=0e4f805d80020ca601b79285e8642616"><span class="studentDashboard">Available Practice</span></a></span><span class="supportPanel"> <a title="Check if my computer is configured properly for this course." href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><span class="categories_preferences-system">Test My System</span></a> <a title="Send email to Majd Sakr" href="mailto:msakr@ANDREW.CMU.EDU"><span class="actions_mail-message-new">Email Sakr</span></a> <a onclick="openMdWin(this.href, 'activity');return false;" class="wnTechSupport" title="Ask OLI technical support team" href="/jcourse/webui/help.do"><span class="actions_mail-message-new">Email Tech Support</span></a></span></div></div><div aria-haspopup="true" aria-label="Unit" role="navigation" class="lessonHead"><h2 tabindex="" accesskey="u" id="0e4f805b80020ca6003d5223beb6c69f"><a tabindex="" href="javascript:;"><span>Unit&nbsp;::</span>Project 2</a></h2></div><div class="expand shadowOne"><ul id="topLvl"></ul></div><div aria-label="module, page" role="navigation" class="subNavigation"><a aria-label="previous, module" role="navigation" accesskey="," class="prev oneclick" href="javascript:;"></a><a aria-label="next, module" role="navigation" accesskey="." class="next oneclick" href="javascript:;"></a><div class="module"><ul id="moduleUl"><li class="current"><a id="0e4f805d80020ca601b79285e8642616" title="Module  Introduction and APIs" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f805d80020ca601b79285e8642616"><b><span>Introduction and APIs</span></b></a></li><li><a id="0e4f806c80020ca6018cb1867646cfa9" title="Module  Elastic Load Balancing" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f806c80020ca6018cb1867646cfa9"><b><span>Elastic Load Balancing</span></b></a></li><li><a id="0e4f807580020ca601ef5d1cc06eb368" title="Module  AutoScaling on Amazon" rel="" href="/jcourse/webui/syllabus/module.do?context=0e4f807580020ca601ef5d1cc06eb368"><b><span>AutoScaling on Amazon</span></b></a></li></ul></div><div class="subMenu shadowOne" id="subMenuExpand"><ul id="jsonSubMenu"></ul></div></div><div class="searchBox"><form method="get" action="/jcourse/search/search.do" id="searchForm"><input value="0e4f7c4380020ca600aa44ba1eaf4b1e" type="hidden" name="section" class="sectionGUID"><input placeholder="Search this course" onBlur="this.setAttribute('value', this.value);" value="" size="25" id="q" type="text" name="q" class="q"><input value="0e4f806780020ca601c7e3edb7fe9c99" type="hidden" name="from" class="contextGUID"></form></div><div class="opacity"><div role="main" class="content shadowTwo"><div id="oli-message"><!----></div><div id="paginationtopwrap"><div class="clearfix" id="paginationtop"><div class="pagtopwrapwrap"><div class="pagtopwrap"><div aria-label="page" role="navigation" class="pagtop"><a aria-label="previous" role="navigation" title="Introduction and APIs" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f805d80020ca601b79285e8642616"></a> <a aria-label="previous" role="navigation" title="Introduction" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f805f80020ca600364b9a1b07dd98"></a> <span class="pagnum"><form method="get" class="pageForm" style="" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip" id="pagnumtip">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax"><input size="4" autocomplete="off" value="158" type="text" class="paginationInput"> </form></span><a aria-label="next" role="navigation" title="Next: The MSB Recruitment Exam" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/workbook/activity/page?context=0e4f806980020ca6014b700d3642cb81"></a></div></div></div><h3><a href="/jcourse/webui/syllabus/module.do?context=0e4f805d80020ca601b79285e8642616" class="module-heading"></a>Amazon Web Service APIs</h3></div></div><div id="lobjh" class=""><h3>Learning Objectives</h3><ul><li><div class="" id="p02_m01_sdk">Work with an AWS API/SDK and programmatically manage resources on AWS.</div></li></ul></div><div class="contentContain">
+	
+		<div id="N106E9" class="section"><div class="sectionContain ">
+			<h2>APIs and SDK access for AWS</h2>
+			
+			
+				<p>The other thing to learn before joining the MSB is how to programmatically create and manage
+				AWS resources.</p>
+				
+				<p>The Amazon Web Services SDK includes different kinds of API packages
+					which developers can use to create and manage resources and
+					applications running on AWS. This allows developers to
+					programmatically automate management tasks on AWS.
+					Almost all of the functionality in AWS is accessible via Command Line Interface (CLI), APIs
+					or SDK. We will go through some of the most popular AWS tools now. The following video
+					provides a brief introduction to AWS SDKs:</p>
+					
+					
+					<div class="activitywrap  flash"><div class="activityhead"><!----><div class="activityinfo"><!----></div></div><div class="actContain"><div class="activity flash"><div style="min-width:640px;min-height:480px;" class="flash_obj" id="_i_0"><div id="o_i_0"><div style="width:640px;height:125px;" class="noflash"><div class="code"><p>Adobe Flash Player is required.</p><p><a target="_blank" href="http://get.adobe.com/flashplayer/">Get
+									Adobe<sup>&reg;</sup> Flash<sup>&reg;</sup> Player.</a></p><p><a target="_blank" href="/jcourse/webui/help/configure/redirect.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e">Test My System</a></p></div></div></div></div> </div></div><div class="captionwrap"><span class="caption">A video about the AWS SDKs</span></div></div>
+					
+				
+			
+			
+		</div></div>
+				
+				
+		<div id="N1070B" class="section"><div class="sectionContain ">
+			<h2>Amazon Command-Line Interface API Tools</h2>
+			
+			<p>For those of you who prefer to use bash scripts to run cloud jobs, the Amazon CLI tools allow for command-line
+			manipulation of various facets of AWS. The following CLI-tools are available from AWS:</p>
+				
+				<ul><li>
+						<a href="http://aws.amazon.com/cli/" id="_i_1" target="_blank">AWS CLI Tool</a>:
+						The EC2 API tools allow you to create, manage and terminate many AWS Services
+					</li></ul>
+
+        <p>Students who plan on using the CLI tools within bash/shell scripts should:</p>
+          <ol><li>Download and install the CLI tools into their instance</li><li>Add the path of the CLI tools into <code>$HOME/.bashrc</code></li><li>Setup their AWS credentials within the <code>$HOME/.bashrc</code> file.</li></ol>
+        
+				<p>Most of the above API tools require you to specify your AWS Credentials (Either your AWS Access Key ID/Secret Key or X.509 Certificates).
+				</p>
+
+			
+		</div></div>
+		
+		<div id="N10739" class="section"><div class="sectionContain ">
+        	<h2>AWS SDK for Java</h2>
+        	
+     			 
+     			 <p>The AWS SDK is available for multiple languages, including, Java, .NET, node.js, Ruby etc.
+     			    The <a href="http://aws.amazon.com/sdkforjava/" id="_i_2" target="_blank">AWS SDK for Java</a> has been developed by Amazon and is a fully featured SDK, which includes:</p>
+	        	 
+	        	 	<ul><li><em>The AWS Java Library: </em> Java packages, classes and methods (i.e. an API) that allow you to program AWS using Java. The API hides much 
+	        	 		of the complexity that is otherwise involved in using a REST/SOAP-based HTTP interface including authentication, request retries and error handling.</li><li><em>Code Samples: </em> Code samples that demonstrate the use of an API to perform various tasks on AWS.</li><li><em>Eclipse support:</em> Includes an Eclipse plugin that allows developers to create Java apps that work with AWS from within the Eclipse IDE.</li></ul>
+	        	
+
+        	<div id="N1075A" class="section"><div class="sectionContain ">
+        	<h3>Amazon EC2 API</h3>
+        	
+        	<p>You are already quite familiar with Amazon EC2 through the AWS Management Console. The AWS SDK exposes the EC2 management functionality provided by the AWS Management Console
+        	and the command line tools via programming interfaces in Java. All of the EC2 related functionality is encapsulated in the <code>com.amazonaws.services.ec2</code> package.
+        	You can use the EC2 classes and methods to:</p>
+        	
+        	<ul><li>Create EC2 Keypairs</li><li>Create Security Groups for Instances and open ports (also known as <em class="italic">authorize security group ingress</em>)</li><li>Create, launch, stop, reboot and terminate instances on EC2.</li></ul>
+        	
+        	 <p>For example in the EC2 API, the following java code snippet will launch an instance:</p>
+  			
+  			<div id="N1077A" class="section section-walkthrough"><div class="head"><span class="scnReader">Walkthrough</span></div><div class="sectionContain ">
+  				<h4>Launching an Instance using the AWS SDK for Java</h4>
+  				
+	  				<div><pre class="brush: java; gutter: false; ">
+			        	//Load the Properties File with AWS Credentials
+			        	Properties properties = new Properties();
+						properties.load(RunInstance.class.getResourceAsStream("/AwsCredentials.properties"));
+		
+						BasicAWSCredentials bawsc = new BasicAWSCredentials(properties.getProperty("accessKey"), properties.getProperty("secretKey"));
+		
+						//Create an Amazon EC2 Client
+						AmazonEC2Client ec2 = new AmazonEC2Client(bawsc);
+						
+						//Create Instance Request
+						RunInstancesRequest runInstancesRequest = new RunInstancesRequest();
+				
+						//Configure Instance Request
+						runInstancesRequest.withImageId("ami-3b44d352")
+						.withInstanceType("t1.micro")
+						.withMinCount(1)
+						.withMaxCount(1)
+						.withKeyName("project1_test")
+						.withSecurityGroups("MySecurityGroup");
+						
+						//Launch Instance
+						RunInstancesResult runInstancesResult = ec2.runInstances(runInstancesRequest);   
+						
+						//Return the Object Reference of the Instance just Launched
+						Instance instance=runInstancesResult.getReservation().getInstances().get(0);
+	        	</pre></div>
+  				
+  			</div></div>      	
+        	
+        	<div id="N10789" class="section section-walkthrough"><div class="head"><span class="scnReader">Walkthrough</span></div><div class="sectionContain ">
+  				<h4>Listing all running instances using the AWS SDK for Java</h4>
+  				
+  				<p>The following java code snippet will list all running instances:</p>
+		  			<div><pre class="brush: java; gutter: false; ">
+			        	//Load the Properties File with AWS Credentials
+			        	Properties properties = new Properties();
+						properties.load(EC2CWTest.class.getResourceAsStream("/AwsCredentials.properties"));
+		
+						bawsc = new BasicAWSCredentials(properties.getProperty("accessKey"), properties.getProperty("secretKey"));
+			        	
+			        	//Launch an EC2 Client 
+			        	amazonEC2Client = new AmazonEC2Client(bawsc);
+						
+						//Obtain a list of Reservations
+						List&lt;Reservation&gt; reservations = amazonEC2Client.describeInstances().getReservations();
+							
+						int reservationCount = reservations.size();
+						
+						for(int i = 0; i &lt; reservationCount; i++) {
+							List&lt;Instance&gt; instances = reservations.get(i).getInstances();
+			
+							int instanceCount = instances.size();
+							
+							//Print the instance IDs of every instance in the reservation.
+							for(int j = 0; j &lt; instanceCount; j++) {
+								Instance instance = instances.get(j);
+			
+								if(instance.getState().getName().equals("running")) {
+									System.out.println(instance.getInstanceId());
+								}
+							}
+						}
+				   	</pre></div>
+  				
+  			</div></div>      	
+  			
+        	<p>The snippets above assume that you have an <code>AwsCredentials.properties</code> file with your AWS keys and have already created an EC2 keypair and
+        	security group.</p>
+ 
+			<p>In addition, the Amazon EC2 API provides classes such as DescribeInstanceStatusRequest to make requests that check an instance&rsquo;s status:</p>
+			<ul><li>Running</li><li>Pending</li><li>Shutting Down, etc...</li></ul>
+ 			
+ 			<p>For more information on the Amazon EC2 API, please refer to the <a href="http://aws.amazon.com/documentation/sdkforjava/" id="_i_3" target="_blank">AWS SDK for Java Documentation</a>
+ 			and the <a href="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/index.html" id="_i_4" target="_blank">AWS Java API Reference</a></p>       	
+        	
+        </div></div>          
+        
+        <div id="N107BE" class="section"><div class="sectionContain ">
+        	<h3>Amazon CloudWatch</h3>
+        	
+        	<p>Amazon CloudWatch enables developers to monitor various facets of their AWS resources. Developers can use it to collect and track metrics from various AWS resources that
+        	are running on the AWS Cloud. Using APIs, CloudWatch also allows you to programmatically retrieve monitoring data, which can be used to track resources, spot trends and
+        	take automated action based on the state of your cloud resources on AWS. CloudWatch also allows you to set <em>alarms</em>, which constitute a set of instructions to be followed
+        	in case of an event that is tracked by CloudWatch is triggered.</p>
+        	
+        	<p>CloudWatch can be used to monitor various types of AWS resources including:</p>
+        	<ul><li>EC2 instances</li><li>EBS volumes</li><li>EMR job flows etc</li><li>ELB Loads</li></ul> 
+        	<p>For EC2 instances, CloudWatch allows you to 
+        	monitor CPU, memory and disk utilization.</p>
+        	
+        	<p>For more information on CloudWatch please refer to the <a href="http://aws.amazon.com/documentation/cloudwatch/" id="_i_5" target="_blank">Amazon CloudWatch documentation</a>.</p>
+         	
+        </div></div>
+	
+</div></div>
+
+<div id="N107EC" class="section"><div class="sectionContain ">
+<h2>AWS SDK for Python (boto)</h2>
+
+	<p>For python-inclined developers, AWS supports a third-party API called <a href="http://docs.pythonboto.org/en/latest/" id="_i_6" target="_blank">boto</a>, which can be used to make API requests to AWS from within python.
+	
+	To install boto on the AMI, just follow the steps outlined in the <a href="http://docs.pythonboto.org/en/latest/getting_started.html" id="_i_7" target="_blank">Getting Started Guide</a>.</p>
+
+
+
+</div></div>
+</div></div></div><div class="paginationBt"><div class="pagtopwrapwrap2"><div class="pagtopwrap2"><div aria-label="page" role="navigation" class="pagtop2"><a aria-label="previous" role="navigation" title="Introduction and APIs" class="prev oneclick degree2" accesskey="Ctrl+Arrow Left" href="/jcourse/webui/syllabus/module.do?context=0e4f805d80020ca601b79285e8642616"></a> <a aria-label="previous" role="navigation" title="Introduction" class="prev oneclick degree1" accesskey="Ctrl+Arrow Left" href="/jcourse/workbook/activity/page?context=0e4f805f80020ca600364b9a1b07dd98"></a> <span class="pagnum2"><form method="get" class="pageForm2" action="/jcourse/webui/syllabus/page.do?section=0e4f7c4380020ca600aa44ba1eaf4b1e"><label for="pagenumnewinput"><span style="display:none" class="pageTip2">Enter Page 1-185, then press Enter</span></label><input value="185" type="hidden" class="pageMax2"><input size="1" autocomplete="off" value="158" type="text" class="paginationInput2"> </form></span><a aria-label="next" role="navigation" title="Next: The MSB Recruitment Exam" accesskey="Ctrl+Arrow Right" class="next oneclick degree1" href="/jcourse/workbook/activity/page?context=0e4f806980020ca6014b700d3642cb81"></a></div></div></div></div><div role="contentinfo" id="tinyfooter"><a class="oli" href="/">Open Learning Initiative</a><br><span class="license" title="Creative Commons License"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license"><img src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" style="border-width:0" alt="Creative Commons License"></a> Unless otherwise noted this work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="license">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+			</span></div></div></body></html>
